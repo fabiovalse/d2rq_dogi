@@ -188,20 +188,6 @@ map:legDocResp_IDResponsabilita_2 a d2rq:PropertyBridge;
   d2rq:uriPattern "Agent/@@tabResponsabilita.IDResponsabilita@@";
   d2rq:condition "legDocResp.Tipo = 1"; # Tipo = 1 denotes the Dogi editor who created the Dogi document
   .
-#map:legDocClasse_Classificazione_1 a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabDocumenti;
-#  d2rq:property dc:subject;
-#  d2rq:join "tabDocumenti.IDDoc = legDocClasse.IDDoc";
-#  d2rq:join "legDocClasse.IDElementoPrinc = tabSistematici.CodiceS";
-#  d2rq:uriPattern "Sistematico/@@tabSistematici.CodiceS@@";
-#  .
-#map:legDocClasse_Classificazione_2 a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabDocumenti;
-#  d2rq:property dc:subject;
-#  d2rq:join "tabDocumenti.IDDoc = legDocClasse.IDDoc";
-#  d2rq:join "legDocClasse.IDElementoPrinc = tabDescrittori.CodiceD";
-#  d2rq:uriPattern "Descrittore/@@tabDescrittori.CodiceD@@";
-#  .
 map:tabDocumenti_IDTAbs a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property x:TipoAbstract;
@@ -209,10 +195,18 @@ map:tabDocumenti_IDTAbs a d2rq:PropertyBridge;
   d2rq:join "tabDocumenti.IDTAbs = tabTipoAbs.IDTAbs";
   d2rq:column "tabTipoAbs.TipoAbstract";
   .
-map:tabDocumenti__label a d2rq:PropertyBridge;
+map:tabDocumenti__label_1 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property rdfs:label;
   d2rq:pattern "Article @@tabDocumenti.IDDoc@@";
+  d2rq:condition "tabTesti.Tipo != 0";
+  .
+map:tabDocumenti__label_2 a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabDocumenti;
+  d2rq:property rdfs:label;
+  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+  d2rq:column "tabTesti.Testo";
+  d2rq:condition "tabTesti.Tipo = 0";
   .
 map:tabDocumenti_IDDoc a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
@@ -587,7 +581,7 @@ map:tabRifBibl a d2rq:ClassMap;
 map:tabRifBibl__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
   d2rq:property rdfs:label;
-  d2rq:pattern "Issue@@tabRifBibl.IDRifBibl@@";
+  d2rq:pattern "Issue @@tabRifBibl.IDRifBibl@@";
   .
 map:tabRifBibl_IDRifBibl a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
@@ -610,6 +604,7 @@ map:tabRifBibl_Fascicolo a d2rq:PropertyBridge;
 map:tabRifBibl_Data a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
   d2rq:property dc:date;
+  d2rq:datatype xsd:date; # If an entry has an invalid date such as 2000-02-00 the property is not translated
   d2rq:column "tabRifBibl.Data";
   .
 map:tabRifBibl_Annata a d2rq:PropertyBridge;
