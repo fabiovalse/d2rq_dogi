@@ -1,0 +1,69 @@
+/*  flex layout
+*/
+#footer {
+  height: 30px;
+  background: #333333;
+  color: #fff;
+}
+
+/* 
+*/
+a {
+  color: steelblue;
+}
+a:hover {
+  text-decoration: none;
+}
+i {
+  color: steelblue;
+}
+#classes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  height: 0;
+}
+.sub_section {
+  padding: 30px;
+}
+.bottom_line {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.section_title {
+  font-size: 25px;
+}
+.section_subtitle {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.class {
+  width: 200px;
+  height: 90px;
+  padding: 8px 10px 8px 10px;
+  margin: 10px;
+  border-radius: 2px;
+  background: #deebf7;
+  border: 2px solid #fff;
+}
+.class:hover {
+  background: #fff;
+  border: 2px solid #deebf7;
+}
+.class .description {
+  font-size: 15px;
+  color: #777;
+  margin-top: 5px;
+}
+.class .title {
+  font-size: 18px;
+}
+
+#classes a {
+  font-size: 19px;
+  color: #333333;
+  text-decoration: none;
+}

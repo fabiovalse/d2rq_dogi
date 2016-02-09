@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>
+#if ($label)
+      $label.string | $server_name
+#else
+      Description of $uri | $server_name
+#end
+    </title>
+    <link rel="stylesheet" type="text/css" href="${home_link}snorql/resource.css" />
+    <link rel="stylesheet" type="text/css" href="${home_link}snorql/vis.css" />
+    <link rel="stylesheet" type="text/css" href="${home_link}snorql/style.css" />
+    <link rel="alternate" type="application/rdf+xml" href="$rdf_link?output=rdfxml" title="This page in RDF (XML)" />
+    <link rel="alternate" type="text/turtle" href="$rdf_link?output=ttl" title="This page in RDF (Turtle)" />
+    <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
+    
+    <script type="text/javascript" src="${home_link}snorql/namespaces.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript">
+      /* RDF triples stored in Velocity variables are passed to Javascript
+      */
+      var triples_data = {direct: [], inverse: []}
+      var resource = {uri: "${uri}", label: "${label.string}"}
+
+      #foreach($property in $properties)
+        var property = {};
+
+        property.predicate = "${property.propertyPrefix()}${property.propertyLocalName()}";
+        property.object = "${property.value()}".replace(/&quot;/g, '');
+
+        #if ($property.value().isLiteral())
+          property.type = 'Data property';
+        #else
+          property.type = 'Object property';
+        #end
+
+        #if ($property.isInverse())
+          triples_data.inverse.push(property)
+        #else
+          triples_data.direct.push(property)
+        #end
+      #end
+    </script>
+  </head>
+  <body>
+    
+    <div id="header" class="box">
+      <div id="title"></div>
+      <div id="subtitle"></div>
+    </div>
+    <div id="sub_header"></div>
+
+    <div id="central_section">
+      
+      <div id="triples" class="box"> 
+        <div>
+          <div class="table_title">Direct Triples</div>
+          <table id="direct"></table>
+        </div>
+        <div>
+          <div class="table_title">Inverse Triples</div>
+          <table id="inverse"></table>
+        </div>
+      </div>
+
+      <div id="visualization"></div>
+
+    </div>
+    
+    #* <div id="footer" class="box"></div> *#
+
+    <script type="text/javascript" src="${home_link}snorql/resource.js"></script>
+    <script type="text/javascript" src="${home_link}snorql/resource_vis.js"></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>DoGi: Dottrina Giuridica</title>
+    <link rel="stylesheet" type="text/css" href="${home_link}snorql/root.css" />
+    <link rel="stylesheet" type="text/css" href="${home_link}snorql/style.css" />
+    <link rel="alternate" type="application/rdf+xml" href="$rdf_link?output=rdfxml" title="This page in RDF (XML)" />
+    <link rel="alternate" type="text/turtle" href="$rdf_link?output=ttl" title="This page in RDF (Turtle)" />
+    <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript">
+      var data = [
+        {"class": "Article", "desc": "Articles published on Italian legal journals.", "translation": "", "table": "tabDocumenti"},
+        {"class": "Journal", "desc": "Italian legal journals.", "translation": "", "table": "tabRiviste"},
+        {"class": "Issue", "desc": "Issues of italian legal journals.", "translation": "", "table": "tabRifBibl"},
+        {"class": "Agent", "desc": "Persons or organizations that are authors of an article.", "translation": "", "table": "tabResponsabilita"},
+        {"class": "Classification", "desc": "", "translation": "", "table": "legDocClasse"},        
+        {"class": "Descrittore", "desc": "", "translation": "", "table": "tabDescrittori"},
+        {"class": "Sistematico", "desc": "", "translation": "", "table": "tabSistematici"},
+        {"class": "Specific Source", "desc": "", "translation": "", "table": "legDocFonte"},
+        {"class": "Source of Law", "desc": "", "translation": "", "table": "tabFonti"},
+        {"class": "Ministry", "desc": "Specialized organizations responsible for a sector of government public administration.", "translation": "", "table": "tabMinisteri"},
+        {"class": "Country", "desc": "Regions identified as a distinct entity in political geography.", "translation": "", "table": "tabStati"}
+      ];
+
+      var home_url = "${home_link}";
+    </script>
+  </head>
+  <body>
+    #* <div id="rdficon"><a href="$rdf_link" title="RDF data"><img src="${home_link}snorql/rdf_flyer.24.gif" alt="[RDF data]" /></a></div> *#
+    
+    <div id="header">
+      #* <img src="${home_link}snorql/logo.jpg" /> *#
+      <div id="page_title">Linked Data DoGi</div>
+    </div>
+    <div id="sub_header"></div>
+
+    <div id="central_section">
+
+      <div id="general_description" class="sub_section bottom_line">
+        <div class="section_title"><i class="fa fa-info-circle"></i> What is Linked Data DoGi?</div>
+        <div class="section_subtitle"></div>
+
+        <a href="http://www.ittig.cnr.it/dogi/en/Index.php">DoGi</a> is a reference database of articles published in Italian legal journals. For each article, the DoGi record provides bibliographic information enhanced with: abstracts and/or summaries of articles; one or more classification codes based on the indexing DoGi system especially designed for legal subjects; a selection of legislative and jurisprudential references of the sources quoted in the article; further metadata describing more significant features of the article; link to the full text when freely available online.<br />
+        <br />
+        This web portal represents the Linked Open Data version of the DoGi data set ...
+      </div>
+
+      <div class="sub_section bottom_line">
+        <div class="section_title"><i class="fa fa-database"></i> Query the dataset</div>
+        <div class="section_subtitle"></div>
+        <ol>
+          <li>
+            Query the dataset by writing and executing SPARQL queries on the <a href="${home_link}snorql/">SNORQL endpoint</a>.
+          </li>
+          <li>
+            Use the SPARQL REST <a href="${home_link}sparql?query=SELECT ?s ?o ?p {?s ?o ?p} LIMIT 3">API</a> for calling the endpoint from your code.
+          </li>
+        </ol>
+      </div>
+
+      <div class="sub_section">
+        <div class="section_title"><i class="fa fa-compass"></i> Navigate the dataset</div>
+        <div class="section_subtitle">The Linked Data set of DoGi contains different kind of data grouped with the following classes.</div>
+        <div id="classes"></div>
+      </div>
+
+    </div>
+
+    #* 
+<div id="footer"></div> *#
+
+
+  <script type="text/javascript" src="${home_link}snorql/root.js"></script>
+  </body>
+</html>

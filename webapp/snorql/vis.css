@@ -1,0 +1,20 @@
+/*  Bar chart Agents
+*/
+.axis {
+  font: 11px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.bar:hover {
+  opacity: .9;
+}

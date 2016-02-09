@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>DoGi: Dottrina Giuridica</title>
+    <link rel="stylesheet" type="text/css" href="${home_link}snorql/directory.css" />
+    <link rel="stylesheet" type="text/css" href="${home_link}snorql/style.css" />
+    <link rel="alternate" type="application/rdf+xml" href="$rdf_link?output=rdfxml" title="This page in RDF (XML)" />
+    <link rel="alternate" type="text/turtle" href="$rdf_link?output=ttl" title="This page in RDF (Turtle)" />
+    <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript">
+    /* Data stored in Velocity variables are passed to Javascript
+    */
+    var table = "${classmap}";
+    var data = []
+
+    #foreach ($resource as $resources.keySet())
+      data.push({"label": "${resources.get($resource)}", "uri": "${resource}"});
+    #end
+    </script>
+
+  </head>
+  <body>
+    <div id="header">
+      #* <img src="${home_link}snorql/logo.jpg" /> *#
+      <div id="page_title">Linked Data DoGi</div>
+    </div>
+    <div id="sub_header">
+      #* 
+<span>DoGi</span>
+      <span>></span> *#
+ 
+    </div>
+
+    <div id="central_section_title"></div>
+
+    <div id="central_section">
+      <div id="examples"></div>
+      <div id="visualization"></div>
+    </div>
+    
+    #* <div id="footer"></div> *#
+
+
+  <script type="text/javascript" src="${home_link}snorql/directory.js"></script>
+  </body>
+</html>
