@@ -33,6 +33,21 @@ if triples_data.direct.length is 0
     .append 'td'
       .text 'No Direct triples defined.'
 
+triples_data.direct.sort (a,b) ->
+  if a.type is 'Data property' and b.type is 'Data property'
+    if a.predicate is 'dc:title'
+      -1
+    else if b.predicate is 'dc:title'
+      1
+    else if a.predicate is 'rdfs:label'
+      -1
+    else if b.predicate is 'rdfs:label'
+      1
+  else if a.type is 'Data property'
+    -1
+  else
+    1
+
 direct = direct_table.selectAll 'tr'
   .data triples_data.direct
 
