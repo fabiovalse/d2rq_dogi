@@ -68,6 +68,12 @@
         <div id="classes"></div>
       </div>
 
+      #* <div class="sub_section">
+        <div class="section_title"><i class="fa fa-compass"></i> Navigate the dataset</div>
+        <div class="section_subtitle">The Linked Data set of DoGi contains different kind of data grouped with the following classes.</div>
+      </div> *#
+
+
     </div>
 
     #* 

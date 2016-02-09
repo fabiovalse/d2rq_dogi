@@ -1,5 +1,9 @@
 /*  flex layout
 */
+#central_section {
+  overflow: scroll;
+  height: 100%;
+}
 #footer {
   height: 30px;
   background: #333333;
@@ -23,7 +27,6 @@ i {
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
-  height: 0;
 }
 .sub_section {
   padding: 30px;
