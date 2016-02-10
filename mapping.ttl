@@ -673,6 +673,11 @@ map:tabRiviste_Rating a d2rq:PropertyBridge;
   d2rq:condition "tabRiviste.Rating != ''";
   d2rq:column "tabRiviste.Rating";
   .
+map:tabRiviste_ACNPurl a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabRiviste;
+  d2rq:property x:ACNPurl;
+  d2rq:column "tabRiviste.ACNPurl";
+  .
 
 ### Table tabSezioni
 ###
