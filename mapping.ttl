@@ -9,12 +9,12 @@
 @prefix jdbc: <http://d2rq.org/terms/jdbc/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix foaf: <http://xmlns.com/foaf/#> .
-@prefix dogi: <http://www.ittig.cnr.it/dogi/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix gn: <http://www.geonames.org/ontology#> .
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dogi: <http://wafi.iit.cnr.it/dogi2020/resource/> .
 @prefix x: <http://dogi.org/> .
 
 <> a d2r:Server;
@@ -32,13 +32,21 @@ map:database a d2rq:Database;
   jdbc:zeroDateTimeBehavior "convertToNull";
   .
 
+#map:LDClasses a d2rq:ClassMap;
+#  d2rq:dataStorage map:database;
+#  d2rq:classDefinitionLabel "@@LDClasses.label@@"@en;
+#  d2rq:classDefinitionComment "@@LDClasses.comment@@"@en;
+#  d2rq:uriPattern "http://wafi.iit.cnr.it/dogi2020/resource/class/@LDClasses.name@";
+#  d2rq:class rdf:Class;
+#  .
+
 # Table legDocFonte
 map:legDocFonte a d2rq:ClassMap;
   d2rq:dataStorage map:database;
   d2rq:uriPattern "SpecificSource/@@legDocFonte.IDRef@@";
   #d2rq:uriPattern "SpecificSource/@@legDocFonte.IDDoc@@_@@legDocFonte.IDFonte@@_@@legDocFonte.Articolo@@_@@legDocFonte.RipA@@_@@legDocFonte.Comma@@_@@legDocFonte.RipC@@_@@legDocFonte.Lettera@@_@@legDocFonte.NumeroP@@_@@legDocFonte.Allegato@@";
   #d2rq:uriSqlExpression "CONCAT('http://wafi.iit.cnr.it/dogi2020/resource/SpecificSource/', MD5(CONCAT(legDocFonte.IDFonte, legDocFonte.Articolo, legDocFonte.RipA, legDocFonte.Comma, legDocFonte.RipC, legDocFonte.Lettera, legDocFonte.NumeroP, legDocFonte.Allegato)))";
-  d2rq:class x:SpecificSource;
+  d2rq:class dogi:SpecificSource;
   .
 map:legDocFonte__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:legDocFonte;
