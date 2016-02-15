@@ -2,6 +2,7 @@
 #@prefix db: <> .
 @prefix dogi: <> .
 @prefix vocab: <vocab/> .
+@prefix owl: <https://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -10,18 +11,18 @@
 @prefix jdbc: <http://d2rq.org/terms/jdbc/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
 @prefix foaf: <http://xmlns.com/foaf/#> .
+@prefix dcterms: <http://purl.org/dc/terms/subject> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix gn: <http://www.geonames.org/ontology#> .
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dogi: <http://dogi.org/> .
 
 <> a d2r:Server;
-    rdfs:label "D2R Server";
-    d2r:baseURI <http://wafi.iit.cnr.it/dogi2020/>;
-    d2r:vocabularyIncludeInstances true;    
-    .
+  rdfs:label "D2R Server";
+  d2r:baseURI <http://wafi.iit.cnr.it/dogi2020/>;
+  d2r:vocabularyIncludeInstances true;
+  d2rq:useAllOptimizations true;
+  .
 
 map:database a d2rq:Database;
   d2rq:jdbcDriver "com.mysql.jdbc.Driver";
@@ -40,7 +41,12 @@ map:legDocFonte a d2rq:ClassMap;
   #d2rq:uriSqlExpression "CONCAT('http://wafi.iit.cnr.it/dogi2020/resource/SpecificSource/', MD5(CONCAT(legDocFonte.IDFonte, legDocFonte.Articolo, legDocFonte.RipA, legDocFonte.Comma, legDocFonte.RipC, legDocFonte.Lettera, legDocFonte.NumeroP, legDocFonte.Allegato)))";
   d2rq:classDefinitionLabel "Specific Source"@en;
   d2rq:classDefinitionComment "A Specific Source is a ..."@en;
+  d2rq:additionalClassDefinitionProperty map:specificSource_subClassOf;
   d2rq:class dogi:SpecificSource;
+  .
+map:specificSource_subClassOf a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subClassOf;
+  d2rq:propertyValue owl:Thing;
   .
 map:legDocFonte__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:legDocFonte;
@@ -49,57 +55,95 @@ map:legDocFonte__label a d2rq:PropertyBridge;
   .
 map:legDocFonte_IDDoc a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:legDocFonte;
-  d2rq:property dogi:article;
+  d2rq:property dogi:__article;
   d2rq:join "legDocFonte.IDDoc = tabDocumenti.IDDoc";
   d2rq:uriPattern "Article/@@tabDocumenti.IDDoc@@";
   .
 map:legDocFonte_IDFonte a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:legDocFonte;
-  d2rq:property dc:source;
+  d2rq:property dcterms:source;
   d2rq:join "legDocFonte.IDFonte = tabFonti.IDFonte";
   d2rq:uriPattern "SourceOfLaw/@@tabFonti.IDFonte@@";
   .
 map:legDocFonte_Articolo a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:legDocFonte;
-  d2rq:property dogi:articolo;
-  d2rq:column "legDocFonte.Articolo";
+  d2rq:property dogi:article;
+  d2rq:sqlExpression "CONCAT(legDocFonte.Articolo, (CASE WHEN (legDocFonte.ripA != '') THEN CONCAT(', ', legDocFonte.ripA) ELSE '' END))";
   d2rq:condition "legDocFonte.Articolo != ''";
+  d2rq:additionalPropertyDefinitionProperty map:article_label;
+  d2rq:additionalPropertyDefinitionProperty map:article_comment;
   .
-map:legDocFonte_RipA a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:legDocFonte;
-  d2rq:property dogi:ripa;
-  d2rq:column "legDocFonte.RipA";
-  d2rq:condition "legDocFonte.RipA != ''";
+map:article_label a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:label;
+  d2rq:propertyValue "Article"@en;
+  .
+map:article_comment a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:comment;
+  d2rq:propertyValue "An article is a portion of a normative document that ..."@en;
   .
 map:legDocFonte_Comma a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:legDocFonte;
-  d2rq:property dogi:comma;
-  d2rq:column "legDocFonte.Comma";
+  d2rq:property dogi:paragraph;
+  d2rq:sqlExpression "CONCAT(legDocFonte.Comma, (CASE WHEN (legDocFonte.ripC != '') THEN CONCAT(', ', legDocFonte.ripC) ELSE '' END))";
   d2rq:condition "legDocFonte.Comma != ''";
+  d2rq:additionalPropertyDefinitionProperty map:paragraph_label;
+  d2rq:additionalPropertyDefinitionProperty map:paragraph_comment;
   .
-map:legDocFonte_RipC a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:legDocFonte;
-  d2rq:property dogi:ripc;
-  d2rq:column "legDocFonte.RipC";
-  d2rq:condition "legDocFonte.RipC != ''";
+map:paragraph_label a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:label;
+  d2rq:propertyValue "Paragraph"@en;
+  .
+map:paragraph_comment a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:comment;
+  d2rq:propertyValue "A paragraph is a portion of a normative document that ..."@en;
   .
 map:legDocFonte_Lettera a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:legDocFonte;
-  d2rq:property dogi:lettera;
+  d2rq:property dogi:letter;
   d2rq:column "legDocFonte.Lettera";
   d2rq:condition "legDocFonte.Lettera != ''";
+  d2rq:additionalPropertyDefinitionProperty map:letter_label;
+  d2rq:additionalPropertyDefinitionProperty map:letter_comment;
+  .
+map:letter_label a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:label;
+  d2rq:propertyValue "Letter"@en;
+  .
+map:letter_comment a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:comment;
+  d2rq:propertyValue "A letter is a portion of a normative document that ..."@en;
   .
 map:legDocFonte_NumeroP a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:legDocFonte;
-  d2rq:property dogi:numeroP;
+  d2rq:property dogi:number;
   d2rq:column "legDocFonte.NumeroP";
   d2rq:condition "legDocFonte.NumeroP != ''";
+  d2rq:additionalPropertyDefinitionProperty map:number_label;
+  d2rq:additionalPropertyDefinitionProperty map:number_comment;
+  .
+map:number_label a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:label;
+  d2rq:propertyValue "Number"@en;
+  .
+map:number_comment a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:comment;
+  d2rq:propertyValue "A number is a portion of a normative document that ..."@en;
   .
 map:legDocFonte_Allegato a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:legDocFonte;
-  d2rq:property dogi:allegato;
+  d2rq:property dogi:annex;
   d2rq:column "legDocFonte.Allegato";
   d2rq:condition "legDocFonte.Allegato != ''";
+  d2rq:additionalPropertyDefinitionProperty map:annex_label;
+  d2rq:additionalPropertyDefinitionProperty map:annex_comment;
+  .
+map:annex_label a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:label;
+  d2rq:propertyValue "Annex"@en;
+  .
+map:annex_comment a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:comment;
+  d2rq:propertyValue "An annex is a portion of a normative document that ..."@en;
   .
 
 ### Table tabDescrittori
@@ -109,7 +153,12 @@ map:tabDescrittori a d2rq:ClassMap;
   d2rq:uriPattern "Descrittore/@@tabDescrittori.CodiceD@@";
   d2rq:classDefinitionLabel "Descrittore"@en;
   d2rq:classDefinitionComment "A Descrittore is a ..."@en;
+  d2rq:additionalClassDefinitionProperty map:descrittore_subClassOf;
   d2rq:class dogi:Descrittore;
+  .
+map:descrittore_subClassOf a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subClassOf;
+  d2rq:propertyValue owl:Thing;
   .
 map:tabDescrittori__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDescrittori;
@@ -118,12 +167,12 @@ map:tabDescrittori__label a d2rq:PropertyBridge;
   .
 map:tabDescrittori_CodiceD a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDescrittori;
-  d2rq:property dc:identifier;
+  d2rq:property dcterms:identifier;
   d2rq:column "tabDescrittori.CodiceD";
   .
 map:tabDescrittori_Descrizione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDescrittori;
-  d2rq:property dc:description;
+  d2rq:property dcterms:description;
   d2rq:column "tabDescrittori.Descrizione";
   .
 map:tabLegameDS_NDNS a d2rq:PropertyBridge;
@@ -141,7 +190,7 @@ map:sistematico_label a d2rq:AdditionalProperty;
   .
 map:sistematico_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
-  d2rq:propertyValue "This property defines ..."@en;
+  d2rq:propertyValue "Identifies a certain law branch (e.g., Administrative Law, Civil Law, Criminal Law)."@en;
   .
 
 ### Table legDocClasse
@@ -150,7 +199,14 @@ map:legDocClasse a d2rq:ClassMap;
   d2rq:dataStorage map:database;
   #d2rq:uriPattern "Classification/@@legDocClasse.IDElementoPrinc@@_@@legDocClasse.IDElementoSec@@";
   d2rq:uriSqlExpression "CONCAT('http://wafi.iit.cnr.it/dogi2020/resource/Classification/', CONCAT(legDocClasse.IDElementoPrinc, (CASE WHEN (legDocClasse.IDElementoSec != '') THEN CONCAT('_', legDocClasse.IDElementoSec) ELSE '' END)))";
+  d2rq:classDefinitionLabel "Classification"@en;
+  d2rq:classDefinitionComment "A classification could be a pair of sistematico-descrittore or a single sistematico that identifies the law branch."@en;
+  d2rq:additionalClassDefinitionProperty map:classification_subClassOf;
   d2rq:class dogi:Classification;
+  .
+map:classification_subClassOf a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subClassOf;
+  d2rq:propertyValue owl:Thing;
   .
 map:legDocClasse__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:legDocClasse;
@@ -178,7 +234,7 @@ map:tabDocumenti a d2rq:ClassMap;
   .
 map:legDocResp_IDResponsabilita a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:creator;
+  d2rq:property dcterms:creator;
   d2rq:join "tabDocumenti.IDDoc = legDocResp.IDDoc";
   d2rq:join "legDocResp.IDResponsabilita = tabResponsabilita.IDResponsabilita";
   d2rq:uriPattern "Agent/@@tabResponsabilita.IDResponsabilita@@";
@@ -186,7 +242,7 @@ map:legDocResp_IDResponsabilita a d2rq:PropertyBridge;
   .
 map:legDocResp_IDResponsabilita_2 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:contributor;
+  d2rq:property dcterms:contributor;
   d2rq:join "tabDocumenti.IDDoc = legDocResp.IDDoc";
   d2rq:join "legDocResp.IDResponsabilita = tabResponsabilita.IDResponsabilita";
   d2rq:uriPattern "Agent/@@tabResponsabilita.IDResponsabilita@@";
@@ -198,35 +254,45 @@ map:tabDocumenti_IDTAbs a d2rq:PropertyBridge;
   d2rq:lang "it";
   d2rq:join "tabDocumenti.IDTAbs = tabTipoAbs.IDTAbs";
   d2rq:column "tabTipoAbs.TipoAbstract";
+  d2rq:additionalPropertyDefinitionProperty map:abstractType_label;
+  d2rq:additionalPropertyDefinitionProperty map:abstractType_comment;
+  .
+map:abstractType_label a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:label;
+  d2rq:propertyValue "Abstract type"@en;
+  .
+map:abstractType_comment a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:label;
+  d2rq:propertyValue "It defines the type of abstract."@en;
   .
 map:tabDocumenti__label_1 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property rdfs:label;
   d2rq:pattern "Article @@tabDocumenti.IDDoc@@";
-  d2rq:condition "tabTesti.Tipo != 0";
+  #d2rq:condition "tabTesti.Tipo != 0";
   .
-map:tabDocumenti__label_2 a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property rdfs:label;
-  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
-  d2rq:column "tabTesti.Testo";
-  d2rq:condition "tabTesti.Tipo = 0";
-  .
+#map:tabDocumenti__label_2 a d2rq:PropertyBridge;
+#  d2rq:belongsToClassMap map:tabDocumenti;
+#  d2rq:property rdfs:label;
+#  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+#  d2rq:column "tabTesti.Testo";
+#  d2rq:condition "tabTesti.Tipo = 0";
+#  .
 map:tabDocumenti_IDDoc a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:identifier;
+  d2rq:property dcterms:identifier;
   d2rq:datatype xsd:integer;
   d2rq:column "tabDocumenti.IDDoc";
   .
 map:tabDocumenti_IDClasse a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:subject;
+  d2rq:property dcterms:subject;
   d2rq:join "tabDocumenti.IDDoc = legDocClasse.IDDoc";
   d2rq:uriPattern "Classification/@@legDocClasse.IDElementoPrinc@@_@@legDocClasse.IDElementoSec@@";
   .
 map:tabDocumenti_AnnoProd a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:available;
+  d2rq:property dcterms:available;
   d2rq:column "tabDocumenti.AnnoProd";
   d2rq:datatype xsd:gYear;
   .
@@ -272,31 +338,31 @@ map:tabDocumenti_IDBib a d2rq:PropertyBridge;
   .
 map:tabDocumenti_LIN a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:language;
+  d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646]. http://id.loc.gov/vocabulary/iso639-2/<<<ita>>>.html
   d2rq:join "tabDocumenti.LIN = tabLingua.IDLingua";
   d2rq:column "tabLingua.Lingua";
   .
 map:tabDocumenti_LO a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:language;
+  d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
   d2rq:join "tabDocumenti.LO = tabLingua.IDLingua";
   d2rq:column "tabLingua.Lingua";
   .
 map:tabDocumenti_LR a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:language;
+  d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
   d2rq:join "tabDocumenti.LR = tabLingua.IDLingua";
   d2rq:column "tabLingua.Lingua";
   .
 map:tabDocumenti_LA a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:language;
+  d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
   d2rq:join "tabDocumenti.LA = tabLingua.IDLingua";
   d2rq:column "tabLingua.Lingua";
   .
 map:tabDocumenti_DataIns a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:created;
+  d2rq:property dcterms:created;
   d2rq:datatype xsd:date;
   d2rq:column "tabDocumenti.DataIns";
   .
@@ -308,7 +374,7 @@ map:tabDocumenti_Nota a d2rq:PropertyBridge;
   .
 map:tabDocumenti_Testo_Titolo a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:title;
+  d2rq:property dcterms:title;
   d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 0";
@@ -323,7 +389,7 @@ map:tabDocumenti_Testo_Riassunto a d2rq:PropertyBridge;
   .
 map:tabDocumenti_Testo_Sommario a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:tableOfContents;
+  d2rq:property dcterms:tableOfContents;
   d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 2";
@@ -344,7 +410,7 @@ map:tabDocumenti_Testo_TestoNota a d2rq:PropertyBridge;
   .
 map:tabDocumenti_Testo_InTemaDi a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dc:subject;
+  d2rq:property dc:subject; # Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary.
   d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 7";
@@ -370,21 +436,29 @@ map:tabDocumenti_Fascicolo a d2rq:PropertyBridge;
   d2rq:join "tabDocumenti.IDRifBibl = tabRifBibl.IDRifBibl";
   d2rq:uriPattern "Issue/@@tabRifBibl.IDRifBibl@@";
   .
+
 ### Table tabFonti
 ###
 map:tabFonti a d2rq:ClassMap;
   d2rq:dataStorage map:database;
   d2rq:uriPattern "SourceOfLaw/@@tabFonti.IDFonte@@";
+  d2rq:classDefinitionLabel "Source of law"@en;
+  d2rq:classDefinitionComment "It is the origin of a law. It could be national, international, regional, historical, canonical, etc."@en;
+  d2rq:additionalClassDefinitionProperty map:source_subClassOf;
   d2rq:class dogi:SourceOfLaw;
+  .
+map:source_subClassOf a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subClassOf;
+  d2rq:propertyValue owl:Thing;
   .
 map:tabFonti__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabFonti;
   d2rq:property rdfs:label;
-  d2rq:pattern "SourceOfLaw @@tabFonti.IDFonte@@";
+  d2rq:pattern "Source of law @@tabFonti.IDFonte@@";
   .
 map:tabFonti_IDFonte a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabFonti;
-  d2rq:property dc:identifier;
+  d2rq:property dcterms:identifier;
   d2rq:datatype xsd:integer;
   d2rq:column "tabFonti.IDFonte";
   .
@@ -397,7 +471,7 @@ map:tabFonti_TipoProvvedimento a d2rq:PropertyBridge;
   .
 map:tabFonti_NomeFonte a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabFonti;
-  d2rq:property dogi:sourcename;
+  d2rq:property foaf:name;
   d2rq:join "tabFonti.IDNomeFonte = tabNomeFonte.IDNomeFonte";
   d2rq:column "tabNomeFonte.NomeFonte";
   .
@@ -411,7 +485,7 @@ map:tabFonti_NomeFonte_2 a d2rq:PropertyBridge;
   .
 map:tabFonti_Data a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabFonti;
-  d2rq:property dc:date;
+  d2rq:property dcterms:date;
   d2rq:datatype xsd:date;
   d2rq:column "tabFonti.Data";
   .
@@ -452,7 +526,8 @@ map:tabFonti_IDRegione a d2rq:PropertyBridge;
   .
 map:tabFonti_IDCitta a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabFonti;
-  d2rq:property dogi:citta;
+  d2rq:property dogi:city;
+  d2rq:lang "it";
   d2rq:join "tabFonti.IDCitta = tabCitta.IDCitta";
   d2rq:column "tabCitta.Citta";
   .
@@ -502,7 +577,14 @@ map:tabFonti_IDMinistero a d2rq:PropertyBridge;
 map:tabMinisteri a d2rq:ClassMap;
   d2rq:dataStorage map:database;
   d2rq:uriPattern "Ministry/@@tabMinisteri.IDMinistero@@";
+  d2rq:classDefinitionLabel "Ministry"@en;
+  d2rq:classDefinitionComment "It is a specialized organization responsible for a sector of government public administration."@en;
+  d2rq:additionalClassDefinitionProperty map:ministry_subClassOf;
   d2rq:class dogi:Ministry;
+  .
+map:ministry_subClassOf a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subClassOf;
+  d2rq:propertyValue owl:Thing;
   .
 map:tabMinisteri__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabMinisteri;
@@ -511,7 +593,7 @@ map:tabMinisteri__label a d2rq:PropertyBridge;
   .
 map:tabMinisteri_IDMinistero a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabMinisteri;
-  d2rq:property dc:identifier;
+  d2rq:property dcterms:identifier;
   d2rq:datatype xsd:integer;
   d2rq:column "tabMinisteri.IDMinistero";
   .
@@ -558,7 +640,7 @@ map:tabResponsabilita__label a d2rq:PropertyBridge;
   .
 map:tabResponsabilita_IDResponsabilita a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabResponsabilita;
-  d2rq:property dc:identifier;
+  d2rq:property dcterms:identifier;
   d2rq:datatype xsd:integer;
   d2rq:column "tabResponsabilita.IDResponsabilita";
   .
@@ -589,13 +671,13 @@ map:tabRifBibl__label a d2rq:PropertyBridge;
   .
 map:tabRifBibl_IDRifBibl a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
-  d2rq:property dc:identifier;
+  d2rq:property dcterms:identifier;
   d2rq:datatype xsd:integer;
   d2rq:column "tabRifBibl.IDRifBibl";
   .
 map:tabRifBibl_IDRivista a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
-  d2rq:property dc:isPartOf;
+  d2rq:property dcterms:isPartOf;
   d2rq:join "tabRifBibl.IDRivista = tabRiviste.IDRivista";
   d2rq:uriPattern "Journal/@@tabRiviste.IDRivista@@";
   .
@@ -607,13 +689,13 @@ map:tabRifBibl_Fascicolo a d2rq:PropertyBridge;
   .
 map:tabRifBibl_Data a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
-  d2rq:property dc:date;
+  d2rq:property dcterms:date;
   d2rq:datatype xsd:date; # If an entry has an invalid date such as 2000-02-00 the property is not translated
   d2rq:column "tabRifBibl.Data";
   .
 map:tabRifBibl_Annata a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
-  d2rq:property dc:issued;
+  d2rq:property dcterms:issued;
   d2rq:column "tabRifBibl.Annata";
   d2rq:datatype xsd:gYear;
   .
@@ -625,7 +707,7 @@ map:tabRifBibl_Volume a d2rq:PropertyBridge;
   .
 map:tabRifBibl_Supplemento a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
-  d2rq:property dogi:tabRifBibl_Supplemento;
+  d2rq:property dogi:supplemento;
   d2rq:condition "tabRifBibl.Supplemento != ''";
   d2rq:column "tabRifBibl.Supplemento";
   .
@@ -645,7 +727,7 @@ map:tabRiviste__label a d2rq:PropertyBridge;
   .
 map:tabRiviste_IDRivista a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRiviste;
-  d2rq:property dc:identifier;
+  d2rq:property dcterms:identifier;
   d2rq:column "tabRiviste.IDRivista";
   .
 map:tabRiviste_ISSN a d2rq:PropertyBridge;
@@ -656,7 +738,7 @@ map:tabRiviste_ISSN a d2rq:PropertyBridge;
   .
 map:tabRiviste_Titolo a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRiviste;
-  d2rq:property dc:title;
+  d2rq:property dcterms:title; # foaf:name ?
   d2rq:column "tabRiviste.Titolo";
   .
 map:tabRiviste_Periodicita a d2rq:PropertyBridge;
@@ -667,7 +749,7 @@ map:tabRiviste_Periodicita a d2rq:PropertyBridge;
   .
 map:tabRiviste_Tipo a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRiviste;
-  d2rq:property dc:type;
+  d2rq:property dc:type; # The value must be one of the class defined here http://dublincore.org/documents/2012/06/14/dcmi-terms/?v=dcmitype#H7
   d2rq:condition "LEFT(tabRiviste.IDRivista, 1) = '9'"; # If the first character is 9 then the journal is online
   d2rq:constantValue "Online Journal";
   .
@@ -728,8 +810,13 @@ map:tabSistematici a d2rq:ClassMap;
   d2rq:dataStorage map:database;
   d2rq:uriPattern "Sistematico/@@tabSistematici.CodiceS@@";
   d2rq:classDefinitionLabel "Sistematico"@en;
-  d2rq:classDefinitionComment "A Sistematico is a ..."@en;
+  d2rq:classDefinitionComment "A Sistematico is a code identifying a branch of the law."@en;
+  d2rq:additionalClassDefinitionProperty map:sistematico_subClassOf;
   d2rq:class dogi:Sistematico;
+  .
+map:sistematico_subClassOf a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subClassOf;
+  d2rq:propertyValue owl:Thing;
   .
 map:tabSistematici__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSistematici;
@@ -743,12 +830,12 @@ map:tabSistematici_CodiceS a d2rq:PropertyBridge;
   .
 map:tabSistematici_SiglaC a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSistematici;
-  d2rq:property dc:identifier;
+  d2rq:property dcterms:identifier;
   d2rq:column "tabSistematici.SiglaC";
   .
 map:tabSistematici_Descrizione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSistematici;
-  d2rq:property dc:description;
+  d2rq:property dcterms:description;
   d2rq:column "tabSistematici.Descrizione";
   .
 map:tabSistematici_CodiceS_Padre a d2rq:PropertyBridge;
@@ -762,9 +849,7 @@ map:tabSistematici_CodiceS_Padre a d2rq:PropertyBridge;
 map:tabStati a d2rq:ClassMap;
   d2rq:dataStorage map:database;
   d2rq:uriPattern "Country/@@tabStati.IDStato@@";
-  d2rq:class gn:A;
-  #d2rq:class dc:Location;
-  #d2rq:class dbo:Country;
+  d2rq:class dc:Location;
   #d2rq:class schema:Country;
   .
 map:tabStati__label a d2rq:PropertyBridge;
@@ -774,45 +859,12 @@ map:tabStati__label a d2rq:PropertyBridge;
   .
 map:tabStati_IDStato a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabStati;
-  d2rq:property dc:identifier;
+  d2rq:property dcterms:identifier;
   d2rq:datatype xsd:integer;
   d2rq:column "tabStati.IDStato";
   .
 map:tabStati_Stato a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabStati;
-  d2rq:property gn:name;
+  d2rq:property foaf:name;
   d2rq:column "tabStati.Stato";
   .
-
-### Table tabTP
-###
-#map:tabTP a d2rq:ClassMap;
-#  d2rq:dataStorage map:database;
-#  d2rq:uriPattern "tabTP/@@tabTP.IDTP|urlify@@";
-#  d2rq:class vocab:tabTP;
-#  d2rq:classDefinitionLabel "tabTP";
-#  .
-#map:tabTP__label a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabTP;
-#  d2rq:property rdfs:label;
-#  d2rq:pattern "tabTP #@@tabTP.IDTP@@";
-#  .
-#map:tabTP_IDTP a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabTP;
-#  d2rq:property vocab:tabTP_IDTP;
-#  d2rq:propertyDefinitionLabel "tabTP IDTP";
-#  d2rq:column "tabTP.IDTP";
-#  .
-#map:tabTP_TipoProvvedimento a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabTP;
-#  d2rq:property vocab:tabTP_TipoProvvedimento;
-#  d2rq:propertyDefinitionLabel "tabTP TipoProvvedimento";
-#  d2rq:column "tabTP.TipoProvvedimento";
-#  .
-#map:tabTP_Ordine a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabTP;
-#  d2rq:property vocab:tabTP_Ordine;
-#  d2rq:propertyDefinitionLabel "tabTP Ordine";
-#  d2rq:column "tabTP.Ordine";
-#  d2rq:datatype xsd:integer;
-#  .
