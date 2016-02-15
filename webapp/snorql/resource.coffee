@@ -8,7 +8,7 @@ o_format = (object) ->
 
   if match isnt null
     "<span class='literal'>#{match[1]}</span> <span class='small literal' title='#{match[2]}'>(#{match[2].slice(match[2].indexOf('#')+1)})</span>"
-  else if object.indexOf("http://") is 0
+  else if object.indexOf("http") is 0
     "<span class='uri'><<a href='#{object}'>#{object}</a>></span>"
   else
     "<span class='literal'>#{object}</span>"

@@ -13,7 +13,7 @@
     match = object.match(/(.*)\^\^(http:\/\/.*)/);
     if (match !== null) {
       return "<span class='literal'>" + match[1] + "</span> <span class='small literal' title='" + match[2] + "'>(" + (match[2].slice(match[2].indexOf('#') + 1)) + ")</span>";
-    } else if (object.indexOf("http://") === 0) {
+    } else if (object.indexOf("http") === 0) {
       return "<span class='uri'><<a href='" + object + "'>" + object + "</a>></span>";
     } else {
       return "<span class='literal'>" + object + "</span>";
