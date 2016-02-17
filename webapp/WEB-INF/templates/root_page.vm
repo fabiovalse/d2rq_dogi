@@ -17,7 +17,7 @@
         {"class": "Issue", "desc": "Issues of italian legal journals.", "translation": "", "table": "tabRifBibl"},
         {"class": "Article", "desc": "Articles published on Italian legal journals.", "translation": "", "table": "tabDocumenti"},
         {"class": "Agent", "desc": "Persons or organizations that are authors of an article.", "translation": "", "table": "tabResponsabilita"},
-        {"class": "Classification", "desc": "Codes designed for legal subjects.", "translation": "", "table": "legDocClasse"},
+        {"class": "Classification", "desc": "Codes designed for legal subjects.", "translation": "", "table": "tabClassificazioni"},
         {"class": "Descrittore", "desc": "It is a ...", "translation": "", "table": "tabDescrittori"},
         {"class": "Sistematico", "desc": "It is a ...", "translation": "", "table": "tabSistematici"},
         {"class": "Specific Source", "desc": "It is a ...", "translation": "", "table": "legDocFonte"},
