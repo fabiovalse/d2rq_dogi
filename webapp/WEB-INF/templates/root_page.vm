@@ -18,10 +18,10 @@
         {"class": "Article", "desc": "Articles published on Italian legal journals.", "translation": "", "table": "tabDocumenti"},
         {"class": "Agent", "desc": "Persons or organizations that are authors of an article.", "translation": "", "table": "tabResponsabilita"},
         {"class": "Classification", "desc": "Codes designed for legal subjects.", "translation": "", "table": "legDocClasse"},
-        {"class": "Descrittore", "desc": "", "translation": "", "table": "tabDescrittori"},
-        {"class": "Sistematico", "desc": "", "translation": "", "table": "tabSistematici"},
-        {"class": "Specific Source", "desc": "", "translation": "", "table": "legDocFonte"},
-        {"class": "Source of Law", "desc": "", "translation": "", "table": "tabFonti"},
+        {"class": "Descrittore", "desc": "It is a ...", "translation": "", "table": "tabDescrittori"},
+        {"class": "Sistematico", "desc": "It is a ...", "translation": "", "table": "tabSistematici"},
+        {"class": "Specific Source", "desc": "It is a ...", "translation": "", "table": "legDocFonte"},
+        {"class": "Source Of Law", "desc": "It is a ...", "translation": "", "table": "tabFonti"},
         {"class": "Ministry", "desc": "Administrative Structure responsible for a government sector.", "translation": "", "table": "tabMinisteri"},
         {"class": "Country", "desc": "Regions identified as a distinct entity in political geography.", "translation": "", "table": "tabStati"}
       ];
@@ -30,10 +30,8 @@
     </script>
   </head>
   <body>
-    #* <div id="rdficon"><a href="$rdf_link" title="RDF data"><img src="${home_link}snorql/rdf_flyer.24.gif" alt="[RDF data]" /></a></div> *#
     
     <div id="header">
-      #* <img src="${home_link}snorql/logo.jpg" /> *#
       <div id="page_title">Linked Data DoGi</div>
     </div>
     <div id="sub_header"></div>
@@ -64,21 +62,12 @@
 
       <div class="sub_section">
         <div class="section_title"><i class="fa fa-compass"></i> Navigate the dataset</div>
-        <div class="section_subtitle">The Linked Data set of DoGi contains different kind of data grouped with the following classes.</div>
+        <div class="section_subtitle">The Linked Data set of DoGi contains different kind of resources, called instances, labeled according to one of the classes listed below. Each orange bars indicates the amount of instances belonging to a certain class.</div>
+        <svg></svg>
         <div id="classes"></div>
       </div>
 
-      #* <div class="sub_section">
-        <div class="section_title"><i class="fa fa-compass"></i> Navigate the dataset</div>
-        <div class="section_subtitle">The Linked Data set of DoGi contains different kind of data grouped with the following classes.</div>
-      </div> *#
-
-
     </div>
-
-    #* 
-<div id="footer"></div> *#
-
 
   <script type="text/javascript" src="${home_link}snorql/root.js"></script>
   </body>

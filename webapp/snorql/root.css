@@ -9,7 +9,9 @@
   background: #333333;
   color: #fff;
 }
-
+svg {
+  width: 100%;
+}
 /* 
 */
 a {
@@ -59,6 +61,7 @@ i {
 .class .description {
   font-size: 15px;
   color: #777;
+  fill: #777;
   margin-top: 5px;
 }
 .class .title {
@@ -69,4 +72,12 @@ i {
   font-size: 19px;
   color: #333333;
   text-decoration: none;
+}
+
+.bar {
+  fill: lightsalmon;
+}
+.bar_amount {
+  font: 12px sans-serif;
+  fill: #777;
 }
