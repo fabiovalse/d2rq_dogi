@@ -26,7 +26,7 @@
 
 map:database a d2rq:Database;
   d2rq:jdbcDriver "com.mysql.jdbc.Driver";
-  d2rq:jdbcDSN "jdbc:mysql://localhost/dogi2";
+  d2rq:jdbcDSN "jdbc:mysql://localhost/dogi";
   d2rq:username "root";
   d2rq:password "wafimysql";
   jdbc:autoReconnect "true";
@@ -195,10 +195,42 @@ map:sistematico_comment a d2rq:AdditionalProperty;
 
 ### Table legDocClasse
 ###
-map:legDocClasse a d2rq:ClassMap;
+#map:legDocClasse a d2rq:ClassMap;
+#  d2rq:dataStorage map:database;
+#  #d2rq:uriPattern "Classification/@@legDocClasse.IDElementoPrinc@@_@@legDocClasse.IDElementoSec@@";
+#  d2rq:uriSqlExpression "CONCAT('http://wafi.iit.cnr.it/dogi2020/resource/Classification/', CONCAT(legDocClasse.IDElementoPrinc, (CASE WHEN (legDocClasse.IDElementoSec != '') THEN CONCAT('_', legDocClasse.IDElementoSec) ELSE '' END)))";
+#  d2rq:classDefinitionLabel "Classification"@en;
+#  d2rq:classDefinitionComment "A classification could be a pair of sistematico-descrittore or a single sistematico that identifies the law branch."@en;
+#  d2rq:additionalClassDefinitionProperty map:classification_subClassOf;
+#  d2rq:class dogi:Classification;
+#  .
+#map:classification_subClassOf a d2rq:AdditionalProperty;
+#  d2rq:propertyName rdfs:subClassOf;
+#  d2rq:propertyValue owl:Thing;
+#  .
+#map:legDocClasse__label a d2rq:PropertyBridge;
+#  d2rq:belongsToClassMap map:legDocClasse;
+#  d2rq:property rdfs:label;
+#  d2rq:sqlExpression "CONCAT('Classification ', CONCAT(legDocClasse.IDElementoPrinc, (CASE WHEN (legDocClasse.IDElementoSec != '') THEN CONCAT('_', legDocClasse.IDElementoSec) ELSE '' END)))";
+#  .
+#map:legDocClasse_IDElementoPrinc a d2rq:PropertyBridge;
+#  d2rq:belongsToClassMap map:legDocClasse;
+#  d2rq:property dogi:sistematico;
+#  d2rq:uriPattern "Sistematico/@@legDocClasse.IDElementoPrinc@@";
+#  .
+#map:legDocClasse_IDElementoSec a d2rq:PropertyBridge;
+#  d2rq:belongsToClassMap map:legDocClasse;
+#  d2rq:property dogi:descrittore;
+#  d2rq:uriPattern "Descrittore/@@legDocClasse.IDElementoSec@@";
+#  d2rq:condition "legDocClasse.IDElementoSec != ''";
+#  .
+
+
+### Table tabClassificazioni
+###
+map:tabClassificazioni a d2rq:ClassMap;
   d2rq:dataStorage map:database;
-  #d2rq:uriPattern "Classification/@@legDocClasse.IDElementoPrinc@@_@@legDocClasse.IDElementoSec@@";
-  d2rq:uriSqlExpression "CONCAT('http://wafi.iit.cnr.it/dogi2020/resource/Classification/', CONCAT(legDocClasse.IDElementoPrinc, (CASE WHEN (legDocClasse.IDElementoSec != '') THEN CONCAT('_', legDocClasse.IDElementoSec) ELSE '' END)))";
+  d2rq:uriSqlExpression "CONCAT('http://wafi.iit.cnr.it/dogi2020/resource/Classification/', CONCAT(tabClassificazioni.NS, (CASE WHEN (tabClassificazioni.ND != '') THEN CONCAT('_', tabClassificazioni.ND) ELSE '' END)))";
   d2rq:classDefinitionLabel "Classification"@en;
   d2rq:classDefinitionComment "A classification could be a pair of sistematico-descrittore or a single sistematico that identifies the law branch."@en;
   d2rq:additionalClassDefinitionProperty map:classification_subClassOf;
@@ -208,21 +240,21 @@ map:classification_subClassOf a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:subClassOf;
   d2rq:propertyValue owl:Thing;
   .
-map:legDocClasse__label a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:legDocClasse;
+map:classification__label a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabClassificazioni;
   d2rq:property rdfs:label;
-  d2rq:sqlExpression "CONCAT('Classification ', CONCAT(legDocClasse.IDElementoPrinc, (CASE WHEN (legDocClasse.IDElementoSec != '') THEN CONCAT('_', legDocClasse.IDElementoSec) ELSE '' END)))";
+  d2rq:sqlExpression "CONCAT('Classification ', CONCAT(tabClassificazioni.NS, (CASE WHEN (tabClassificazioni.ND != '') THEN CONCAT('_', tabClassificazioni.ND) ELSE '' END)))";
   .
-map:legDocClasse_IDElementoPrinc a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:legDocClasse;
+map:classification_NS a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabClassificazioni;
   d2rq:property dogi:sistematico;
-  d2rq:uriPattern "Sistematico/@@legDocClasse.IDElementoPrinc@@";
+  d2rq:uriPattern "Sistematico/@@tabClassificazioni.NS@@";
   .
-map:legDocClasse_IDElementoSec a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:legDocClasse;
+map:classification_ND a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabClassificazioni;
   d2rq:property dogi:descrittore;
-  d2rq:uriPattern "Descrittore/@@legDocClasse.IDElementoSec@@";
-  d2rq:condition "legDocClasse.IDElementoSec != ''";
+  d2rq:uriPattern "Descrittore/@@tabClassificazioni.ND@@";
+  d2rq:condition "tabClassificazioni.ND != ''";
   .
 
 ### Table tabDocumenti
@@ -271,24 +303,25 @@ map:tabDocumenti__label_1 a d2rq:PropertyBridge;
   d2rq:pattern "Article @@tabDocumenti.IDDoc@@";
   #d2rq:condition "tabTesti.Tipo != 0";
   .
-#map:tabDocumenti__label_2 a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabDocumenti;
-#  d2rq:property rdfs:label;
-#  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
-#  d2rq:column "tabTesti.Testo";
-#  d2rq:condition "tabTesti.Tipo = 0";
-#  .
 map:tabDocumenti_IDDoc a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:identifier;
   d2rq:datatype xsd:integer;
   d2rq:column "tabDocumenti.IDDoc";
   .
-map:tabDocumenti_IDClasse a d2rq:PropertyBridge;
+### OLD MAPPING OF legDocClasse
+#map:tabDocumenti_IDClasse a d2rq:PropertyBridge;
+#  d2rq:belongsToClassMap map:tabDocumenti;
+#  d2rq:property dcterms:subject;
+#  d2rq:join "tabDocumenti.IDDoc = legDocClasse.IDDoc";
+#  d2rq:uriPattern "Classification/@@legDocClasse.IDElementoPrinc@@_@@legDocClasse.IDElementoSec@@";
+#  .
+map:tabDocumenti_Classificazione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:subject;
-  d2rq:join "tabDocumenti.IDDoc = legDocClasse.IDDoc";
-  d2rq:uriPattern "Classification/@@legDocClasse.IDElementoPrinc@@_@@legDocClasse.IDElementoSec@@";
+  d2rq:join "tabDocumenti.IDDoc = legDocClassificazione.IDDoc";
+  d2rq:join "legDocClassificazione.IDClassificazione = tabClassificazioni.Id";
+  d2rq:uriSqlExpression "CONCAT('http://wafi.iit.cnr.it/dogi2020/resource/Classification/', CONCAT(tabClassificazioni.NS, (CASE WHEN (tabClassificazioni.ND != '') THEN CONCAT('_', tabClassificazioni.ND) ELSE '' END)))";
   .
 map:tabDocumenti_AnnoProd a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
@@ -363,7 +396,7 @@ map:tabDocumenti_LA a d2rq:PropertyBridge;
 map:tabDocumenti_DataIns a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:created;
-  d2rq:datatype xsd:date;
+  #d2rq:datatype xsd:date;
   d2rq:column "tabDocumenti.DataIns";
   .
 map:tabDocumenti_Nota a d2rq:PropertyBridge;
@@ -690,7 +723,7 @@ map:tabRifBibl_Fascicolo a d2rq:PropertyBridge;
 map:tabRifBibl_Data a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
   d2rq:property dcterms:date;
-  d2rq:datatype xsd:date; # If an entry has an invalid date such as 2000-02-00 the property is not translated
+  #d2rq:datatype xsd:date; # If an entry has an invalid date such as 2000-02-00 the property is not translated
   d2rq:column "tabRifBibl.Data";
   .
 map:tabRifBibl_Annata a d2rq:PropertyBridge;
@@ -764,45 +797,6 @@ map:tabRiviste_ACNPurl a d2rq:PropertyBridge;
   d2rq:property dogi:acnpUrl;
   d2rq:column "tabRiviste.ACNPurl";
   .
-
-### Table tabSezioni
-###
-#map:tabSezioni a d2rq:ClassMap;
-#  d2rq:dataStorage map:database;
-#  d2rq:uriPattern "tabSezioni/@@tabSezioni.IDSezione@@";
-#  d2rq:class vocab:tabSezioni;
-#  d2rq:classDefinitionLabel "tabSezioni";
-#  .
-#map:tabSezioni__label a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabSezioni;
-#  d2rq:property rdfs:label;
-#  d2rq:pattern "tabSezioni #@@tabSezioni.IDSezione@@";
-#  .
-#map:tabSezioni_IDSezione a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabSezioni;
-#  d2rq:property vocab:tabSezioni_IDSezione;
-#  d2rq:propertyDefinitionLabel "tabSezioni IDSezione";
-#  d2rq:column "tabSezioni.IDSezione";
-#  d2rq:datatype xsd:integer;
-#  .
-#map:tabSezioni_Sezione a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabSezioni;
-#  d2rq:property vocab:tabSezioni_Sezione;
-#  d2rq:propertyDefinitionLabel "tabSezioni Sezione";
-#  d2rq:column "tabSezioni.Sezione";
-#  .
-#map:tabSezioni_SiglaSezione a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabSezioni;
-#  d2rq:property vocab:tabSezioni_SiglaSezione;
-#  d2rq:propertyDefinitionLabel "tabSezioni SiglaSezione";
-#  d2rq:column "tabSezioni.SiglaSezione";
-#  .
-#map:tabSezioni_AltraSigla a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabSezioni;
-#  d2rq:property vocab:tabSezioni_AltraSigla;
-#  d2rq:propertyDefinitionLabel "tabSezioni AltraSigla";
-#  d2rq:column "tabSezioni.AltraSigla";
-#  .
 
 ### Table tabSistematici
 ###
