@@ -1,0 +1,57 @@
+{
+  "head": {
+    "vars": [ "cont" , "c" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "22842" } ,
+        "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Issue" }
+      } ,
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "212749" } ,
+        "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Article" }
+      } ,
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "45972" } ,
+        "c": { "type": "uri" , "value": "http://xmlns.com/foaf/#Person" }
+      } ,
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "756505" } ,
+        "c": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/SpecificSource" }
+      } ,
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5249" } ,
+        "c": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Descrittore" }
+      } ,
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "190" } ,
+        "c": { "type": "uri" , "value": "http://xmlns.com/foaf/#Organization" }
+      } ,
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "154771" } ,
+        "c": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/SourceOfLaw" }
+      } ,
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "219" } ,
+        "c": { "type": "uri" , "value": "http://purl.org/dc/elements/1.1/Location" }
+      } ,
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "353" } ,
+        "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Journal" }
+      } ,
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1545" } ,
+        "c": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Sistematico" }
+      } ,
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "55" } ,
+        "c": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Ministry" }
+      } ,
+      {
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "437939" } ,
+        "c": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Classification" }
+      }
+    ]
+  }
+}
