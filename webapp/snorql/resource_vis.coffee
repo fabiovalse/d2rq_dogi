@@ -1,8 +1,10 @@
 if resource.uri.split('/').slice(-2)[0] is 'Agent'
 
-  prefixes = "PREFIX dc: <http://purl.org/dc/elements/1.1/> PREFIX db: <http://wafi.iit.cnr.it/dogi2020/resource/> PREFIX foaf: <http://xmlns.com/foaf/#> PREFIX schema: <http://schema.org/> PREFIX gn: <http://www.geonames.org/ontology#> PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> PREFIX dbo: <http://dbpedia.org/ontology/> PREFIX bibo: <http://purl.org/ontology/bibo/> PREFIX d2r: <http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf#> PREFIX map: <http://wafi.iit.cnr.it/dogi2020/resource/#> PREFIX owl: <http://www.w3.org/2002/07/owl#> PREFIX dogi: <http://www.ittig.cnr.it/dogi/> PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> PREFIX vocab: <http://wafi.iit.cnr.it/dogi2020/resource/vocab/> PREFIX x: <http://dogi.org/>"
-  #query = encodeURIComponent("#{prefixes} SELECT ?journal ?rate {?article dc:creator <#{resource.uri}>;bibo:issue ?issue.?issue dc:isPartOf ?journal.OPTIONAL{?journal x:Rating ?rate.}}")
-  query = encodeURIComponent("#{prefixes} SELECT (COUNT(?rate) AS ?a) (COUNT(?journal) AS ?tot){?article dc:creator <#{resource.uri}>;bibo:issue ?issue.?issue dc:isPartOf ?journal.OPTIONAL{?journal x:Rating ?rate.}}")
+  prefixes = ""
+  for key,value of D2R_namespacePrefixes
+    prefixes += "PREFIX #{key}: <#{value}> "
+
+  query = encodeURIComponent("#{prefixes} SELECT (COUNT(?rate) AS ?a) (COUNT(?journal) AS ?tot){?article dcterms:creator <#{resource.uri}>;bibo:issue ?issue.?issue dcterms:isPartOf ?journal.OPTIONAL{?journal dogi:rating ?rate.}}")
   url = "http://wafi.iit.cnr.it/dogi2020/sparql?query=#{query}&output=json"
 
   margin = 20
