@@ -44,7 +44,7 @@ d3.json "#{home_url}snorql/classes.json", (classes_data) ->
   classes.append 'text'
     .attr
       class: 'description'
-      x: (d) -> left_padding + 5 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width
+      x: (d) -> left_padding + 9 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width
       y: (d,i) -> i*class_height
     .text (d) -> d.desc
 

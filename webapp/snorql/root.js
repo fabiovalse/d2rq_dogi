@@ -50,7 +50,7 @@
     classes.append('text').attr({
       "class": 'description',
       x: function(d) {
-        return left_padding + 5 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width;
+        return left_padding + 9 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width;
       },
       y: function(d, i) {
         return i * class_height;
