@@ -62,7 +62,7 @@
 
       <div class="sub_section">
         <div class="section_title"><i class="fa fa-compass"></i> Navigate the dataset</div>
-        <div class="section_subtitle">The Linked Data set of DoGi contains different kind of resources, called instances, labeled according to one of the classes listed below. Each orange bars indicates the amount of instances belonging to a certain class.</div>
+        <div class="section_subtitle">The Linked Data set of DoGi contains different kind of resources, called instances, labeled according to one of the classes listed below. Each orange bar indicates the amount of instances belonging to a certain class.</div>
         <svg></svg>
         <div id="classes"></div>
       </div>

@@ -45,16 +45,19 @@
         return i * class_height;
       }
     }).html(function(d) {
-      return "<a xlink:href='" + home_url + "directory/" + d.table + "'>" + d["class"] + "</a>";
+      return "<a xlink:href='" + home_url + "directory/" + d.table + "'>" + d["class"] + "</a>:";
     });
-
-    /*classes.append 'text'
-      .attr
-        class: 'description'
-        x: left_padding
-        y: (d,i) -> i*class_height+20
-      .text (d) -> d.desc
-     */
+    classes.append('text').attr({
+      "class": 'description',
+      x: function(d) {
+        return left_padding + 5 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width;
+      },
+      y: function(d, i) {
+        return i * class_height;
+      }
+    }).text(function(d) {
+      return d.desc;
+    });
     classes.append('rect').attr({
       "class": 'bar',
       x: left_padding,

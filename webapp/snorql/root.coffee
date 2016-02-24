@@ -39,14 +39,14 @@ d3.json "#{home_url}snorql/classes.json", (classes_data) ->
       class: 'title'
       x: left_padding
       y: (d,i) -> i*class_height
-    .html (d) -> "<a xlink:href='#{home_url}directory/#{d.table}'>#{d.class}</a>"
+    .html (d) -> "<a xlink:href='#{home_url}directory/#{d.table}'>#{d.class}</a>:"
 
-  ###classes.append 'text'
+  classes.append 'text'
     .attr
       class: 'description'
-      x: left_padding
-      y: (d,i) -> i*class_height+20
-    .text (d) -> d.desc###
+      x: (d) -> left_padding + 5 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width
+      y: (d,i) -> i*class_height
+    .text (d) -> d.desc
 
   classes.append 'rect'
     .attr
