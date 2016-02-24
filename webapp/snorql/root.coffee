@@ -36,17 +36,17 @@ d3.json "#{home_url}snorql/classes.json", (classes_data) ->
   
   classes.append 'text'
     .attr
-      class: 'title'
+      class: 'title_description'
       x: left_padding
       y: (d,i) -> i*class_height
-    .html (d) -> "<a xlink:href='#{home_url}directory/#{d.table}'>#{d.class}</a>:"
+    .html (d) -> "<a class='title' xlink:href='#{home_url}directory/#{d.table}'>#{d.class}</a>: #{d.desc}"
 
-  classes.append 'text'
+  ###classes.append 'text'
     .attr
       class: 'description'
-      x: (d) -> left_padding + 9 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width
+      x: (d) -> left_padding + 10 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width
       y: (d,i) -> i*class_height
-    .text (d) -> d.desc
+    .text (d) -> d.desc###
 
   classes.append 'rect'
     .attr

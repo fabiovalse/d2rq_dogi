@@ -39,25 +39,22 @@
       "class": 'class'
     });
     classes.append('text').attr({
-      "class": 'title',
+      "class": 'title_description',
       x: left_padding,
       y: function(d, i) {
         return i * class_height;
       }
     }).html(function(d) {
-      return "<a xlink:href='" + home_url + "directory/" + d.table + "'>" + d["class"] + "</a>:";
+      return "<a class='title' xlink:href='" + home_url + "directory/" + d.table + "'>" + d["class"] + "</a>: " + d.desc;
     });
-    classes.append('text').attr({
-      "class": 'description',
-      x: function(d) {
-        return left_padding + 9 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width;
-      },
-      y: function(d, i) {
-        return i * class_height;
-      }
-    }).text(function(d) {
-      return d.desc;
-    });
+
+    /*classes.append 'text'
+      .attr
+        class: 'description'
+        x: (d) -> left_padding + 10 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width
+        y: (d,i) -> i*class_height
+      .text (d) -> d.desc
+     */
     classes.append('rect').attr({
       "class": 'bar',
       x: left_padding,

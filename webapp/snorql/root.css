@@ -53,19 +53,17 @@ i {
   border-radius: 2px;
   background: #deebf7;
   border: 2px solid #fff;
+
+  font-size: 15px;
+  fill: #777;
 }
 .class:hover {
   background: #fff;
   border: 2px solid #deebf7;
 }
-.class .description {
-  font-size: 15px;
-  color: #777;
-  fill: #777;
-  margin-top: 5px;
-}
 .class .title {
   font-size: 18px;
+  fill: #333333;
 }
 
 #classes a {
