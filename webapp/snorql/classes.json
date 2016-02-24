@@ -5,19 +5,19 @@
   "results": {
     "bindings": [
       {
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "22842" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "23077" } ,
         "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Issue" }
       } ,
       {
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "212749" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "214869" } ,
         "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Article" }
       } ,
       {
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "45972" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "46341" } ,
         "c": { "type": "uri" , "value": "http://xmlns.com/foaf/#Person" }
       } ,
       {
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "756505" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "767258" } ,
         "c": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/SpecificSource" }
       } ,
       {
@@ -29,7 +29,7 @@
         "c": { "type": "uri" , "value": "http://xmlns.com/foaf/#Organization" }
       } ,
       {
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "154771" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "157020" } ,
         "c": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/SourceOfLaw" }
       } ,
       {
@@ -49,7 +49,7 @@
         "c": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Ministry" }
       } ,
       {
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "437939" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7563" } ,
         "c": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Classification" }
       }
     ]
