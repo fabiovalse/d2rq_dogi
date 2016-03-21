@@ -2,11 +2,11 @@
 (function() {
   var bar_height, class_height, classes_amounts, left_padding, svg;
 
-  left_padding = 40;
+  left_padding = 150;
 
-  class_height = 60;
+  class_height = 30;
 
-  bar_height = 5;
+  bar_height = 15;
 
   classes_amounts = {};
 
@@ -17,7 +17,7 @@
   });
 
   d3.json(home_url + "snorql/classes.json", function(classes_data) {
-    var bar_width, c, classes, enter_classes, i, key, ref;
+    var c, classes, i, key, ref, x, y;
     ref = classes_data.results.bindings;
     for (i in ref) {
       c = ref[i];
@@ -29,79 +29,56 @@
       }
       classes_amounts[key] = parseInt(c.cont.value);
     }
-    bar_width = d3.scale.pow().exponent(0.3).range([0, d3.select('#central_section').node().getBoundingClientRect().width / 2]).domain([
+    x = d3.scale.pow().exponent(0.3).range([0, d3.select('#central_section').node().getBoundingClientRect().width / 2]).domain([
       0, d3.max(classes_data.results.bindings, function(d) {
         return parseInt(d.cont.value);
       })
     ]);
+    y = d3.scale.ordinal().rangeRoundBands([0, 300], .5).domain(data.map(function(d, i) {
+      return i;
+    }));
+
+    /* Classes
+     */
     classes = svg.selectAll('.class').data(data);
-    enter_classes = classes.enter().append('g').attr({
+    classes.enter().append('g').attr({
       "class": 'class'
     });
-    classes.append('text').attr({
-      "class": 'title_description',
-      x: left_padding,
-      y: function(d, i) {
-        return i * class_height;
-      }
-    }).html(function(d) {
-      return "<a class='title' xlink:href='" + home_url + "directory/" + d.table + "'>" + d["class"] + "</a>: " + d.desc;
-    });
-
-    /*classes.append 'text'
-      .attr
-        class: 'description'
-        x: (d) -> left_padding + 10 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width
-        y: (d,i) -> i*class_height
-      .text (d) -> d.desc
-     */
     classes.append('rect').attr({
       "class": 'bar',
       x: left_padding,
       y: function(d, i) {
-        return i * class_height + 10;
+        return y(i);
       },
       width: function(d) {
-        return bar_width(classes_amounts[d["class"].replace(/ /g, '')]);
+        return x(classes_amounts[d["class"].replace(/ /g, '')]);
       },
       height: bar_height
+    });
+    classes.append('text').attr({
+      'text-anchor': 'end',
+      x: left_padding - 10,
+      y: function(d, i) {
+        return y(i) + bar_height / 1.4;
+      }
+    }).html(function(d) {
+      return "<a class='title' xlink:href='" + home_url + "directory/" + d.table + "'>" + d["class"] + "</a>";
+    }).append('title').text(function(d) {
+      return "" + d.desc;
     });
     return classes.append('text').attr({
       "class": 'bar_amount',
       x: function(d) {
-        return left_padding;
+        return left_padding + x(classes_amounts[d["class"].replace(/ /g, '')]) + 5;
       },
       y: function(d, i) {
-        return i * class_height + 27;
+        return y(i) + bar_height / 1.4;
       }
     }).text(function(d) {
-      return classes_amounts[d["class"].replace(/ /g, '')] + " instances";
+      return classes_amounts[d["class"].replace(/ /g, '')];
+    }).append('title').text(function(d) {
+      return classes_amounts[d["class"].replace(/ /g, '')] + " instances of type " + d["class"];
     });
   });
-
-
-  /*container = d3.select '#classes'
-  
-  classes = container.selectAll '.class'
-    .data data
-  
-  enter_classes = classes.enter()
-      .append 'a'
-        .attr
-          href: (d) -> "#{home_url}directory/#{d.table}"
-        .append 'div'
-          .attr
-            class: 'class'
-  
-  enter_classes.append 'div'
-    .attr
-      class: 'title'
-    .text (d) -> d.class
-  
-  enter_classes.append 'div'
-    .attr
-      class: 'description'
-    .text (d) -> d.desc
-   */
 
 }).call(this);

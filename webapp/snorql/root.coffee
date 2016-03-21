@@ -1,6 +1,6 @@
-left_padding = 40
-class_height = 60
-bar_height = 5
+left_padding = 150
+class_height = 30
+bar_height = 15
 classes_amounts = {}
 
 svg = d3.select 'svg'
@@ -22,66 +22,47 @@ d3.json "#{home_url}snorql/classes.json", (classes_data) ->
 
     classes_amounts[key] = parseInt(c.cont.value)
 
-  bar_width = d3.scale.pow()
+  x = d3.scale.pow()
     .exponent(0.3)
     .range [0, d3.select('#central_section').node().getBoundingClientRect().width/2]
     .domain [0, d3.max(classes_data.results.bindings, (d) -> parseInt(d.cont.value))]
 
+  y = d3.scale.ordinal()
+    .rangeRoundBands [0, 300], .5
+    .domain data.map (d,i) -> i
+
+  ### Classes
+  ###
   classes = svg.selectAll '.class'
     .data data
 
-  enter_classes = classes.enter().append 'g'
+  classes.enter().append 'g'
     .attr
       class: 'class'
   
-  classes.append 'text'
-    .attr
-      class: 'title_description'
-      x: left_padding
-      y: (d,i) -> i*class_height
-    .html (d) -> "<a class='title' xlink:href='#{home_url}directory/#{d.table}'>#{d.class}</a>: #{d.desc}"
-
-  ###classes.append 'text'
-    .attr
-      class: 'description'
-      x: (d) -> left_padding + 10 + d3.select(this.parentNode).select('.title').node().getBoundingClientRect().width
-      y: (d,i) -> i*class_height
-    .text (d) -> d.desc###
-
   classes.append 'rect'
     .attr
       class: 'bar'
       x: left_padding
-      y: (d,i) -> i*class_height+10
-      width: (d) -> bar_width classes_amounts[d.class.replace(/ /g, '')]
+      y: (d,i) -> y i
+      width: (d) -> x classes_amounts[d.class.replace(/ /g, '')]
       height: bar_height
 
   classes.append 'text'
     .attr
+      'text-anchor': 'end'
+      x: left_padding - 10
+      y: (d,i) -> y(i) + bar_height/1.4
+    .html (d) -> "<a class='title' xlink:href='#{home_url}directory/#{d.table}'>#{d.class}</a>"
+    .append 'title'
+      .text (d) -> "#{d.desc}"
+
+  classes.append 'text'
+    .attr
       class: 'bar_amount'
-      x: (d) -> left_padding
-      y: (d,i) -> i*class_height+27
-    .text (d) -> "#{classes_amounts[d.class.replace(/ /g, '')]} instances"
-
-###container = d3.select '#classes'
-
-classes = container.selectAll '.class'
-  .data data
-
-enter_classes = classes.enter()
-    .append 'a'
-      .attr
-        href: (d) -> "#{home_url}directory/#{d.table}"
-      .append 'div'
-        .attr
-          class: 'class'
-
-enter_classes.append 'div'
-  .attr
-    class: 'title'
-  .text (d) -> d.class
-
-enter_classes.append 'div'
-  .attr
-    class: 'description'
-  .text (d) -> d.desc###
+      x: (d) -> left_padding + x(classes_amounts[d.class.replace(/ /g, '')]) + 5
+      y: (d,i) -> y(i) + bar_height/1.4
+    .text (d) -> classes_amounts[d.class.replace(/ /g, '')]
+    .append 'title'
+      .text (d) -> "#{classes_amounts[d.class.replace(/ /g, '')]} instances of type #{d.class}"
+  

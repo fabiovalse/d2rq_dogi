@@ -17,11 +17,11 @@
         {"class": "Issue", "desc": "Issues of italian legal journals.", "translation": "", "table": "tabRifBibl"},
         {"class": "Article", "desc": "Articles published on Italian legal journals.", "translation": "", "table": "tabDocumenti"},
         {"class": "Agent", "desc": "Persons or organizations that are authors of an article.", "translation": "", "table": "tabResponsabilita"},
-        {"class": "Classification", "desc": "Codes designed for legal subjects.", "translation": "", "table": "tabClassificazioni"},
-        {"class": "Descrittore", "desc": "It is a ...", "translation": "", "table": "tabDescrittori"},
-        {"class": "Sistematico", "desc": "It is a ...", "translation": "", "table": "tabSistematici"},
-        {"class": "Specific Source", "desc": "It is a ...", "translation": "", "table": "legDocFonte"},
-        {"class": "Source Of Law", "desc": "It is a ...", "translation": "", "table": "tabFonti"},
+        {"class": "Classification", "desc": "Classification scheme for law, specifically developed for the DoGi database. It could be a pair sistematico-descrittore or a sistematico.", "translation": "", "table": "tabClassificazioni"},
+        {"class": "Descrittore", "desc": "An additional descriptor associated to a sistematico for better qualifying its context and meaning.", "translation": "", "table": "tabDescrittori"},
+        {"class": "Sistematico", "desc": "A descriptor for legal documentation identifying a certain law branch (e.g., Administrative Law, Civil Law, Criminal Law).", "translation": "", "table": "tabSistematici"},
+        {"class": "Specific Source", "desc": "A specific section of a source of law.", "translation": "", "table": "legDocFonte"},
+        {"class": "Source Of Law", "desc": "A source of law considered as a whole.", "translation": "", "table": "tabFonti"},
         {"class": "Ministry", "desc": "Administrative Structure responsible for a government sector.", "translation": "", "table": "tabMinisteri"},
         {"class": "Country", "desc": "Regions identified as a distinct entity in political geography.", "translation": "", "table": "tabStati"}
       ];
@@ -42,9 +42,17 @@
         <div class="section_title"><i class="fa fa-info-circle"></i> What is Linked Data DoGi?</div>
         <div class="section_subtitle"></div>
 
-        <a href="http://www.ittig.cnr.it/dogi/en/Index.php">DoGi</a> is a reference database of articles published in Italian legal journals. For each article, the DoGi record provides bibliographic information enhanced with: abstracts and/or summaries of articles; one or more classification codes based on the indexing DoGi system especially designed for legal subjects; a selection of legislative and jurisprudential references of the sources quoted in the article; further metadata describing more significant features of the article; link to the full text when freely available online.<br />
+        <a href="http://www.ittig.cnr.it/dogi/en/Index.php">DoGi</a> is a reference database of articles published in Italian legal journals. For each article, the DoGi record provides bibliographic information enhanced with: 
+
+        <ul>
+          <li>abstracts and/or summaries of articles;</li>
+          <li>one or more classification codes based on the indexing DoGi system especially designed for legal subjects;</li>
+          <li>a selection of legislative and jurisprudential references of the sources quoted in the article;</li>
+          <li>further metadata describing more significant features of the article;</li>
+          <li>link to the full text when freely available online.</li>
+        </ul>
         <br />
-        This web portal represents the Linked Open Data version of the DoGi data set ...
+        This web portal provides the bibliographic data of DoGi as <a href="https://en.wikipedia.org/wiki/Linked_data">Linked Open Data</a>.
       </div>
 
       <div class="sub_section bottom_line">
@@ -62,7 +70,7 @@
 
       <div class="sub_section">
         <div class="section_title"><i class="fa fa-compass"></i> Navigate the dataset</div>
-        <div class="section_subtitle">The Linked Data set of DoGi contains different kind of resources, called instances, labeled according to one of the classes listed below. Each orange bar indicates the amount of instances belonging to a certain class.</div>
+        <div class="section_subtitle">The Linked Data set of DoGi contains different kind of resources classified with one of the class in the bar-chart below. Each bar indicates the amount of resources of a certain class.</div>
         <svg></svg>
         <div id="classes"></div>
       </div>
