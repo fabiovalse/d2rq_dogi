@@ -16,8 +16,8 @@
     transform: "translate(0, 20)"
   });
 
-  d3.json(home_url + "snorql/classes.json", function(classes_data) {
-    var c, classes, i, key, ref, x, y;
+  d3.json(home_url + "snorql/data/classes.json", function(classes_data) {
+    var c, classes, enter_classes, i, key, ref, x, y;
     ref = classes_data.results.bindings;
     for (i in ref) {
       c = ref[i];
@@ -29,7 +29,7 @@
       }
       classes_amounts[key] = parseInt(c.cont.value);
     }
-    x = d3.scale.pow().exponent(0.3).range([0, d3.select('#central_section').node().getBoundingClientRect().width / 2]).domain([
+    x = d3.scale.pow().exponent(0.3).range([0, d3.select('#main').node().getBoundingClientRect().width / 2]).domain([
       0, d3.max(classes_data.results.bindings, function(d) {
         return parseInt(d.cont.value);
       })
@@ -39,6 +39,21 @@
     }));
 
     /* Classes
+     */
+    classes = d3.select('#classes').selectAll('li').data(data);
+    enter_classes = classes.enter().append('li');
+    enter_classes.append('span').append('a').attr({
+      href: function(d) {
+        return home_url + "directory/" + d.table;
+      }
+    }).text(function(d) {
+      return d["class"];
+    });
+    enter_classes.append('span').text(function(d) {
+      return ": " + d.desc;
+    });
+
+    /* Bar-chart
      */
     classes = svg.selectAll('.class').data(data);
     classes.enter().append('g').attr({
@@ -56,13 +71,14 @@
       height: bar_height
     });
     classes.append('text').attr({
+      "class": 'title',
       'text-anchor': 'end',
       x: left_padding - 10,
       y: function(d, i) {
         return y(i) + bar_height / 1.4;
       }
-    }).html(function(d) {
-      return "<a class='title' xlink:href='" + home_url + "directory/" + d.table + "'>" + d["class"] + "</a>";
+    }).text(function(d) {
+      return d["class"];
     }).append('title').text(function(d) {
       return "" + d.desc;
     });

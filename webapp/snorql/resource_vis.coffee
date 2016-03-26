@@ -1,4 +1,8 @@
-if resource.uri.split('/').slice(-2)[0] is 'Agent'
+switch resource.uri.split('/').slice(-2)[0]
+  when 'Agent' then draw_agent_diagram()
+  else console.log draw_agent_diagram()
+
+###if resource.uri.split('/').slice(-2)[0] is 'Agent'
 
   prefixes = ""
   for key,value of D2R_namespacePrefixes
@@ -8,8 +12,8 @@ if resource.uri.split('/').slice(-2)[0] is 'Agent'
   url = "http://wafi.iit.cnr.it/dogi2020/sparql?query=#{query}&output=json"
 
   margin = 20
-  width = d3.select('#visualization').node().getBoundingClientRect().width/2-margin*2
-  height = d3.select('#visualization').node().getBoundingClientRect().height/2-margin*2
+  width = d3.select('#main').node().getBoundingClientRect().width/2-margin*2
+  height = 300#d3.select('').node().getBoundingClientRect().height/2-margin*2
 
   svg = d3.select('#visualization').append 'svg'
     .attr
@@ -83,3 +87,4 @@ if resource.uri.split('/').slice(-2)[0] is 'Agent'
         fill: (d) -> color d.id
       .append 'title'
         .text (d) -> "#{d.value} #{d.desc}"
+###

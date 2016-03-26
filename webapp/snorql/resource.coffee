@@ -15,10 +15,10 @@ o_format = (object) ->
 
 ### Resource label and URI
 ###
-d3.select '#header #title'
+d3.select '#header .title'
   .html resource.label
 
-d3.select '#header #subtitle'
+d3.select '#header .subtitle'
   .text resource.uri
 
 ### Triples list

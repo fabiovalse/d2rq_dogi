@@ -13,17 +13,17 @@
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript">
       var data = [
-        {"class": "Journal", "desc": "Italian legal journals.", "translation": "", "table": "tabRiviste"},
-        {"class": "Issue", "desc": "Issues of italian legal journals.", "translation": "", "table": "tabRifBibl"},
-        {"class": "Article", "desc": "Articles published on Italian legal journals.", "translation": "", "table": "tabDocumenti"},
-        {"class": "Agent", "desc": "Persons or organizations that are authors of an article.", "translation": "", "table": "tabResponsabilita"},
-        {"class": "Classification", "desc": "Classification scheme for law, specifically developed for the DoGi database. It could be a pair sistematico-descrittore or a sistematico.", "translation": "", "table": "tabClassificazioni"},
-        {"class": "Descrittore", "desc": "An additional descriptor associated to a sistematico for better qualifying its context and meaning.", "translation": "", "table": "tabDescrittori"},
-        {"class": "Sistematico", "desc": "A descriptor for legal documentation identifying a certain law branch (e.g., Administrative Law, Civil Law, Criminal Law).", "translation": "", "table": "tabSistematici"},
-        {"class": "Specific Source", "desc": "A specific section of a source of law.", "translation": "", "table": "legDocFonte"},
-        {"class": "Source Of Law", "desc": "A source of law considered as a whole.", "translation": "", "table": "tabFonti"},
-        {"class": "Ministry", "desc": "Administrative Structure responsible for a government sector.", "translation": "", "table": "tabMinisteri"},
-        {"class": "Country", "desc": "Regions identified as a distinct entity in political geography.", "translation": "", "table": "tabStati"}
+        {"class": "Journal", "desc": "italian legal journals.", "translation": "", "table": "tabRiviste"},
+        {"class": "Issue", "desc": "issues of italian legal journals.", "translation": "", "table": "tabRifBibl"},
+        {"class": "Article", "desc": "articles published on Italian legal journals.", "translation": "", "table": "tabDocumenti"},
+        {"class": "Agent", "desc": "persons or organizations that are authors of an article.", "translation": "", "table": "tabResponsabilita"},
+        {"class": "Classification", "desc": "classification scheme for law, specifically developed for the DoGi database. It could be a pair sistematico-descrittore or a sistematico.", "translation": "", "table": "tabClassificazioni"},
+        {"class": "Descrittore", "desc": "an additional descriptor associated to a sistematico for better qualifying its context and meaning.", "translation": "", "table": "tabDescrittori"},
+        {"class": "Sistematico", "desc": "a descriptor for legal documentation identifying a certain law branch (e.g., Administrative Law, Civil Law, Criminal Law).", "translation": "", "table": "tabSistematici"},
+        {"class": "Specific Source", "desc": "a specific section of a source of law.", "translation": "", "table": "tabFontiSpecifiche"},
+        {"class": "Source Of Law", "desc": "a source of law considered as a whole.", "translation": "", "table": "tabFonti"},
+        {"class": "Ministry", "desc": "administrative Structure responsible for a government sector.", "translation": "", "table": "tabMinisteri"},
+        {"class": "Country", "desc": "regions identified as a distinct entity in political geography.", "translation": "", "table": "tabStati"}
       ];
 
       var home_url = "${home_link}";
@@ -34,13 +34,12 @@
     <div id="header">
       <div id="page_title">Linked Data DoGi</div>
     </div>
-    <div id="sub_header"></div>
 
-    <div id="central_section">
+    <div id="main">
 
-      <div id="general_description" class="sub_section bottom_line">
-        <div class="section_title"><i class="fa fa-info-circle"></i> What is Linked Data DoGi?</div>
-        <div class="section_subtitle"></div>
+      <div class="subsection bottom_line justify">
+        <div class="title"><i class="fa fa-info-circle"></i> What is Linked Data DoGi?</div>
+        <div class="subtitle"></div>
 
         <a href="http://www.ittig.cnr.it/dogi/en/Index.php">DoGi</a> is a reference database of articles published in Italian legal journals. For each article, the DoGi record provides bibliographic information enhanced with: 
 
@@ -55,9 +54,9 @@
         This web portal provides the bibliographic data of DoGi as <a href="https://en.wikipedia.org/wiki/Linked_data">Linked Open Data</a>.
       </div>
 
-      <div class="sub_section bottom_line">
-        <div class="section_title"><i class="fa fa-database"></i> Query the dataset</div>
-        <div class="section_subtitle"></div>
+      <div class="subsection bottom_line">
+        <div class="title"><i class="fa fa-database"></i> Query the dataset</div>
+        <div class="subtitle"></div>
         <ol>
           <li>
             Query the dataset by writing and executing SPARQL queries on the <a href="${home_link}snorql/">SNORQL endpoint</a>.
@@ -68,11 +67,16 @@
         </ol>
       </div>
 
-      <div class="sub_section">
-        <div class="section_title"><i class="fa fa-compass"></i> Navigate the dataset</div>
-        <div class="section_subtitle">The Linked Data set of DoGi contains different kind of resources classified with one of the class in the bar-chart below. Each bar indicates the amount of resources of a certain class.</div>
+      <div class="subsection">
+        <div class="title"><i class="fa fa-compass"></i> Navigate the dataset</div>
+        <div class="subtitle">The Linked Data set of DoGi contains different kind of resources classified with one of the class listed below.</div>
+        <ul id="classes"></ul>
+      </div>
+
+      <div class="subsection">
+        <div class="title"><i class="fa fa-bar-chart"></i> Get insights from data</div>
+        <div class="subtitle">The bar-chart shows the amount of instances (i.e., resources) for each class in the dataset.</div>
         <svg></svg>
-        <div id="classes"></div>
       </div>
 
     </div>

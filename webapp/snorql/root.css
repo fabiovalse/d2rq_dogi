@@ -1,24 +1,22 @@
-/* http://www.colorcombos.com/color-schemes/6343/ColorCombo6343.html
-*/
-
-/*  flex layout
-*/
-#central_section {
-  overflow: scroll;
-  height: 100%;
-}
-#footer {
-  height: 30px;
-  background: #333333;
-  color: #fff;
-}
-#general_description {
-  text-align: justify;
-}
 svg {
   width: 100%;
 }
-/* 
+
+/*  SUBSECTION
+*/
+.subsection .title {
+  font-size: 24px;
+}
+.subsection .subtitle {
+  color: #777;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+.bottom_line {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+/*
 */
 a {
   color: steelblue;
@@ -30,25 +28,13 @@ i {
   color: steelblue;
 }
 #classes {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: flex-start;
+  padding-left: 40px;
+  text-align: justify;
 }
-.sub_section {
-  padding: 30px;
+#classes > * {
+  padding: 2px 0px 2px 0px;
 }
-.bottom_line {
-  border-bottom: 1px solid #f2f2f2;
-}
-
-.section_title {
-  font-size: 25px;
-}
-.section_subtitle {
-  color: #777;
-  margin-bottom: 10px;
+.justify {
   text-align: justify;
 }
 
@@ -62,7 +48,6 @@ i {
   border-radius: 2px;
   background: #deebf7;
   border: 2px solid #fff;
-
   font-size: 15px;
   fill: #777;
 }
@@ -75,10 +60,6 @@ i {
   font-size: 15px;
   fill: #333333;
 }
-.class .title:hover {
-  text-decoration: underline;
-}
-
 .bar {
   fill: #F39D41;
 }

@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+svg {
+  background: #f2f2f2;
+}
+/*@font-face {
+  font-family: "Lacuna";
+  src: url("lacuna.ttf");
+}*/
+
+.sector {
+  vector-effect: non-scaling-stroke;
+  stroke: #f2f2f2;
+}
+.sector_one {
+  vector-effect: non-scaling-stroke;
+  stroke: #f2f2f2;
+}
+.sector:hover {
+  opacity: 0.8;
+}
+.sector_one:hover {
+  opacity: 0.8;
+}
+
+.label {
+  font-size: 13px;
+  /*font-family: "Lacuna";*/
+  text-anchor: middle;
+  font-weight: bold;
+  pointer-events: none;
+}
+.halo {
+  stroke: white;
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+  font-weight: bold;
+}
+
+#radio {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}

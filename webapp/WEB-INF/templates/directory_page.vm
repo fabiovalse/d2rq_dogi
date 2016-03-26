@@ -5,11 +5,16 @@
     <title>DoGi: Dottrina Giuridica</title>
     <link rel="stylesheet" type="text/css" href="${home_link}snorql/directory.css" />
     <link rel="stylesheet" type="text/css" href="${home_link}snorql/style.css" />
+    <link rel="stylesheet" type="text/css" href="${home_link}snorql/vis/sistematici.css" />
+
     <link rel="alternate" type="application/rdf+xml" href="$rdf_link?output=rdfxml" title="This page in RDF (XML)" />
     <link rel="alternate" type="text/turtle" href="$rdf_link?output=ttl" title="This page in RDF (Turtle)" />
+    
     <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
 
+    <script src="//wafi.iit.cnr.it/webvis/libs/jigmaps/zip.js"></script>
+    <script src="//wafi.iit.cnr.it/webvis/libs/jigmaps/tree_utils.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript">
     /* Data stored in Velocity variables are passed to Javascript
@@ -24,27 +29,24 @@
 
   </head>
   <body>
+
     <div id="header">
-      #* <img src="${home_link}snorql/logo.jpg" /> *#
       <div id="page_title">Linked Data DoGi</div>
     </div>
-    <div id="sub_header">
-      #* 
-<span>DoGi</span>
-      <span>></span> *#
- 
+
+    <div id="main">
+      <div id="visualization" class="subsection">
+        <div class="title">Visualization:</div>
+        <div class="subtitle"></div>
+      </div>
+      <div id="examples" class="subsection">
+        <div class="title">Examples:</div>
+      </div>
     </div>
 
-    <div id="central_section_title"></div>
+    <script type="text/javascript" src="${home_link}snorql/vis/sistematici.js"></script>
+    <script type="text/javascript" src="${home_link}snorql/directory.js"></script>
+    <script type="text/javascript" src="${home_link}snorql/directory_vis.js"></script>
 
-    <div id="central_section">
-      <div id="examples"></div>
-      <div id="visualization"></div>
-    </div>
-    
-    #* <div id="footer"></div> *#
-
-
-  <script type="text/javascript" src="${home_link}snorql/directory.js"></script>
   </body>
 </html>

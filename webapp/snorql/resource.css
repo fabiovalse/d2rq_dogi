@@ -1,34 +1,17 @@
-/*  flex layout
-*/
-#central_section {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  height: 0;
+#header .title, #header .subtitle {
+  margin-left: 10%;
 }
-#triples {
-  flex-grow: 1;
-  width: 0;
-  overflow: scroll;
-}
-#visualization {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-  width: 0;
-}
-#footer {
-  height: 30px;
-  background: #333333;
-  color: #fff;
-}
-
-#title {
+#header .title {
   font-size: 25px;
 }
-#subtitle {
+#header .subtitle {
   color: #1f78b4;
+}
+
+/*  vis
+*/
+#visualization {
+  text-align: center;
 }
 
 /*  triples
@@ -41,7 +24,7 @@ td {
   padding: 10px;
   border-bottom: 1px solid #dddddd;
 }
-.table_title {
+.subsection .title {
   font-size: 20px;
   margin-bottom: 10px;
 }

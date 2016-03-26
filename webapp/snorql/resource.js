@@ -24,9 +24,9 @@
   /* Resource label and URI
    */
 
-  d3.select('#header #title').html(resource.label);
+  d3.select('#header .title').html(resource.label);
 
-  d3.select('#header #subtitle').text(resource.uri);
+  d3.select('#header .subtitle').text(resource.uri);
 
 
   /* Triples list

@@ -46,31 +46,28 @@
   </head>
   <body>
     
-    <div id="header" class="box">
-      <div id="title"></div>
-      <div id="subtitle"></div>
+    <div id="header">
+      <div class="title"></div>
+      <div class="subtitle"></div>
     </div>
-    <div id="sub_header"></div>
 
-    <div id="central_section">
-      
-      <div id="triples" class="box"> 
+    <div id="main">
+
+      <div id="visualization"></div>
+      <div class="subsection">
         <div>
-          <div class="table_title">Direct Triples</div>
+          <div class="title">Direct Triples</div>
           <table id="direct"></table>
         </div>
         <div>
-          <div class="table_title">Inverse Triples</div>
+          <div class="title">Inverse Triples</div>
           <table id="inverse"></table>
         </div>
       </div>
 
-      <div id="visualization"></div>
-
     </div>
-    
-    #* <div id="footer" class="box"></div> *#
 
+    <script type="text/javascript" src="${home_link}snorql/vis/agent.js"></script>
     <script type="text/javascript" src="${home_link}snorql/resource.js"></script>
     <script type="text/javascript" src="${home_link}snorql/resource_vis.js"></script>
   </body>

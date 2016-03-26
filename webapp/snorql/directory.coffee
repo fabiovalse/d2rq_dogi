@@ -1,5 +1,5 @@
-d3.select '#central_section_title'
-  .text "Some examples of resources classified as #{data[0].uri.split('/').slice(-2)[0]}:"
+###d3.select '#central_section_title'
+  .text "Some examples of resources classified as #{data[0].uri.split('/').slice(-2)[0]}:"###
 
 container = d3.select '#examples'
 
@@ -15,8 +15,6 @@ enter_examples = examples.enter()
       class: 'example'
 
 enter_examples.append 'div'
-  .attr
-    class: 'title'
   .html (d) -> d.label
 
 enter_examples.append 'div'
