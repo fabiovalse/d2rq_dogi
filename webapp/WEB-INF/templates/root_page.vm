@@ -77,6 +77,17 @@
         <div class="title"><i class="fa fa-bar-chart"></i> Get insights from data</div>
         <div class="subtitle">The bar-chart shows the amount of instances (i.e., resources) for each class in the dataset.</div>
         <svg></svg>
+        <div class="subtitle">Browse the following visualizations in order to get insights from different kind of data within DoGi.</div>
+        <div id="vis_list">
+          <div class="vis_box"><a target="_blank" href="http://wafi.iit.cnr.it/webvis/lab/public/4122230f56cbd9982ba0/"><img src="${home_link}snorql/img/journal.png"/></a></div>
+          <div class="vis_box"><a target="_blank" href="http://wafi.iit.cnr.it/webvis/replayer/?dogi_titoli"><img src="${home_link}snorql/img/replayer.png"/></a></div>
+          <div class="vis_box"><a target="_blank" href=""><img src="${home_link}snorql/img/"/></a></div>
+          <div class="vis_box"><a target="_blank" href=""><img src="${home_link}snorql/img/"/></a></div>
+          <div class="vis_box"><a target="_blank" href=""><img src="${home_link}snorql/img/"/></a></div>
+          <div class="vis_box"><a target="_blank" href=""><img src="${home_link}snorql/img/"/></a></div>
+          <div class="vis_box"><a target="_blank" href=""><img src="${home_link}snorql/img/"/></a></div>
+          <div class="vis_box"><a target="_blank" href=""><img src="${home_link}snorql/img/"/></a></div>
+        </div>
       </div>
 
     </div>

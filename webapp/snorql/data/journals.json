@@ -1,0 +1,1421 @@
+{
+  "head": {
+    "vars": [ "j" , "cont" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1832" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8390" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0289" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "6923" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0269" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5733" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1684" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4184" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1833" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3519" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1486" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3303" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0390" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3220" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2057" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3186" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1935" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3014" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1831" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3000" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1489" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2959" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1513" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2932" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0140" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2671" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0290" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2667" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1487" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2460" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1406" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2404" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1934" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2335" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1494" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2308" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1820" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2267" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0288" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2163" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0522" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2101" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1936" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2060" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0951" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2052" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0294" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2009" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1484" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1918" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1683" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1750" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1818" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1688" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0833" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1656" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1410" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1632" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0225" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1560" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0230" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1540" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0566" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1495" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1821" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1491" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0023" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1483" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1814" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1480" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1478" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1472" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1696" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1442" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1687" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1441" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0649" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1400" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1442" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1324" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0555" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1323" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1675" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1314" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2100" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1284" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1493" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1265" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0589" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1229" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0093" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1189" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0266" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1175" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0613" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1130" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9017" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1117" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1692" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1111" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0982" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1075" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1816" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1067" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0267" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1066" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1495" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1065" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0548" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1036" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1949" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1034" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2037" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1026" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0575" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1015" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0229" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1001" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2044" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "996" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0958" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "983" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1463" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "983" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1904" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "981" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2054" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "940" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1485" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "930" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1024" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "926" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2055" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "923" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1508" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "916" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0249" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "908" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1488" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "908" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0556" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "903" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0969" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "900" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1938" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "899" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2056" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "896" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1460" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "891" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1430" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "890" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0564" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "882" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1428" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "864" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2008" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "829" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0590" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "796" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1448" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "785" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0297" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "779" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1804" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "768" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1454" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "767" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0272" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "761" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1908" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "735" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1482" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "716" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1680" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "714" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1498" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "701" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2065" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "697" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0692" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "694" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0922" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "691" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0597" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "681" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0947" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "679" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1414" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "667" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1926" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "661" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1903" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "651" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0970" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "648" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1905" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "638" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1948" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "633" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0614" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "628" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1998" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "624" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0228" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "617" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1418" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "613" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1931" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "613" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2007" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "609" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0311" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "604" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1402" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "604" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0533" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "602" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0550" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "602" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1806" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "597" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1689" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "586" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9022" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "586" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1808" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "559" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1458" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "552" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2027" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "543" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1924" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "539" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9012" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "522" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2058" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "520" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1467" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "504" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2060" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "504" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0569" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "503" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0551" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "488" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0326" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "483" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1996" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "483" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1400" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "482" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1649" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "478" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1432" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "470" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1824" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "463" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0187" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "461" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0236" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "455" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1434" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "453" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1906" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "452" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9011" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "449" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1510" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "448" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1802" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "448" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1459" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "445" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1506" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "440" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1995" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "439" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0952" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "429" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1512" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "428" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2088" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "425" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0059" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "422" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1408" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "420" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0082" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "412" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1314" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "410" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2022" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "408" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9001" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "408" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0925" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "403" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1452" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "403" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0923" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "402" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1515" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "402" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2072" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "400" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0226" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "399" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1830" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "397" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1912" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "395" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0185" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "389" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0222" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "389" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0212" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "375" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1446" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "372" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1462" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "372" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1514" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "372" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0424" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "371" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1923" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "370" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1807" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "366" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0324" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "363" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1997" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "362" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1453" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "360" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2050" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "358" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1501" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "355" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0924" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "352" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1992" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "350" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1910" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "349" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1473" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "348" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1983" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "348" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1947" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "344" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1950" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "342" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2040" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "340" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1416" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "327" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1822" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "326" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1943" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "326" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1130" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "322" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0223" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "321" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2009" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "313" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9010" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "313" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2033" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "312" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9007" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "312" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1435" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "307" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1942" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "303" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1496" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "302" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1930" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "300" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1261" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "299" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1304" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "299" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1826" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "298" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1991" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "298" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9002" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "298" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2059" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "297" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0981" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "292" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1902" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "292" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2061" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "288" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1690" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "280" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0021" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "266" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1129" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "266" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1450" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "264" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1913" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "259" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1440" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "252" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1920" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "252" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9013" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "252" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1317" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "250" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2005" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "247" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0057" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "244" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2077" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "243" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9009" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "243" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1917" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "242" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0706" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "241" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2064" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "236" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9023" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "234" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1438" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "232" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1946" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "230" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1928" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "221" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1800" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "216" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2029" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "215" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9006" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "214" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0567" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "213" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2062" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "212" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1086" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "207" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1444" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "203" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9014" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "201" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2083" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "199" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1301" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "197" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1907" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "197" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0949" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "194" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2093" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "188" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2069" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "181" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1424" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "178" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2046" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "174" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2063" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "174" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1919" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "171" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1691" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "168" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0964" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "167" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2051" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "167" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1497" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "161" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0268" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "157" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1940" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "155" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2021" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "153" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2034" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "151" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0399" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "148" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2006" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "148" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9021" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "148" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2068" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "147" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2078" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "147" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2099" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "147" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1422" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "145" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2075" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "143" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2102" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "143" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2089" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "141" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2002" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "139" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2073" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "138" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9008" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "127" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1613" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "125" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2087" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "125" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9019" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "125" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9020" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "125" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1810" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "123" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2079" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "118" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2023" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "116" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2032" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "115" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9025" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "114" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2076" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "112" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0765" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "111" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1939" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "111" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2082" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "110" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1490" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "107" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2090" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "106" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2084" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "105" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1834" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "104" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1925" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "104" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2004" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "104" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2097" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "101" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1471" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "100" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0251" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "98" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9026" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "98" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1933" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "96" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2028" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "90" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1472" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "88" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1812" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "88" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9016" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "88" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2070" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "84" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2101" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "84" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1937" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "82" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9005" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "79" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2091" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "78" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0475" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "77" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0568" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "75" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1685" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "75" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1686" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "75" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1929" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "74" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1464" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "73" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2092" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "72" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1436" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "71" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0232" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "70" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1499" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "70" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2080" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "66" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2095" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "66" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9018" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "65" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9024" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "64" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1270" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "59" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1985" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "59" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2013" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "59" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2053" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "59" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1509" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "54" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9015" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "54" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2067" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "52" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9027" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "50" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2066" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "48" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2074" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "46" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9031" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "44" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0271" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "42" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1927" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "42" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1944" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "42" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1491" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "40" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2026" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "40" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2052" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "40" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2086" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "37" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9003" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "35" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0473" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "34" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2071" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "34" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1456" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "32" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1479" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "32" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1922" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "32" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1911" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "31" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2096" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "29" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9028" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "29" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2003" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "28" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2035" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "27" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1987" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "23" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2041" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "22" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/9029" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "21" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1901" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "20" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1918" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "20" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0365" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "19" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1461" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "17" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2025" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "14" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2031" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "14" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2098" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "14" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/0927" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "12" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1989" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "11" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/2085" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "11" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1828" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "10" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1915" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "9" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1990" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "9" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1914" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7" }
+      } ,
+      {
+        "j": { "type": "uri" , "value": "http://wafi.iit.cnr.it/dogi2020/resource/Journal/1502" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      }
+    ]
+  }
+}

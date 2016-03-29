@@ -5,7 +5,7 @@
       draw_agent_diagram();
       break;
     default:
-      console.log(draw_agent_diagram());
+      console.log('new class');
   }
 
 

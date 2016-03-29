@@ -22,6 +22,7 @@
   d2r:baseURI <http://wafi.iit.cnr.it/dogi2020/>;
   d2r:vocabularyIncludeInstances true;
   d2rq:useAllOptimizations true;
+  d2r:sparqlTimeout 300;
   .
 
 map:database a d2rq:Database;

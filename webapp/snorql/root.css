@@ -38,6 +38,28 @@ i {
   text-align: justify;
 }
 
+/* Visualization lists
+*/
+#vis_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center
+}
+.vis_box {
+  border-radius: 5px;
+  border: 2px solid gainsboro;
+  width: 200px;
+  margin: 5px;
+}
+.vis_box img {
+  width: 200px;
+  height: 100px;
+}
+.vis_box img:hover {
+  opacity: 0.8;
+}
+
 /*  Bar chart
 */
 .class {
