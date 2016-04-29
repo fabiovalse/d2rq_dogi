@@ -5,7 +5,7 @@
       draw_journal_diagram();
       break;
     default:
-      console.log(table);
+      d3.select('#visualization').remove();
   }
 
 }).call(this);

@@ -6,7 +6,7 @@ window.draw_agent_diagram = () ->
   query = """
   SELECT ?label ?rate (COUNT(?article) AS ?cont) {
 
-  ?article dcterms:creator <http://wafi.iit.cnr.it/dogi2020/resource/Agent/1>;
+  ?article dcterms:creator <#{resource.uri}>;
   bibo:issue ?issue.
 
   ?issue dcterms:isPartOf ?journal.

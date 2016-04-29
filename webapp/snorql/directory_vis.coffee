@@ -1,3 +1,3 @@
 switch table
   when "tabSistematici" then draw_journal_diagram()
-  else console.log table
+  else d3.select('#visualization').remove()

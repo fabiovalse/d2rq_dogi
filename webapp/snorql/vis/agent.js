@@ -7,7 +7,7 @@
       value = D2R_namespacePrefixes[key];
       prefixes += "PREFIX " + key + ": <" + value + "> ";
     }
-    query = "SELECT ?label ?rate (COUNT(?article) AS ?cont) {\n\n?article dcterms:creator <http://wafi.iit.cnr.it/dogi2020/resource/Agent/1>;\nbibo:issue ?issue.\n\n?issue dcterms:isPartOf ?journal.\n\n?journal rdfs:label ?label .\n\nOPTIONAL{?journal dogi:rating ?rate.}\n\n} GROUP BY ?label ?rate";
+    query = "SELECT ?label ?rate (COUNT(?article) AS ?cont) {\n\n?article dcterms:creator <" + resource.uri + ">;\nbibo:issue ?issue.\n\n?issue dcterms:isPartOf ?journal.\n\n?journal rdfs:label ?label .\n\nOPTIONAL{?journal dogi:rating ?rate.}\n\n} GROUP BY ?label ?rate";
     query = encodeURIComponent(prefixes + " " + query);
     url = "http://wafi.iit.cnr.it/dogi2020/sparql?query=" + query + "&output=json";
     margin = 20;

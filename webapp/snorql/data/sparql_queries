@@ -1,10 +1,12 @@
-### Number of instances for each Class
+### CLASSES.JSON 
+##  number of instances for each Class
 
 SELECT ?c (COUNT(?i) AS ?cont) {
   ?i a ?c
 } GROUP BY ?c
 
-### Number of articles for each Journal
+### JOURNALS.JSON
+##  Number of articles for each Journal
 
 SELECT ?j ?jl (COUNT(?a) AS ?cont) {
   ?j a bibo:Journal ;
