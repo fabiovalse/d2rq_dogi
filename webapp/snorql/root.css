@@ -27,12 +27,15 @@ a:hover {
 i {
   color: steelblue;
 }
-#classes {
+#main_classes {
   padding-left: 40px;
   text-align: justify;
 }
-#classes > * {
+#main_classes > * {
   padding: 2px 0px 2px 0px;
+}
+#other_classes {
+  margin-left: 20px;
 }
 .justify {
   text-align: justify;
@@ -46,11 +49,20 @@ i {
   flex-wrap: wrap;
   justify-content: center
 }
-.vis_box {
+.vis_box div:not(.vis_desc) {
   border-radius: 5px;
   border: 2px solid gainsboro;
   width: 200px;
-  margin: 5px;
+  margin: 10px;
+}
+.vis_desc {
+  width: 200px;
+  margin: 10px;
+  font-family: sans-serif;
+  font-size: 12px;
+  text-align: justify;
+  margin-top: -8px;
+  color: #777;
 }
 .vis_box img {
   width: 200px;

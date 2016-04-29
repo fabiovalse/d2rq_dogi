@@ -17,17 +17,22 @@
   });
 
   d3.json(home_url + "snorql/data/classes.json", function(classes_data) {
-    var c, classes, enter_classes, i, key, ref, x, y;
+    var c, classes, enter_classes, i, key, other_classes, ref, x, y;
     ref = classes_data.results.bindings;
     for (i in ref) {
       c = ref[i];
       key = c.c.value.split('/').slice(-1)[0].replace('#', '');
       if (key === 'Person' || key === 'Organization') {
-        key = 'Agent';
+        if ('Agent' in classes_amounts) {
+          classes_amounts['Agent'] += parseInt(c.cont.value);
+        } else {
+          classes_amounts['Agent'] = parseInt(c.cont.value);
+        }
       } else if (key === 'Location') {
-        key = 'Country';
+        classes_amounts['Country'] = parseInt(c.cont.value);
+      } else {
+        classes_amounts[key] = parseInt(c.cont.value);
       }
-      classes_amounts[key] = parseInt(c.cont.value);
     }
     x = d3.scale.pow().exponent(0.3).range([0, d3.select('#main').node().getBoundingClientRect().width / 2]).domain([
       0, d3.max(classes_data.results.bindings, function(d) {
@@ -38,9 +43,11 @@
       return i;
     }));
 
-    /* Classes
+    /* MAIN Classes
      */
-    classes = d3.select('#classes').selectAll('li').data(data);
+    classes = d3.select('#main_classes').selectAll('li').data(data.filter(function(d) {
+      return d.main === true;
+    }));
     enter_classes = classes.enter().append('li');
     enter_classes.append('span').append('a').attr({
       href: function(d) {
@@ -51,6 +58,19 @@
     });
     enter_classes.append('span').text(function(d) {
       return ": " + d.desc;
+    });
+
+    /* OTHER Classes
+     */
+    other_classes = d3.select('#other_classes').selectAll('span').data(data.filter(function(d) {
+      return d.main === false;
+    }));
+    other_classes.enter().append('span').html(function(d, i) {
+      if (i > 0) {
+        return ", <a href='" + home_url + "directory/" + d.table + "'>" + d["class"] + "</a>";
+      } else {
+        return "<a href='" + home_url + "directory/" + d.table + "'>" + d["class"] + "</a>";
+      }
     });
 
     /* Bar-chart

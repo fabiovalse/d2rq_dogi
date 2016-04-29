@@ -13,14 +13,17 @@ svg = d3.select 'svg'
 d3.json "#{home_url}snorql/data/classes.json", (classes_data) ->
 
   for i,c of classes_data.results.bindings
-    key = c.c.value.split('/').slice(-1)[0].replace('#', '')
+    key = c.c.value.split('/').slice(-1)[0].replace('#', '')  
 
     if key is 'Person' or key is 'Organization'
-      key = 'Agent'
+      if 'Agent' of classes_amounts
+        classes_amounts['Agent'] += parseInt(c.cont.value)
+      else
+        classes_amounts['Agent'] = parseInt(c.cont.value)
     else if key is 'Location'
-      key = 'Country'
-
-    classes_amounts[key] = parseInt(c.cont.value)
+      classes_amounts['Country'] = parseInt(c.cont.value)
+    else
+      classes_amounts[key] = parseInt(c.cont.value)
 
   x = d3.scale.pow()
     .exponent(0.3)
@@ -31,10 +34,10 @@ d3.json "#{home_url}snorql/data/classes.json", (classes_data) ->
     .rangeRoundBands [0, 300], .5
     .domain data.map (d,i) -> i
 
-  ### Classes
+  ### MAIN Classes
   ###
-  classes = d3.select('#classes').selectAll 'li'
-    .data data
+  classes = d3.select('#main_classes').selectAll 'li'
+    .data data.filter (d) -> d.main is true
 
   enter_classes = classes.enter().append 'li'
   
@@ -46,6 +49,14 @@ d3.json "#{home_url}snorql/data/classes.json", (classes_data) ->
 
   enter_classes.append 'span'
     .text (d) -> ": #{d.desc}"
+
+  ### OTHER Classes
+  ###
+  other_classes = d3.select('#other_classes').selectAll 'span'
+    .data data.filter((d) -> d.main is false)
+
+  other_classes.enter().append 'span'
+    .html (d, i) -> if i > 0 then ", <a href='#{home_url}directory/#{d.table}'>#{d.class}</a>" else "<a href='#{home_url}directory/#{d.table}'>#{d.class}</a>"
 
   ### Bar-chart
   ###
