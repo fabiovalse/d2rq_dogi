@@ -63,7 +63,7 @@
       "class": "Bibliography Type",
       "desc": "Types of bibliography used by a certain academic article (e.g., at the end of the article, footnote).",
       "translation": "",
-      "table": "tabTipoAbs",
+      "table": "tabBib",
       "main": true
     }, {
       "class": "Descrittore",

@@ -12,7 +12,7 @@ data = [
   {"class": "Source Of Law", "desc": "A source of law considered as a whole.", "translation": "", "table": "tabFonti", "main": true},
   {"class": "Agent", "desc": "Agents (i.e., persons or organizations) responsible of the authorship of an academic article.", "translation": "", "table": "tabResponsabilita", "main": true},
   {"class": "Abstract Type", "desc": "Types of abstract used to described an academic article within DoGi (e.g., the standard abstract, table of contents).", "translation": "", "table": "tabTipoAbs", "main": true},
-  {"class": "Bibliography Type", "desc": "Types of bibliography used by a certain academic article (e.g., at the end of the article, footnote).", "translation": "", "table": "tabTipoAbs", "main": true},
+  {"class": "Bibliography Type", "desc": "Types of bibliography used by a certain academic article (e.g., at the end of the article, footnote).", "translation": "", "table": "tabBib", "main": true},
   {"class": "Descrittore", "desc": "An additional descriptor associated to a sistematico for better qualifying its context and meaning.", "translation": "", "table": "tabDescrittori", "main": false},
   {"class": "Sistematico", "desc": "A descriptor for legal documentation identifying a certain law branch (e.g., Administrative Law, Civil Law, Criminal Law).", "translation": "", "table": "tabSistematici", "main": false},
   {"class": "Ministry", "desc": "Administrative Structure responsible for a government sector.", "translation": "", "table": "tabMinisteri", "main": false},

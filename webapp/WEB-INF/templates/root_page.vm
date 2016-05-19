@@ -102,7 +102,9 @@
     </div>
 
     <div id="footer">
-      This webpage shows the results of a collaboration between the Institute of Legal Information Theory and Techniques (ITTIG) and the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR).
+      <div>
+        This webpage shows the results of a collaboration between the Institute of Legal Information Theory and Techniques (ITTIG) and the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR).
+      </div>
     </div>
 
   <script type="text/javascript" src="${home_link}snorql/root.js"></script>
