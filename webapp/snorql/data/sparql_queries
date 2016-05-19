@@ -15,3 +15,34 @@ SELECT ?j ?jl (COUNT(?a) AS ?cont) {
   ?a bibo:issue ?i .
 } GROUP BY ?j ?jl
 ORDER BY DESC(?cont)
+
+###
+## Number of articles for each AbstractType
+
+SELECT ?at ?label ?cont{
+  ?at rdfs:label ?label .
+  {
+    SELECT ?at (COUNT(?a) AS ?cont) {
+      ?a dogi:abstractType ?at .
+    } GROUP BY ?at
+  }
+}
+
+###
+## Number of articles for each BibliographyType
+
+SELECT ?bt ?label ?cont{
+  ?bt rdfs:label ?label .
+  {
+    SELECT ?bt (COUNT(?a) AS ?cont) {
+      ?a dogi:bibliographyType ?bt .
+    } GROUP BY ?bt
+  }
+}
+
+###
+## Number of articles for each Language
+
+SELECT ?lang (COUNT(?a) AS ?cont) {
+  ?a dcterms:language ?lang .
+} GROUP BY ?lang
