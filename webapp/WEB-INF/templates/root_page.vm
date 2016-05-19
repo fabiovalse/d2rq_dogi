@@ -12,22 +12,6 @@
 
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript">
-      var data = [
-        {"class": "Journal", "desc": "italian legal journals.", "translation": "", "table": "tabRiviste", "main": true},
-        {"class": "Issue", "desc": "issues of italian legal journals.", "translation": "", "table": "tabRifBibl", "main": true},
-        {"class": "Article", "desc": "articles published on Italian legal journals.", "translation": "", "table": "tabDocumenti", "main": true},
-        {"class": "Classification", "desc": "classification scheme for law, specifically developed for the DoGi database. It could be a pair sistematico-descrittore or a sistematico.", "translation": "", "table": "tabClassificazioni", "main": true},
-        {"class": "Specific Source", "desc": "a specific section of a source of law.", "translation": "", "table": "tabFontiSpecifiche", "main": true},
-        {"class": "Source Of Law", "desc": "a source of law considered as a whole.", "translation": "", "table": "tabFonti", "main": true},
-        {"class": "Agent", "desc": "persons or organizations that are authors of an article.", "translation": "", "table": "tabResponsabilita", "main": true},
-        {"class": "AbstractType", "desc": "The type of the abstract of a certain article.", "translation": "", "table": "tabTipoAbs", "main": true},
-        {"class": "BibliographyType", "desc": "The type of bibliography of a certain article", "translation": "", "table": "tabTipoAbs", "main": true},
-        {"class": "Descrittore", "desc": "an additional descriptor associated to a sistematico for better qualifying its context and meaning.", "translation": "", "table": "tabDescrittori", "main": false},
-        {"class": "Sistematico", "desc": "a descriptor for legal documentation identifying a certain law branch (e.g., Administrative Law, Civil Law, Criminal Law).", "translation": "", "table": "tabSistematici", "main": false},
-        {"class": "Ministry", "desc": "administrative Structure responsible for a government sector.", "translation": "", "table": "tabMinisteri", "main": false},
-        {"class": "Country", "desc": "regions identified as a distinct entity in political geography.", "translation": "", "table": "tabStati", "main": false}
-      ];
-
       var home_url = "${home_link}";
     </script>
   </head>
@@ -61,19 +45,20 @@
         <div class="subtitle"></div>
         <ol>
           <li>
-            Query the dataset by writing and executing SPARQL queries on the <a href="${home_link}snorql/">SNORQL endpoint</a>.
+            Query the dataset by writing SPARQL queries on the <a href="snorql/">endpoint</a>.
           </li>
           <li>
-            Use the SPARQL REST <a href="${home_link}sparql?query=SELECT ?s ?o ?p {?s ?o ?p} LIMIT 3">API</a> for calling the endpoint from your code.
+            Use the SPARQL REST <a href="sparql?query=SELECT ?s ?o ?p {?s ?o ?p} LIMIT 3">API</a> for calling the endpoint from your code.
           </li>
         </ol>
       </div>
 
       <div class="subsection bottom_line">
         <div class="title"><i class="fa fa-compass"></i> Navigate the dataset</div>
-        <div class="subtitle">The Linked Data set of DoGi contains several kind of resources that are mainly classified with the following classes:</div>
-        <ul id="main_classes"></ul>
-        <div class="subtitle">There are also the following classes:</div>
+        <div class="subtitle">The DoGi Linked Data set describes its resources by means of the following major classes:</div>
+        #* <table id="main_classes"></table> *#
+        <div id="main_classes"></div>
+        <div class="subtitle">There are also other minor classes:</div>
         <div id="other_classes"></div>
       </div>
 
@@ -85,14 +70,14 @@
         <div id="vis_list">
           <div class="vis_box">
             <div>
-              <a target="_blank" href="http://wafi.iit.cnr.it/webvis/lab/public/4122230f56cbd9982ba0/"><img src="${home_link}snorql/img/journal.png"/></a>
+              <a target="_blank" href="http://wafi.iit.cnr.it/webvis/lab/public/4122230f56cbd9982ba0/"><img src="snorql/img/journal.png"/></a>
             </div>
             <div class="vis_desc">The amount of articles published on journals rated as A and not-A.</div>
           </div>
 
           <div class="vis_box">
             <div>
-              <a target="_blank" href="http://wafi.iit.cnr.it/webvis/replayer/?dogi_titoli"><img src="${home_link}snorql/img/replayer.png"/></a>
+              <a target="_blank" href="http://wafi.iit.cnr.it/webvis/replayer/?dogi_titoli"><img src="snorql/img/replayer.png"/></a>
             </div>
             <div class="vis_desc">The most common words within the titles of articles during the time.</div>
           </div>
@@ -114,6 +99,10 @@
         </div>
       </div>
 
+    </div>
+
+    <div id="footer">
+      This webpage shows the results of a collaboration between the Institute of Legal Information Theory and Techniques (ITTIG) and the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR).
     </div>
 
   <script type="text/javascript" src="${home_link}snorql/root.js"></script>
