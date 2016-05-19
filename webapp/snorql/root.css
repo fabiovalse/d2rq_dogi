@@ -8,7 +8,7 @@ svg {
   font-size: 24px;
 }
 .subsection .subtitle {
-  color: #777;
+  color: gray;
   margin-bottom: 10px;
   text-align: justify;
 }
@@ -28,13 +28,25 @@ i {
   color: steelblue;
 }
 #main_classes {
-  padding-left: 40px;
+  padding: 0px 0px 10px 20px;
   text-align: justify;
+  border-spacing: 5px;
 }
-#main_classes > * {
-  padding: 2px 0px 2px 0px;
+.main_class {
+  margin-bottom: 15px;
 }
+.main_class a {
+  font-family: sans-serif;
+  color: #333;
+  font-weight: bold;
+}
+.main_class div {
+  color: gray;
+  font-size: 14px;
+}
+
 #other_classes {
+  font-family: sans-serif;
   margin-left: 20px;
 }
 .justify {
@@ -62,7 +74,7 @@ i {
   font-size: 12px;
   text-align: justify;
   margin-top: -8px;
-  color: #777;
+  color: gray;
 }
 .vis_box img {
   width: 200px;
@@ -74,30 +86,22 @@ i {
 
 /*  Bar chart
 */
-.class {
+svg .class {
   width: 200px;
   height: 90px;
   padding: 8px 10px 8px 10px;
   margin: 10px;
-  border-radius: 2px;
-  background: #deebf7;
   border: 2px solid #fff;
-  font-size: 15px;
-  fill: #777;
 }
-.class:hover {
-  background: #fff;
-  border: 2px solid #deebf7;
-}
-.class .title {
+svg .class .title {
   font-family: sans-serif;
   font-size: 15px;
-  fill: #333333;
+  fill: #333;
 }
-.bar {
-  fill: #F39D41;
+svg .bar {
+  fill: steelblue;
 }
-.bar_amount {
+svg .bar_amount {
   font: 12px sans-serif;
-  fill: #777;
+  fill: gray;
 }
