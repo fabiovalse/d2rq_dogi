@@ -19,7 +19,7 @@
 
 <> a d2r:Server;
   rdfs:label "D2R Server";
-  d2r:baseURI <http://wafi.iit.cnr.it/dogi2020/>;
+  d2r:baseURI <http://www.dogi.cnr.it/>;
   d2r:vocabularyIncludeInstances true;
   d2rq:useAllOptimizations true;
   .
