@@ -19,11 +19,11 @@ window.draw_agent_diagram = () ->
   """
 
   query = encodeURIComponent("#{prefixes} #{query}")
-  url = "http://wafi.iit.cnr.it/dogi2020/sparql?query=#{query}&output=json"
+  url = "/sparql?query=#{query}&output=json"
 
   margin = 20
   width = d3.select('#main').node().getBoundingClientRect().width-margin*2
-  height = 300#d3.select('').node().getBoundingClientRect().height/2-margin*2
+  height = 300
 
   svg = d3.select('#visualization').append 'svg'
   .attr
@@ -34,7 +34,8 @@ window.draw_agent_diagram = () ->
       transform: "translate(#{margin}, #{margin})"
 
   color = d3.scale.ordinal()
-  .range ['#67a9cf', '#ef8a62']
+    .domain [false, true]
+    .range ['#67a9cf', '#ef8a62']
 
   x = d3.scale.ordinal()
   .rangeRoundBands [0, width], 0.3
@@ -60,6 +61,7 @@ window.draw_agent_diagram = () ->
     y.domain [0, d3.max(data, (d) -> parseInt(d.cont.value)+1)]
     color.domain data.map (d) -> d.rate?
 
+    # axis
     svg.append 'g'
       .attr
         class: 'x axis'
@@ -79,6 +81,7 @@ window.draw_agent_diagram = () ->
           'text-anchor': 'end'
         .text 'Articles amount'
 
+    # bars
     bars = svg.selectAll '.bar'
       .data data
 
@@ -95,3 +98,31 @@ window.draw_agent_diagram = () ->
         fill: (d) -> color d.rate?
       .append 'title'
         .text (d) -> "#{d.label.value}\n#{d.cont.value} articles"
+
+    # legend
+    legend = svg.selectAll '.legend'
+      .data ['A-rated Journal Articles', 'Not A-rated Journal Articles']
+    
+    legend.enter().append 'g'
+      .attr
+        class: 'legend'
+        'font-family': 'sans-serif'
+        'font-size': '13px'
+        transform: (d,i) -> "translate(0,#{i*20})"
+
+    legend.append 'rect'
+      .attr
+        x: width - 18
+        width: 18
+        height: 18
+      .style
+        fill: color
+
+    legend.append 'text'
+      .attr
+        x: width - 24
+        y: 9
+        dy: '.35em'
+      .style
+        'text-anchor': 'end'
+      .text (d) -> d

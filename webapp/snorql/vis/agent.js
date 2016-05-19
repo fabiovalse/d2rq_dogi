@@ -9,7 +9,7 @@
     }
     query = "SELECT ?label ?rate (COUNT(?article) AS ?cont) {\n\n?article dcterms:creator <" + resource.uri + ">;\nbibo:issue ?issue.\n\n?issue dcterms:isPartOf ?journal.\n\n?journal rdfs:label ?label .\n\nOPTIONAL{?journal dogi:rating ?rate.}\n\n} GROUP BY ?label ?rate";
     query = encodeURIComponent(prefixes + " " + query);
-    url = "http://wafi.iit.cnr.it/dogi2020/sparql?query=" + query + "&output=json";
+    url = "/sparql?query=" + query + "&output=json";
     margin = 20;
     width = d3.select('#main').node().getBoundingClientRect().width - margin * 2;
     height = 300;
@@ -19,13 +19,13 @@
     }).append('g').attr({
       transform: "translate(" + margin + ", " + margin + ")"
     });
-    color = d3.scale.ordinal().range(['#67a9cf', '#ef8a62']);
+    color = d3.scale.ordinal().domain([false, true]).range(['#67a9cf', '#ef8a62']);
     x = d3.scale.ordinal().rangeRoundBands([0, width], 0.3);
     y = d3.scale.linear().range([height, 0]);
     x_axis = d3.svg.axis().scale(x).orient('bottom');
     y_axis = d3.svg.axis().scale(y).orient('left').ticks(10);
     return d3.json(url, function(error, data) {
-      var bars, enter_bars;
+      var bars, enter_bars, legend;
       data = data.results.bindings.sort(function(a, b) {
         return a.cont.value < b.cont.value;
       });
@@ -61,7 +61,7 @@
       enter_bars = bars.enter().append('rect').attr({
         "class": 'bar'
       });
-      return bars.attr({
+      bars.attr({
         x: function(d) {
           return x(d.label.value.length > 10 ? (d.label.value.slice(0, 10)) + "..." : d.label.value);
         },
@@ -77,6 +77,31 @@
         }
       }).append('title').text(function(d) {
         return d.label.value + "\n" + d.cont.value + " articles";
+      });
+      legend = svg.selectAll('.legend').data(['A-rated Journal Articles', 'Not A-rated Journal Articles']);
+      legend.enter().append('g').attr({
+        "class": 'legend',
+        'font-family': 'sans-serif',
+        'font-size': '13px',
+        transform: function(d, i) {
+          return "translate(0," + (i * 20) + ")";
+        }
+      });
+      legend.append('rect').attr({
+        x: width - 18,
+        width: 18,
+        height: 18
+      }).style({
+        fill: color
+      });
+      return legend.append('text').attr({
+        x: width - 24,
+        y: 9,
+        dy: '.35em'
+      }).style({
+        'text-anchor': 'end'
+      }).text(function(d) {
+        return d;
       });
     });
   };
