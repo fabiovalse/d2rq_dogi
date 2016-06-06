@@ -36,12 +36,6 @@
       "table": "tabClassificazioni",
       "main": true
     }, {
-      "class": "Specific Source",
-      "desc": "A specific section of a source of law.",
-      "translation": "",
-      "table": "tabFontiSpecifiche",
-      "main": true
-    }, {
       "class": "Source Of Law",
       "desc": "A source of law considered as a whole.",
       "translation": "",
@@ -52,12 +46,6 @@
       "desc": "Agents (i.e., persons or organizations) responsible of the authorship of an academic article.",
       "translation": "",
       "table": "tabResponsabilita",
-      "main": true
-    }, {
-      "class": "Abstract Type",
-      "desc": "Types of abstract used to described an academic article within DoGi (e.g., the standard abstract, table of contents).",
-      "translation": "",
-      "table": "tabTipoAbs",
       "main": true
     }, {
       "class": "Bibliography Type",
