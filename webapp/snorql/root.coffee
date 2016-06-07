@@ -8,7 +8,7 @@ data = [
   {"class": "Issue", "desc": "Periodical publications of Italian legal journals.", "translation": "", "table": "tabRifBibl", "main": true},
   {"class": "Article", "desc": "Academic articles published within an issue of an Italian legal journals.", "translation": "", "table": "tabDocumenti", "main": true},
   {"class": "Classification", "desc": "Scheme codes, specifically developed within DoGi, for classifying academic legal articles (i.e., a pair sistematico-descrittore or a sistematico).", "translation": "", "table": "tabClassificazioni", "main": true},
-  {"class": "Source Of Law", "desc": "A source of law considered as a whole.", "translation": "", "table": "tabFonti", "main": true},
+  {"class": "Source Of Law", "desc": "A source of law considered as a whole.", "translation": "", "table": "tabSourceOfLaw", "main": true},
   {"class": "Agent", "desc": "Agents (i.e., persons or organizations) responsible of the authorship of an academic article.", "translation": "", "table": "tabResponsabilita", "main": true},
   {"class": "Bibliography Type", "desc": "Types of bibliography used by a certain academic article (e.g., at the end of the article, footnote).", "translation": "", "table": "tabBib", "main": true},
   {"class": "Descrittore", "desc": "An additional descriptor associated to a sistematico for better qualifying its context and meaning.", "translation": "", "table": "tabDescrittori", "main": false},

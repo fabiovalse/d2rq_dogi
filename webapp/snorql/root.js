@@ -39,7 +39,7 @@
       "class": "Source Of Law",
       "desc": "A source of law considered as a whole.",
       "translation": "",
-      "table": "tabFonti",
+      "table": "tabSourceOfLaw",
       "main": true
     }, {
       "class": "Agent",
