@@ -2,7 +2,7 @@
 #@prefix db: <> .
 @prefix dogi: <> .
 @prefix vocab: <vocab/> .
-@prefix owl: <https://www.w3.org/2002/07/owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -17,7 +17,6 @@
 @prefix schema: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix bf: <http://bibframe.org/vocab/> .
-@prefix lv: <http://purl.org/lobid/lv#> .
 
 <> a d2r:Server;
   rdfs:label "D2R Server";
@@ -317,8 +316,7 @@ map:tabSourceOfLaw_IDFonte a d2rq:PropertyBridge;
 map:tabSourceOfLaw_urnNirAtto a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property bf:urn;
-  d2rq:property lv:urn;
-  d2rq:column "tabSourceOfLaw.urnNirAtto";
+  d2rq:sqlExpression "CONCAT(tabSourceOfLaw.urnNirAtto, (CASE WHEN (tabSourceOfLaw.urnNirPart != '') THEN CONCAT(';', tabSourceOfLaw.urnNirPart) ELSE '' END))"
   .
 map:tabSourceOfLaw_LegalCitation a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
@@ -628,6 +626,12 @@ map:ministry_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
   d2rq:propertyValue "An administrative structure responsible for a government sector."@en;
   .
+map:tabSourceOfLaw_DBpedia a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabSourceOfLaw;
+  d2rq:property owl:sameAs;
+  d2rq:join "tabSourceOfLaw.IDSourceOfLaw = CAMERA_leggi.IDSourceOfLaw";
+  d2rq:column "CAMERA_leggi.uri";
+  .
 
 ### Table tabClassificazioni
 ###
@@ -646,7 +650,17 @@ map:classification_subClassOf a d2rq:AdditionalProperty;
 map:classification__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabClassificazioni;
   d2rq:property rdfs:label;
-  d2rq:sqlExpression "CONCAT('Classification ', CONCAT(tabClassificazioni.NS, (CASE WHEN (tabClassificazioni.ND != '') THEN CONCAT('_', tabClassificazioni.ND) ELSE '' END)))";
+  d2rq:join "tabClassificazioni.NS = tabSistematici.CodiceS";
+  d2rq:column "tabSistematici.Descrizione";
+  d2rq:condition "tabClassificazioni.ND IS NULL";
+  .
+map:classification__label_2 a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabClassificazioni;
+  d2rq:property rdfs:label;
+  d2rq:join "tabClassificazioni.NS = tabSistematici.CodiceS";
+  d2rq:join "tabClassificazioni.ND = tabDescrittori.CodiceD";
+  d2rq:sqlExpression "CONCAT(tabSistematici.Descrizione, CONCAT(': ', tabDescrittori.Descrizione))";
+  d2rq:condition "tabClassificazioni.ND IS NOT NULL";
   .
 map:classification_NS a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabClassificazioni;
@@ -825,6 +839,12 @@ map:tabResponsabilita_SecondoElemento a d2rq:PropertyBridge;
   d2rq:column "tabResponsabilita.SecondoElemento";
   d2rq:condition "tabResponsabilita.SecondoElemento != ''";
   .
+map:tabResponsabilita_DBpedia a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabResponsabilita;
+  d2rq:property owl:sameAs;
+  d2rq:join "tabResponsabilita.IDResponsabilita = DBpedia_autori.IDResponsabilita";
+  d2rq:column "DBpedia_autori.uri";
+  .
 
 ### Table tabRifBibl
 ###
@@ -961,6 +981,12 @@ map:tabRiviste_ACNPurl a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRiviste;
   d2rq:property foaf:page;
   d2rq:column "tabRiviste.ACNPurl";
+  .
+map:tabRiviste_BPR a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabRiviste;
+  d2rq:property owl:sameAs;
+  d2rq:join "tabRiviste.IDRivista = BPR_riviste.IDRivista";
+  d2rq:column "BPR_riviste.uri";
   .
 
 ### Table tabSistematici
