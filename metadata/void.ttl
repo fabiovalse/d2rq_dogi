@@ -62,7 +62,6 @@
 	void:exampleResource <http://www.dogi.cnr.it/resource/Article/207033>;
 	void:exampleResource <http://www.dogi.cnr.it/resource/Classification/S0001>;
 	void:exampleResource <http://www.dogi.cnr.it/resource/SourceOfLaw/1>;
-	void:exampleResource <http://www.dogi.cnr.it/resource/SourceOfLaw/1>;
 	void:exampleResource <http://www.dogi.cnr.it/resource/Agent/6>;
 	void:exampleResource <http://www.dogi.cnr.it/resource/BibliographyType/bibliography-at-end-of-article>;
 	void:exampleResource <http://www.dogi.cnr.it/resource/Descrittore/A0096>;
@@ -93,21 +92,9 @@
 	void:distinctSubjects ;
 	void:distinctObjects ;
 	void:classes 11;
-	
-	# sub dataset. Each subdataset must have just one class
-	void:classPartition [void:class <http://purl.org/ontology/bibo/Journal>; ] ;
-	void:classPartition [void:class <http://purl.org/ontology/bibo/Issue>; ] ;
-	void:classPartition [void:class <http://purl.org/ontology/bibo/Article>; ] ;
-	void:classPartition [void:class <http://www.dogi.cnr.it/resource/Classification>; ] ;
-	void:classPartition [void:class <http://www.dogi.cnr.it/resource/SourceOfLaw> ] ;
-	void:classPartition [void:class <http://xmlns.com/foaf/#Agent> ] ;
-	void:classPartition [void:class <http://xmlns.com/foaf/#Person> ] ;
-	void:classPartition [void:class <http://www.dogi.cnr.it/resource/BibliographyTypet> ] ;
-	void:classPartition [void:class <http://www.w3.org/2004/02/skos/core#Concept> ] ;
-	void:classPartition [void:class <http://purl.org/dc/elements/1.1/Location> ] ;
 	.
 
-#TODO add other people
+#TODO add other people (Connect to organizations)
 :Valsecchi a foaf:Person ;
   	rdfs:label "Fabio Valsecchi" ;
   	foaf:mbox <mailto:fabio.valsecchi@iit.cnr.it> ;
