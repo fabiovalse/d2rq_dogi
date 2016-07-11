@@ -1,0 +1,166 @@
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/#> .
+@prefix dcterms: <http://purl.org/dc/terms/subject> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix bf: <http://bibframe.org/vocab/> .
+
+<> a void:DatasetDescription;
+	dcterms:title "A VoID Description of the DoGi Linked Open Dataset";
+	# TODO add other people
+	dcterms:creator :Valsecchi;
+	dcterms:creator :LoDuca;
+	dcterms:creator :Marchetti;
+	foaf:primaryTopic :DoGi;
+	.
+
+:DoGi a void:Dataset;
+	dcterms:title "DoGi Linked Open Dataset";
+	dcterms:description "RDF version of the DoGi Dataset" ;
+	# TODO add license
+	dcterms:license <???> ;
+	foaf:homepage <http://www.dogi.cnr.it> ;
+	dcterms:source <http://www.dogi.cnr.it> ;
+	dcterms:modified "2016-06-01"^^xsd:date ;
+	# TODO add other people
+	dcterms:publisher :Valsecchi;
+	dcterms:publisher :LoDuca;
+	dcterms:publisher :Marchetti;
+	dcterms:contributor :IIT-CNR;
+	dcterms:contributor :ITTIG-CNR;
+	
+	# TODO add a generic subject e.g. juridical
+	dcterms:subject <http://purl.org/ontology/bibo/Journal>;
+	dcterms:subject <http://purl.org/ontology/bibo/Issue>;
+	dcterms:subject <http://purl.org/ontology/bibo/Article>;
+	dcterms:subject <http://www.dogi.cnr.it/resource/Classification>;
+	dcterms:subject <http://www.dogi.cnr.it/resource/SourceOfLaw>;
+	dcterms:subject <http://xmlns.com/foaf/#Agent>;
+	dcterms:subject <http://xmlns.com/foaf/#Person>;
+	dcterms:subject <http://www.dogi.cnr.it/resource/BibliographyTypet>;
+	dcterms:subject <http://www.w3.org/2004/02/skos/core#Concept>;
+	dcterms:subject <http://purl.org/dc/elements/1.1/Location>;
+	
+	# TODO add supported formats
+	void:feature <http://www.w3.org/ns/formats/RDF_XML>;
+	void:feature <http://www.w3.org/ns/formats/Turtle>;
+	void:sparqlEndpoint <http://www.dogi.cnr.it/snorql/>;
+	void:sparqlEndpoint <http://www.dogi.cnr.it/sparql>;
+	
+	# TODO add link to the dump
+	void:dataDump <??>;
+	
+	void:exampleResource <http://www.dogi.cnr.it/resource/Journal/0021> ;
+	void:exampleResource <http://www.dogi.cnr.it/resource/Issue/23065>;
+	void:exampleResource <http://www.dogi.cnr.it/resource/Article/207033>;
+	void:exampleResource <http://www.dogi.cnr.it/resource/Classification/S0001>;
+	void:exampleResource <http://www.dogi.cnr.it/resource/SourceOfLaw/1>;
+	void:exampleResource <http://www.dogi.cnr.it/resource/SourceOfLaw/1>;
+	void:exampleResource <http://www.dogi.cnr.it/resource/Agent/6>;
+	void:exampleResource <http://www.dogi.cnr.it/resource/BibliographyType/bibliography-at-end-of-article>;
+	void:exampleResource <http://www.dogi.cnr.it/resource/Descrittore/A0096>;
+	void:exampleResource <http://www.dogi.cnr.it/resource/Sistematico/S0001>;
+	void:exampleResource <http://www.dogi.cnr.it/resource/Ministry/1>;
+	void:exampleResource <http://www.dogi.cnr.it/resource/Country/1>;
+	
+	void:uriSpace "http://dogi.cnr.it/resource";
+	
+	void:vocabulary <http://rdfs.org/ns/void#>;
+	void:vocabulary <http://www.w3.org/2002/07/owl#>;
+	void:vocabulary <http://www.w3.org/1999/02/22-rdf-syntax-ns#>;
+	void:vocabulary <http://www.w3.org/2000/01/rdf-schema#>;
+	void:vocabulary <http://www.w3.org/2001/XMLSchema#>;
+	void:vocabulary <http://dbpedia.org/ontology/>;
+	void:vocabulary <http://xmlns.com/foaf/#>;
+	void:vocabulary <http://purl.org/dc/terms/subject>;
+	void:vocabulary <http://purl.org/dc/elements/1.1/>;
+	void:vocabulary <http://purl.org/ontology/bibo/>;
+	void:vocabulary <http://schema.org/>;
+	void:vocabulary <http://www.w3.org/2004/02/skos/core#>;
+	void:vocabulary <http://bibframe.org/vocab/>;
+	
+	# TODO add statistics
+	void:triples  ;
+	void:entities ;
+	void:properties 101;
+	void:distinctSubjects ;
+	void:distinctObjects ;
+	void:classes 11;
+	
+	# sub dataset. Each subdataset must have just one class
+	void:classPartition [void:class <http://purl.org/ontology/bibo/Journal>; ] ;
+	void:classPartition [void:class <http://purl.org/ontology/bibo/Issue>; ] ;
+	void:classPartition [void:class <http://purl.org/ontology/bibo/Article>; ] ;
+	void:classPartition [void:class <http://www.dogi.cnr.it/resource/Classification>; ] ;
+	void:classPartition [void:class <http://www.dogi.cnr.it/resource/SourceOfLaw> ] ;
+	void:classPartition [void:class <http://xmlns.com/foaf/#Agent> ] ;
+	void:classPartition [void:class <http://xmlns.com/foaf/#Person> ] ;
+	void:classPartition [void:class <http://www.dogi.cnr.it/resource/BibliographyTypet> ] ;
+	void:classPartition [void:class <http://www.w3.org/2004/02/skos/core#Concept> ] ;
+	void:classPartition [void:class <http://purl.org/dc/elements/1.1/Location> ] ;
+	.
+
+#TODO add other people
+:Valsecchi a foaf:Person ;
+  	rdfs:label "Fabio Valsecchi" ;
+  	foaf:mbox <mailto:fabio.valsecchi@iit.cnr.it> ;
+  	.
+  	
+:LoDuca a foaf:Person ;
+  	rdfs:label "Angelica Lo Duca" ;
+  	foaf:mbox <mailto:angelica.loduca@iit.cnr.it> ;
+  	.
+
+:Marchetti a foaf:Person ;
+  	rdfs:label "Andrea Marchetti" ;
+  	foaf:mbox <mailto:andrea.marchetti@iit.cnr.it> ;
+  	.
+  	
+:ITTIG-CNR a foaf:Organization;
+	rdfs:label "Institute of Legal Information Theory and Techniques - National Research Council, Italy";
+	.
+
+:IIT-CNR a foaf:Organization;
+	rdfs:label "Institute of Informatics and Telematics - National Research Council, Italy";
+	.
+
+:DoGi_DBpedia a void:Linkset;
+	void:target :DBpedia;
+	void:target :DoGi;
+	void:linkPredicate owl:sameAs;
+	# TODO put number of links
+	void:triples ;
+	.
+:DBpedia a void:Dataset;
+	void:homepage <http://dbpedia.org>;
+	.
+	
+:DoGi_VIAF a void:Linkset;
+	void:target :VIAF;
+	void:target :DoGi;
+	void:linkPredicate owl:sameAs;
+	# TODO put number of links
+	void:triples ;
+	.
+:VIAF a void:Dataset;
+	void:homepage <http://viaf.org>;
+	.
+
+:DoGi_BPR a void:Linkset;
+	void:target :BPR;
+	void:target :DoGi;
+	void:linkPredicate owl:sameAs;
+	# TODO put number of links
+	void:triples ;
+	.
+:BPR a void:Dataset;
+	void:homepage <http://dati.camera.it>;
+	.
+	
