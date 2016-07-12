@@ -9,7 +9,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  font-family: 'Noto serif', serif;
+  font-family: colfax-web, Helvetica;
   color: #333;
   overflow: scroll;
 }
@@ -18,17 +18,24 @@ body > * {
   margin: auto;
 }
 
+@font-face{font-family:'colfax-web';src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Bold-edc473a5c72a3c8f88e7dffee0885e6b.eot);src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Bold.eot?#iefix) format("embedded-opentype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Bold-bdab10549cebe5e05b8c73497e63c0b1.woff) format("woff"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Bold-27a64f3ba4be0f35f26a25d886f5cafe.ttf) format("truetype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Bold.svg#354422b001c2d0f9dcf8df2404cf86ed) format("svg");font-style:normal;font-weight:700}
+@font-face{font-family:'colfax-web';src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-BoldItalic-8756aa61bf75bf1f87206f996b5e89f2.eot);src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-BoldItalic.eot?#iefix) format("embedded-opentype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-BoldItalic-3733f85e8dfd4c496dfd0a0162e64da6.woff) format("woff"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-BoldItalic-101e34a6d3e4682876de848922b4224c.ttf) format("truetype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-BoldItalic.svg#c86e337a13cbc169ad82e273f9f38275) format("svg");font-style:italic;font-weight:700}
+@font-face{font-family:'colfax-web';src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Regular-b8356ebad016dd247e659cd59f9c9e74.eot);src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Regular.eot?#iefix) format("embedded-opentype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Regular-053a5eb9fa4c5e1bbb7991a7a72e2bcf.woff) format("woff"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Regular-2ca8ab9a589fdd7e5a655d6e44b63208.ttf) format("truetype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Regular.svg#baf2864d4cfcbabd96e0926e27a56f1f) format("svg");font-style:normal;font-weight:400}
+@font-face{font-family:'colfax-web';src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-RegularItalic-c5b8d51c3c1b793bd70645e6fa66d557.eot);src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-RegularItalic.eot?#iefix) format("embedded-opentype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-RegularItalic-7247488d6745c4d46c0edf0948fba6b0.woff) format("woff"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-RegularItalic-5aa75ec2915bfe449239bebc64092fff.ttf) format("truetype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-RegularItalic.svg#35e758e1938759df110b9568ecd0c139) format("svg");font-style:italic;font-weight:400}
+@font-face{font-family:'colfax-web';src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Thin-6922f5af01e05c34ffd270246b026fd0.eot);src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Thin.eot?#iefix) format("embedded-opentype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Thin-1d5236b037dfcd3caa74eb74829daceb.woff) format("woff"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Thin-14b974d9f691c92dfa64aeeca572b564.ttf) format("truetype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-Thin.svg#fe66a1f163767194d19f0597df2b0264) format("svg");font-style:normal;font-weight:200}
+@font-face{font-family:'colfax-web';src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-ThinItalic-4263d3f2d87081d251be4342e651ed82.eot);src:url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-ThinItalic.eot?#iefix) format("embedded-opentype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-ThinItalic-03faee6f1d43a4e0866590ab5eacc853.woff) format("woff"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-ThinItalic-0cc64d200fa0aa3f04da6ed2ac03f59d.ttf) format("truetype"),url(//d3krjgdh5n3zsi.cloudfront.net/assets/Colfax-ThinItalic.svg#57283f13856ed3cce1e6d569e4e2a4a2) format("svg");font-style:italic;font-weight:200}
+
 #header {
   position: fixed;
   width: 100%;
-  height: 60px;
+  height: 80px;
   background: #fff;
   padding: 15px 0px 15px 0px;
   vertical-align: bottom;
   border-bottom: 2px solid #555;
 }
 #main {
-  margin-top: 90px;
+  margin-top: 110px;
 }
 #page_title {
   font-size: 40px;
@@ -36,16 +43,35 @@ body > * {
 }
 #footer {
   width: 100%;
-  background: #333;
-  color: #f2f2f2;
-  font-family: sans-serif;
-  font-size: 12px;
-  font-weight: lighter;
+  background: steelblue;
+  color: #fff;
 }
-#footer div {
+#footer > div {
   padding: 40px;
 }
 
 .subsection {
   padding: 30px 0px 30px 0px;
+}
+
+/* Logo
+*/
+#logo {
+  display: flex;
+  flex-direction: row;
+  font-family: colfax-web;
+  width: 80%;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+#logo div:first-child {
+  font-size: 20px;
+}
+#logo div:first-child > div {
+  text-align: right;
+}
+#logo > div:nth-child(2) {
+  font-size: 54px;
+  margin: -7px 0px 0px 5px;
 }

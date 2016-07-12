@@ -31,7 +31,13 @@
   <body>
 
     <div id="header">
-      <div id="page_title">Linked Data DoGi</div>
+      <div id="logo">
+        <div>
+          <div>LINKED</div>
+          <div>DATA</div>
+        </div>
+        <div>DOGI</div>
+      </div>
     </div>
 
     <div id="main">

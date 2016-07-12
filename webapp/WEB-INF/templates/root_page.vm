@@ -17,30 +17,32 @@
   </head>
   <body>
     
-    <div id="header">
-      <div id="page_title">Linked Data DoGi</div>
+    <div id="root_header">
+      <div id="top_header">
+        <div id="logo">
+          <div>
+            <div>LINKED</div>
+            <div>DATA</div>
+          </div>
+          <div>DOGI</div>
+        </div>
+        <div id="nav">
+          <span><a href="#query">QUERY</a></span>
+          <span><a href="#download">DOWNLOAD</a></span>
+          <span><a href="#navigate">NAVIGATE</a></span>
+          <span><a href="#visualize">VISUALIZE</a></span>
+          <span><a href="#contact">CONTACT</a></span>
+        </div>
+      </div>
+      <div id="desc">
+        <div>
+          LINKED DATA <a href="http://www.ittig.cnr.it/dogi/en/Index.php">DOGI</a> is a bibliographic Linked Open Data source containing references about <b>articles</b> published in <b>Italian legal journals</b>. Each article consists of <b>bibliographic information</b> enhanced with <b>abstracts</b>, <b>summaries</b>, a selection of <b>legislative and jurisprudential references</b>, classification codes based on the indexing DoGi system and other interesting information.
+        </div>
+      </div>
     </div>
 
-    <div id="main">
-
-      <div class="subsection bottom_line justify">
-        <div class="title"><i class="fa fa-info-circle"></i> What is Linked Data DoGi?</div>
-        <div class="subtitle"></div>
-
-        <a href="http://www.ittig.cnr.it/dogi/en/Index.php">DoGi</a> is a reference database of articles published in Italian legal journals. For each article, the DoGi record provides bibliographic information enhanced with: 
-
-        <ul>
-          <li>abstracts and/or summaries of articles;</li>
-          <li>one or more classification codes based on the indexing DoGi system especially designed for legal subjects;</li>
-          <li>a selection of legislative and jurisprudential references of the sources quoted in the article;</li>
-          <li>further metadata describing more significant features of the article;</li>
-          <li>link to the full text when freely available online.</li>
-        </ul>
-        <br />
-        This web portal provides the bibliographic data of DoGi as <a href="https://en.wikipedia.org/wiki/Linked_data">Linked Open Data</a>.
-      </div>
-
-      <div class="subsection bottom_line">
+    <div id="main" class="root">
+      <div class="subsection bottom_line" id="query">
         <div class="title"><i class="fa fa-database"></i> Query the dataset</div>
         <div class="subtitle"></div>
         <ol>
@@ -53,47 +55,57 @@
         </ol>
       </div>
 
-      <div class="subsection bottom_line">
+      <div class="subsection bottom_line" id="download">
+        <div class="title"><i class="fa fa-download"></i> Download latest dump</div>
+        <div class="subtitle"></div>
+          <a href="">Dump 01/06/2016</a>.
+        </ol>
+      </div>
+
+      <div class="subsection bottom_line" id="navigate">
         <div class="title"><i class="fa fa-compass"></i> Navigate the dataset</div>
-        <div class="subtitle">The DoGi Linked Data set describes its resources by means of the following major classes:</div>
-        #* <table id="main_classes"></table> *#
+        <div class="subtitle">The class diagram below shows the RDF classes of the dataset. Major classes are blue while minor are brown. Gray edges show how the instances (resources) of the classes are connected:</div>
+        <div id="class_diagram">
+          <img src="/snorql/img/class_diagram.png" />
+        </div>
+        <div class="subtitle">The major classes are the following:</div>
         <div id="main_classes"></div>
-        <div class="subtitle">There are also other minor classes:</div>
+        <div class="subtitle">The minor classes are:</div>
         <div id="other_classes"></div>
       </div>
 
-      <div class="subsection">
+      <div class="subsection" id="visualize">
         <div class="title"><i class="fa fa-bar-chart"></i> Get insights from data</div>
         <div class="subtitle">The bar-chart shows the amount of instances (i.e., resources) for each class in the dataset.</div>
         <svg></svg>
-        <div class="subtitle">Browse the following visualizations in order to get insights from the DoGi data.</div>
+        <div class="subtitle">Browse the following visualizations in order to get insights from the data.</div>
         <div id="vis_list">
           <div class="vis_box">
             <div>
-              <a target="_blank" href="http://wafi.iit.cnr.it/webvis/lab/public/4122230f56cbd9982ba0/"><img src="snorql/img/journal.png"/></a>
+              <a href="snorql/vis/1"><img src="snorql/vis/1/thumbnail.png"/></a>
             </div>
-            <div class="vis_desc">The amount of articles published on journals rated as A and not-A.</div>
-          </div>
-
-          <div class="vis_box">
-            <div>
-              <a target="_blank" href="http://wafi.iit.cnr.it/webvis/replayer/?dogi_titoli"><img src="snorql/img/replayer.png"/></a>
-            </div>
-            <div class="vis_desc">The most common words within the titles of articles during the time.</div>
+            <div class="vis_desc">Which is the amount of articles published on journals rated as A and not-A during time?</div>
           </div>
           
           <div class="vis_box">
             <div>
-              <a target="_blank" href="http://wafi.iit.cnr.it/webvis/lab/public/04466b8ca6a3670dd963/"><img src="http://wafi.iit.cnr.it/webvis/lab/public/04466b8ca6a3670dd963/thumbnail.png"/></a>
+              <a href="snorql/vis/3"><img src="snorql/vis/3/thumbnail.png"/></a>
             </div>
-            <div class="vis_desc">The hierarchy of the sistematici describing different law branches.</div>
+            <div class="vis_desc">How is structured the hierarchy of the DoGi classification? Which law branches are present?</div>
           </div>
 
           <div class="vis_box">
             <div>
-              <a target="_blank" href="http://wafi.iit.cnr.it/webvis/lab/public/a5a79b7594493a713a3db0999caa558a/"><img src="http://wafi.iit.cnr.it/webvis/lab/public/a5a79b7594493a713a3db0999caa558a/thumbnail.png"/></a>
+              <a href="snorql/vis/4"><img src="snorql/vis/4/thumbnail.png"/></a>
             </div>
-            <div class="vis_desc">The distribution of published articles.</div>
+            <div class="vis_desc">Which kind of Source of Law are contained in DoGi? In which quantity?</div>
+          </div>
+
+          <div class="vis_box">
+            <div>
+              <a href="snorql/vis/2"><img src="snorql/vis/2/thumbnail.png"/></a>
+            </div>
+            <div class="vis_desc">How are distributed the articles published by the authors in DoGi?</div>
           </div>
 
         </div>
@@ -102,8 +114,30 @@
     </div>
 
     <div id="footer">
-      <div>
-        This webpage shows the results of a collaboration between the Institute of Legal Information Theory and Techniques (ITTIG) and the Institute of Informatics and Telematics (IIT) of the National Research Council (CNR).
+      <div id="contact">
+        This web page shows the results of the collaboration between two institutes of the National Research Council (CNR):
+      </div>
+      <div id="partners">
+        <div class="partner">
+          <div>
+            <a href="http://www.ittig.cnr.it/en/">
+              <img src="snorql/img/ittig.png"/>
+            </a>
+          </div>
+          <div>
+            Institute of Legal Information Theory and Techniques
+          </div>
+        </div>
+        <div class="partner">
+          <div>
+            <a href="http://www.iit.cnr.it/en">
+              <img src="snorql/img/iit.svg"/>
+            </a>
+          </div>
+          <div>
+            Institute of Informatics and Telematics
+          </div>
+        </div>
       </div>
     </div>
 

@@ -1,11 +1,57 @@
 svg {
   width: 100%;
+  margin-bottom: 50px;
+}
+
+.root {
+  margin-top: 0px !important;
+}
+
+/*  HEADER and LOGO
+*/
+#root_header {
+  width: 100%;
+}
+#top_header {
+  position: relative;
+}
+
+#desc {
+  width: 100%;
+  background: #f2f2f2;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 2.5;
+  padding: 70px 0px 70px 0px;
+}
+#desc > * {
+  width: 70%;
+  margin: auto;
+}
+
+#nav {
+  position: absolute;
+  bottom: -20px;
+  right: 50px;
+}
+#nav span {
+  margin-right: 15px;
+}
+#nav span a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.4s linear;
+}
+#nav span a:hover {
+  color: steelblue;
 }
 
 /*  SUBSECTION
 */
 .subsection .title {
-  font-size: 24px;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
 }
 .subsection .subtitle {
   color: gray;
@@ -23,9 +69,18 @@ a {
 }
 a:hover {
   text-decoration: none;
+  cursor: pointer;
 }
-i {
+i.fa {
   color: steelblue;
+  font-size: 50px;
+  margin-right: 10px;
+}
+ol {
+  line-height: 2;
+}
+#root_main {
+  margin-top: 450px;
 }
 #main_classes {
   padding: 0px 0px 10px 20px;
@@ -35,20 +90,25 @@ i {
 .main_class {
   margin-bottom: 15px;
 }
-.main_class a {
-  font-family: sans-serif;
-}
+
 .main_class div {
   color: gray;
   font-size: 14px;
 }
 
 #other_classes {
-  font-family: sans-serif;
   margin-left: 20px;
 }
 .justify {
   text-align: justify;
+}
+
+#class_diagram {
+  text-align: center;
+}
+#class_diagram img {
+  width: 570px;
+  margin: 40px 0px 40px 0px;
 }
 
 /* Visualization lists
@@ -68,8 +128,7 @@ i {
 .vis_desc {
   width: 200px;
   margin: 10px;
-  font-family: sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   text-align: justify;
   margin-top: -8px;
   color: gray;
@@ -102,4 +161,25 @@ svg .bar {
 svg .bar_amount {
   font: 12px sans-serif;
   fill: gray;
+}
+
+/* partners
+*/
+
+#partners {
+  display: flex;
+}
+.partner {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.partner div:nth-child(2) {
+  width: 250px;
+  margin-top: 10px;
+}
+.partner img {
+  height: 75px;
 }
