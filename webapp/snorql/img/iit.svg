@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="31.83667mm"
+   height="13.872005mm"
+   viewBox="0 0 112.8071 49.152775"
+   id="svg4219"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="iit_logo.svg">
+  <defs
+     id="defs4221">
+    <clipPath
+       id="clipPath4326-0"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4328-7"
+         d="m 0,595.275 841.89,0 L 841.89,0 0,0 0,595.275 Z" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#2e2e2e"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="90.943391"
+     inkscape:cy="5.9133703"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2036"
+     inkscape:window-height="1395"
+     inkscape:window-x="111"
+     inkscape:window-y="-13"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4224">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(1421.1132,93.092816)">
+    <g
+       id="g4824">
+      <path
+         style="fill:#dfd7c4;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -1408.4637,-83.262575 -2.6564,8.241145 18.2359,0 2.6358,-8.241145 -18.2153,0 z m -3.4944,10.842198 -2.3291,7.229186 18.2596,0 2.3117,-7.229186 -18.2422,0 z m -3.1687,9.830237 -2.5157,7.8079 18.2849,0 2.4983,-7.8079 -18.2675,0 z m -3.3537,10.408953 -2.6327,8.168411 18.288,0.07273 2.6359,-8.241145 -18.2912,0 z"
+         id="path4536"
+         inkscape:connector-curvature="0" />
+      <path
+         style="fill:#dfd7c4;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -1404.5604,-86.009082 c 0,-0.578263 2.1685,-7.083717 2.1685,-7.083717 l 12.8663,0 -2.313,7.372848 z"
+         id="path4548"
+         inkscape:connector-curvature="0" />
+      <path
+         style="fill:#dfd7c4;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -1394.7227,-44.012304 12.6495,-39.249592 18.2153,0 -12.5773,39.321855 z"
+         id="path4536-3"
+         inkscape:connector-curvature="0" />
+      <path
+         style="fill:#dfd7c4;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m -1375.5312,-93.092814 -2.892,7.227604 12.9396,0.14547 1.2279,-3.253294 11.4216,0 -14.4211,44.960256 18.288,0.07273 11.8826,-37.153146 0.01,0 0.076,-0.262476 0.6104,-1.906912 -0.055,0 1.6824,-5.710454 11.7087,0 -0.8676,3.542648 13.0111,0 2.6025,-7.662428 z"
+         id="path4567"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccccccccccc" />
+    </g>
+  </g>
+</svg>
