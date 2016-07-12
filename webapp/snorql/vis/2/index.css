@@ -1,0 +1,28 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font: 10px sans-serif;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/*.x.axis path, .x.axis .tick {*/
+.x.axis path, .x2.axis path {
+  display: none;
+}
+
+.x2 .tick line {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}

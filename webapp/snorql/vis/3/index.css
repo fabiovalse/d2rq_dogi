@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "Lacuna";
+  src: url("lacuna.ttf");
+}
+
+.sector {
+  vector-effect: non-scaling-stroke;
+  stroke: #fff;
+}
+.sector_one {
+  vector-effect: non-scaling-stroke;
+  stroke: #fff;
+}
+.sector:hover {
+  opacity: 0.8;
+}
+.sector_one:hover {
+  opacity: 0.8;
+}
+
+.label {
+  font-size: 13px;
+  font-family: "Lacuna";
+  text-anchor: middle;
+  font-weight: bold;
+  pointer-events: none;
+}
+.halo {
+  stroke: white;
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+  font-weight: bold;
+}
+
+#radio {
+  margin-top: 20px;
+}

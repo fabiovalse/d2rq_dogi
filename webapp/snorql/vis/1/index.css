@@ -1,0 +1,22 @@
+html, body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+rect:hover {
+  opacity: 0.85
+}
+
+.x.axis path {
+  display: none;
+}
+
+mean {
+  stroke-opacity: 0.5;
+}

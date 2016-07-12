@@ -1,0 +1,1685 @@
+{
+  "head": {
+    "vars": [ "desc" , "cont" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "desc": { "type": "literal" , "value": "Corte suprema di Cassazione" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "27950" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "9387" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Legge" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8107" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto legislativo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7193" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Normativa diritto straniero" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5263" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte costituzionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4447" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale amministrativo regionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4019" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Consiglio di Stato" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4005" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice civile" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3718" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto del presidente della Repubblica" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3275" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Giurisprudenza diritto straniero" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2946" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto legge" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2710" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte europea per i dirirtti dell'uomo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2264" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte di appello" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1855" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte di Giustizia delle comunità europee" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1664" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte di Giustizia dell'Unione europea" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1562" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Legge regionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1432" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice di procedura penale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1277" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice di procedura civile" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1208" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice penale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "945" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Commissione tributaria provinciale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "800" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Circolare" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "773" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto ministeriale (con ministero)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "760" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regio decreto" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "715" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Risoluzione ONU" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "547" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Commissione tributaria regionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "545" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Delibera" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "536" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto ministeriale (senza ministero)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "520" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Provvedimento" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "491" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento CE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "491" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Direttiva CE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "457" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Circolare ministeriale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "456" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Legge fallimentare" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "443" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Risoluzione" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "433" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Costituzione della Repubblica" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "431" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte dei Conti" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "389" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento UE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "301" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice della navigazione" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "290" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Diritto romano (fonti giurisprudenziali)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "247" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Altra normativa diritto canonico" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "244" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Giudice di pace" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "243" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Direttiva CEE (ante ...)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "216" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto del presidente del Consiglio dei Ministri" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "199" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Giudice per le indagini preliminari (Tribunale)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "181" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Contratto collettivo nazionale di lavoro" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "179" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Statuto" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "160" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale dell'Unione europea" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "154" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "141" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo interconfederale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "139" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Direttiva UE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "134" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "123" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Consiglio di giustizia amministrativa per la regione siciliana" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "123" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento CEE (ante ...)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "123" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regio decreto legge" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "122" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale dei minori" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "121" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte internazionale di giustizia (CIJ)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "111" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Lodo arbitrale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "109" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Disposizioni di attuazione e transitorie del codice civile" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "104" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Comunicazione" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "99" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice civile del 1865" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "95" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decisione CE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "93" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Legge costituzionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "92" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Disposizioni di attuazione del codice di procedura penale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "88" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Disposizioni per l'attuazione del codice di procedura civile e disposizioni transitorie" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "86" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Risoluzione del Parlamento europeo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "86" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale di I grado CE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "84" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Collegio arbitrale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "83" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Delibera della giunta regionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "73" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento della Camera" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "73" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Legge provinciale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "68" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Giudice per l'udienza preliminare (Tribunale)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "67" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento del Senato" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "65" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte penale internazionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "63" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Parere" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "62" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decisione" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "60" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decisione UE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "58" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale di Sorveglianza" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "55" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto interministeriale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "52" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Raccomandazione CE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "50" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice di procedura penale del 1930" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "47" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte interamericana per i diritti dell'uomo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "47" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Determinazione" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "46" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Giurisprudenza diritto canonico" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "46" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte di assise" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "41" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Nota ministeriale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "41" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. New York" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "39" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte di assise di appello" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "39" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale regionale di giustizia amministrativo per la regione Trentino Alto Adige" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "39" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Raccomandazione UE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "38" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decisione quadro GAI" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "37" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Commissione europea per i dirirtti dell'uomo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "36" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Risoluzione Consiglio d'Europa" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "35" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Giurì di autodisciplina pubblicitaria" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "34" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale arbitrale dello sport - TAS" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "34" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. L'Aja" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "32" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Strasburgo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "32" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice di commercio" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "31" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Giurisprudenza sportiva" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "29" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Raccomandazione Consiglio d'Europa" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "28" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Risoluzione ministeriale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "27" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Oil" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "26" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto legislativo luogotenenziale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "26" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Nota" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "26" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice di procedura civile del 1865" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "25" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice penale militare di pace" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "25" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Commissione tributaria centrale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "25" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Ginevra" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "25" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Disposizioni sulla legge in generale (preleggi)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "25" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale penale internazionale per l'ex-Jugoslavia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "25" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Parigi" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "24" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Diritto romano (fonti letterarie)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "24" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Altre fonti storiche giurisprudenziali" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "23" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice penale del 1889" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "23" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Direttiva ministeriale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "23" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Fonti storiche di diritto intermedio o comune" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "23" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Testo unico sulla circolazione stradale (1959)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "23" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Statuto albertino" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "22" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Direttiva del presidente del Consiglio dei Ministri" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "21" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regio decreto luogotenenziale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "21" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Pretura" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "20" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale supremo della Signatura apostolica" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "20" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Giudice tutelare" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "19" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Circolare del presidente del Consiglio dei Ministri" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "18" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice di procedura penale del 1913" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "18" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Bruxelles" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "16" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Londra" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "16" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Delibera del consiglio regionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "15" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Raccomandazione CEE (ante \u2026)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "15" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Disposizioni finali e transitorie della Costituzione della Repubblica" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "14" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Giurisprudenza ordinaria" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "14" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "contratto collettivo nazionale quadro" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "14" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto legge luogotenenziale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "13" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto legislativo del capo provvisorio della Stato" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "13" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Ordinanza del presidente del Consiglio dei Ministri" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "13" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Risoluzione CE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "13" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convezione UE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "12" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decisione GAI" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "12" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto del presidente della giunta regionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "12" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto luogotenenziale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "12" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Ordinanza ministeriale (con ministero)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "12" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Vienna" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "11" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decisione CEE (ante ...)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "11" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento regionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "11" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Commissione tributaria di II grado" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "10" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Disposizioni di coordinamento e transitorie del codice di procedura penale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "10" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento del codice di navigazione" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "10" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale superiore della acque pubbliche" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "10" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "9" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Disposizioni di attuazione e transitorie del codice penale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "9" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo UE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "9" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Risoluzione UE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "9" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Roma" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte africana per i diritti dell'uomo e dei popoli" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Delibera della giunta provinciale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale internazionale per il diritto del mare (International Tribunal for the law of the sea)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Norme bancarie uniformi" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Ordinanza" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento del codice di procedura penale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale Funzione pubblica" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "C. Iur. Can." } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "6" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Berna" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "6" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale penale internazionale per il Ruanda" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "6" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale speciale per il Libano" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "6" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Altre fonti storiche letterarie" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decisione Ufficio Europeo Brevetti" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Direttiva EURATOM" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Prot. Strasburgo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento ministeriale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice penale militare di guerra" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Lussemburgo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Monaco" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Varsavia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Washington" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte militare di appello" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Corte permanente di giustizia internazionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decisione Consiglio d'Europa" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Ordinanza ministeriale (senza ministero)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Bruxelles" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo New York" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale militare" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "4" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Italia-USA" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Codice di procedura penale del 1865" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Basilea" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Lugano" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Montreal" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Dec. Ufficio Armonizzazione Mercato Interno - UAMI" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto del presidente della giunta provinciale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto legge del capo provvisorio dello Stato" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Direttiva" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Diritto romano (fonti papirologiche)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Leggi costituzionali" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Prot. L'Aja" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento per l'esecuzione del T.U. sulla circolazione stradale (1959)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Ginevra" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Roma" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Washington" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Italia-Brasile" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "WTO - Agreement on Technical Barriers to Trade" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Cee-Efta" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Italia-Francia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Italia-Montenegro" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Atti statali aventi forza di legge" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Carta Addis Abeba" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conf. Rio De Janeiro" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Amburgo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Dublino" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Kyoto" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. OCSE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Ottawa" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Rio De Janeiro" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Caracas" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Italia-Argentina" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Santiago de Compostela" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Dichiarazione Brighton" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Diritto bizantino (fonti giurisprudenziali)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Prot. Parigi" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Ginevra" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Londra" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Madrid" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Olivos" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Palermo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Risoluzione CEE (ante ...)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "TRIPS - Accordo sugli aspetti dei diritti di proprietà intellettuale attinenti al commercio" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Italia-Usa" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Londra-Mosca-Washington" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. New York" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Amsterdam (2 ottobre 1997)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Stati Uniti d'America - Federazione russa" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato di Lisbona (13 dicembre 2007)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Asean" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Basilea" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Cee-Turchia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Cotonou" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Italia-Austria" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Italia-Francia-Monaco" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Italia-Repubblica Popolare Cinese" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Italia-Santa Sede" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Italia-Svizzera" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Londra" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Madrid" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Marrakesh" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Osimo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Oslo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Schengen" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Acc. Washington" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo ASEAN-Cina" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Basilea III" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Dusanbe" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Germania-Francia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Ginevra" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Italia-Grecia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Italia-India" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Italia-Lettonia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Italia-Libia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Italia-Malta" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Italia-Marocco" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Italia-Repubblica Federale di Germani" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Italia-Repubblica Federale di Germania" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Italia-Spagna" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo NAFTA" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo USA-UE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Accordo Ucraina-UE" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Altre fonti storiche papirologiche" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Atto Unico Europeo (1986)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Carta Dir. Fondamentali UE 7 dicembre 2000 (Carta dei diritti fondamentali dell'Unione europea, Nizza)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Carta L'Aja" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Carta Montevideo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Carta Onu" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Carta San Pietroburgo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Carta Strasburgo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Carta africana dei diritti dell'uomo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Carta araba dei diritti" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Carta sociale europea" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conc." } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conferenza Bretton Woods" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conferenza Durban" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conferenza Johannesburg" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conferenza Manila" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Consiglio giurisdizionale della Camera dei Deputati" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Atene" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Bamako" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Barcellona" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Budapest" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Cartagena" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Chicago" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Città del Capo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Città del Messico" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Guadalajara" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Istanbul" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Italia-Cipro" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Italia-Francia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Italia-Germania" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Italia-Repubblica Federale Tedesca" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Italia-San Marino" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Italia-Svizzera" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Lisbona" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Londra-Mosca-Washington" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Madrid" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Merida" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Montego Bay" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Oslo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Oviedo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Palermo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Prüm" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Ramsar" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Rotterdam" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. San José De Costa Rica" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. San Sebastian" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Schengen" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Tokyo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Vilnius" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Conv. Wellington" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione AIEA (Agenzia Internazionale per l'Energia Atomica)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Aarhus" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Algeri " } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Bélem do Parà" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Canberra" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Faro" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Firenze" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Helsinki" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Hong Kong" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Il Cairo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Italia-Brasile" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Italia-Portogallo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Italia-Regno Unito" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Italia-Repubblica federale di Jugoslavia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Italia-USA" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Lanzarote" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Pechino" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Repubblica Ceca-Repubblica Slovacca" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Shanghai" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Stoccolma" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Tampere" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione Tromso" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione UE-Stato Città del Vaticano" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Convenzione USA-Svizzera" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Decreto del capo provvisorio della Stato" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Dichiarazione Barcellona" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Dichiarazione Cartagena" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Dichiarazione Friburgo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Dichiarazione Lima" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Dichiarazione New York" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Dichiarazione OIL" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Dichiarazione Stoccolma" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Dichiarazione di Laeken sul futuro dell'Europa, 15 dicembre 2001" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Diritto greco (fonti giurisprudenziali)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Disposizioni sulla legge in generale (preleggi) 1865" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "European Patent Convention - EPC 2000" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "GATS - Accordo generale sugli scambi di servizi" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "GATT - Accordo generale sulle tariffe e il commercio" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Giudice conciliatore" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Giudice per le indagini preliminari del Tribunale dei minori" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Giurisprudenza brevetti" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Istruzione" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Meccanismo europeo di stabilità (MES)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "xml:lang": "it" , "value": "Normativa comunitaria (trattati, convenzioni, diritto derivato)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Patto di stabilità (fiscal compact) UE 2012" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Pretura circondariale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Progetto di trattato che istituisce una Costituzione per l'Europa" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Atene" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Brasilia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Göteborg" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Nagoya" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Ouagadougou" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Ouro Preto" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Tripoli" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Protocollo Vilnius" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Raccomandazione" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Reg. Corte Eur. Dir. Uomo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Reg. trib. penale intern. ex-Jugoslavia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento L'Aja" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento del Parlamento europeo" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Regolamento di navigazione interna" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "St. Corte Intern. Giustizia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "St. trib. penale intern. Ruanda" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "St. trib. penale intern. ex-Jugoslavia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Atene" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Italia-Francia" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Italia-Gran Bretagna" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Italia-Regno Unito-Irlanda del Nord" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Italia-Santa Sede" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Madrid" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. Parigi" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. UE (Lisbona, 2009)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tr. UNESCO" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Astana" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Asuncion" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Bengasi" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Bruxelles (8 aprile 1965)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato CE (25 marzo 1957)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato CE (Amsterdam, 1997)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato CE (Maastricht, 1992)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato CECA (18 aprile 1951)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Dili" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato EURATOM (25 marzo 1957)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Italia-Cina" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Italia-Kazakistan" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Italia-Libano" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Italia-Messico" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Lagos" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Lisbona" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Lomé" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Londra" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Nizza (26 febbraio 2001)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Prüm" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Roma 29 ottobre 2004 (Trattato costituzionale europeo)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Sidney" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Stati Uniti d'America - Unione Sovietica" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato UE (Amsterdam, 1997)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato UE 7 febbraio 1992 (Maastricht)" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Velsen" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato Windhoek" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Trattato sul funzionamento dell'Unione europea" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale ecclesiastico regionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale militare per l'udienza preliminare" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale penale internazionale" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale regionale delle acque pubbliche" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "Tribunale supremo militare" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      } ,
+      {
+        "desc": { "type": "literal" , "value": "WTO - Agreement on the Application of Sanitary and Phytosanitary Measures" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1" }
+      }
+    ]
+  }
+}
