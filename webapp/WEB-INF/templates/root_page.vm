@@ -27,8 +27,8 @@
           <div>DOGI</div>
         </div>
         <div id="nav">
-          <span><a href="#query">QUERY</a></span>
           <span><a href="#download">DOWNLOAD</a></span>
+          <span><a href="#query">QUERY</a></span>
           <span><a href="#navigate">NAVIGATE</a></span>
           <span><a href="#visualize">VISUALIZE</a></span>
           <span><a href="#contact">CONTACT</a></span>
@@ -42,9 +42,17 @@
     </div>
 
     <div id="main" class="root">
+
+      <div class="subsection bottom_line" id="download">
+        <div class="title"><i class="fa fa-download"></i> Download latest dump</div>
+        <div class="subtitle"></div>
+          <a href="/snorql/dump/dump_2016_05_24.nt" download>Dump 24/05/2016</a>
+        </ol>
+      </div>
+
       <div class="subsection bottom_line" id="query">
         <div class="title"><i class="fa fa-database"></i> Query the dataset</div>
-        <div class="subtitle"></div>
+        <div class="subtitle">Choose an endpoint according to your needs:</div>
         <ol>
           <li>
             Query the dataset by writing SPARQL queries on the <a href="snorql/">endpoint</a>.
@@ -53,13 +61,46 @@
             Use the SPARQL REST <a href="sparql?query=SELECT ?s ?o ?p {?s ?o ?p} LIMIT 3">API</a> for calling the endpoint from your code.
           </li>
         </ol>
-      </div>
 
-      <div class="subsection bottom_line" id="download">
-        <div class="title"><i class="fa fa-download"></i> Download latest dump</div>
-        <div class="subtitle"></div>
-          <a href="">Dump 01/06/2016</a>.
-        </ol>
+        <div class="subtitle">Some basic examples of SPARQL queries:</div>
+        <div class="query">
+          <div>Which are the <i>Sources of law</i> cited by a certain <i>Article</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%3Fsource+%3Fsource_label+%3Fsource_name+%3Furn+%7B%0D%0A++%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FArticle%2F247613%3E+bibo%3Acites+%3Fsource+.%0D%0A++%3Fsource+rdfs%3Alabel+%3Fsource_label+%3B%0D%0A++++++++++++++++dcterms%3Adescription+%3Fsource_name+.%0D%0A++OPTIONAL+%7B%0D%0A++++%3Fsource+dogi%3AurnNir+%3Furn+.%0D%0A++%7D%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
+          <pre><code>
+  SELECT ?source ?source_label ?source_name ?urn {
+    &lt;http://www.dogi.cnr.it/resource/Article/247613&gt; bibo:cites ?source .
+    ?source rdfs:label ?source_label ;
+                  dcterms:description ?source_name .
+    OPTIONAL {
+      ?source dogi:urnNir ?urn .
+    }
+  }
+          </code></pre>
+        </div>
+        <div class="query">
+          <div>How it is classified (in term of <i>Classification codes</i>) a certain <i>Article</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%3Fclass+%3Flabel+%7B%0D%0A++%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FArticle%2F247613%3E+dcterms%3Asubject+%3Fclass+.%0D%0A++%3Fclass+rdfs%3Alabel+%3Flabel+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
+          <pre><code>
+  SELECT ?class ?label {
+    &lt;http://www.dogi.cnr.it/resource/Article/247613&gt; dcterms:subject ?class .
+    ?class rdfs:label ?label .
+  }
+          </code></pre>
+        </div>
+        <div class="query">
+          <div>How many articles cite a certain <i>Source of law</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%28COUNT+%28%3Farticle%29+AS+%3Fcont%29+%7B%0D%0A++%3Farticle+bibo%3Acites+%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FSourceOfLaw%2F179%3E+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
+          <pre><code>
+  SELECT (COUNT (?article) AS ?cont) {
+    ?article bibo:cites &lt;http://www.dogi.cnr.it/resource/SourceOfLaw/179&gt; .
+  }
+          </code></pre>
+        </div>
+        <div class="query">
+          <div>How many articles are classified according to a certain <i>Classification code</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%28COUNT%28%3Farticle%29+AS+%3Fcont%29+%7B%0D%0A++%3Farticle+dcterms%3Asubject+%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FClassification%2FS0306%3E+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
+          <pre><code>
+  SELECT (COUNT(?article) AS ?cont) {
+    ?article dcterms:subject &lt;http://www.dogi.cnr.it/resource/Classification/S0306&gt; .
+  }
+          </code></pre>
+        </div>
       </div>
 
       <div class="subsection bottom_line" id="navigate">

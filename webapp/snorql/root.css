@@ -62,7 +62,7 @@ svg {
   border-bottom: 1px solid #f2f2f2;
 }
 
-/*
+/*  General
 */
 a {
   color: steelblue;
@@ -103,6 +103,8 @@ ol {
   text-align: justify;
 }
 
+/*  Class diagram
+*/
 #class_diagram {
   text-align: center;
 }
@@ -111,7 +113,21 @@ ol {
   margin: 40px 0px 40px 0px;
 }
 
-/* Visualization lists
+/*  SPARQL QUERIES
+*/
+pre {
+  margin: 0px;
+  background: #f2f2f2;
+  border-left: 2px solid #333;
+}
+.query {
+  margin: 0px 0px 15px 20px;
+}
+.run_query i {
+  font-size: 18px;
+}
+
+/*  Visualization lists
 */
 #vis_list {
   display: flex;
@@ -163,9 +179,8 @@ svg .bar_amount {
   fill: gray;
 }
 
-/* partners
+/*  partners
 */
-
 #partners {
   display: flex;
 }
