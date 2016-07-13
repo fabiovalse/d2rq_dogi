@@ -126,6 +126,9 @@ pre {
 .run_query i {
   font-size: 18px;
 }
+.run_query i:hover {
+  color: lightsteelblue
+}
 
 /*  Visualization lists
 */
@@ -172,7 +175,7 @@ svg .class .title {
   fill: #333;
 }
 svg .bar {
-  fill: steelblue;
+  fill: rgb(107,172,206);
 }
 svg .bar_amount {
   font: 12px sans-serif;
