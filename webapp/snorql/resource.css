@@ -3,6 +3,7 @@
 }
 #header .title {
   font-size: 25px;
+  font-weight: bold;
 }
 #header .subtitle {
   color: #1f78b4;
@@ -32,23 +33,35 @@ td {
   margin-bottom: 20px;
 }
 
-.small {
-  font-size: 12px;
-}
-span.uri {
-  color: #1f78b4;
-}
-span.uri a {
-  color: #1f78b4;
-  text-decoration: underline;
-}
-span.uri a:hover {
-  text-decoration: none;
-}
-
 .literal {
   color: #999;
 }
+.datatype {
+  color: #999;
+  cursor: pointer; 
+  text-decoration: none;
+}
+.datatype:hover {
+  text-decoration: underline;
+}
+
+.predicate a, .object a:not(.datatype) {
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+}
+.predicate a:hover, .object a:hover {
+  text-decoration: underline;
+}
+.small {
+  font-size: 12px;
+}
 .prefix {
   color: #ff7f00;
+}
+.dogi_prefix {
+  font-weight: bold;
+}
+.suffix {
+  color: #333;
 }

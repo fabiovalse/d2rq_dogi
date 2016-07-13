@@ -1,17 +1,20 @@
 p_format = (predicate) ->
-  match = predicate.match /(.*):(.*)/  
-
-  "<span class='small prefix' title='#{D2R_namespacePrefixes[match[1]]}'>#{match[1]}:</span><span>#{match[2]}</span>"
+  "<a href='#{predicate.uri}' title='#{predicate.uri}'><span class='small prefix#{if predicate.prefix is 'dogi:' then ' dogi_prefix' else ''}'>#{predicate.prefix}</span><span class='suffix'>#{predicate.suffix}</span><a>"
 
 o_format = (object) ->
-  match = object.match /(.*)\^\^(http:\/\/.*)/
+  match = object.value.match /(.*)\^\^(http:\/\/.*)/
 
   if match isnt null
-    "<span class='literal'>#{match[1]}</span> <span class='small literal' title='#{match[2]}'>(#{match[2].slice(match[2].indexOf('#')+1)})</span>"
-  else if object.indexOf("http") is 0
-    "<span class='uri'><<a href='#{object}'>#{object}</a>></span>"
+    "<span class='literal'>#{match[1]}</span> <span class='small literal' title='#{match[2]}'>(<a target='_blank' class='datatype' href='#{match[2]}'>#{match[2].slice(match[2].indexOf('#')+1)}</a>)</span>"
+  else if object.isURI
+    for k,v of D2R_namespacePrefixes
+      if object.value.indexOf(v) is 0
+        return "<a href='#{object.value}' title='#{object.value}'><span class='small prefix#{if k is 'dogi' then ' dogi_prefix' else ''}'>#{k}:</span><span class='suffix'>#{object.value.slice(v.length)}</span><a>"
+    "<span class='uri'><<a href='#{object.value}'>#{object.value}</a>></span>"
+  else if object.value.indexOf("http") is 0
+    "<span class='uri'><a href='#{object.value}'>#{object.value}</a></span>"
   else
-    "<span class='literal'>#{object}</span>"
+    "<span class='literal'>#{object.value}</span>"
 
 ### Resource label and URI
 ###
@@ -33,15 +36,17 @@ if triples_data.direct.length is 0
     .append 'td'
       .text 'No Direct triples defined.'
 
+# sorting
 triples_data.direct.sort (a,b) ->
   if a.type is 'Data property' and b.type is 'Data property'
-    if a.predicate is 'dc:title'
+    if (a.predicate.prefix+a.predicate.suffix) < (b.predicate.prefix+a.predicate.suffix)
       -1
-    else if b.predicate is 'dc:title'
+    else
       1
-    else if a.predicate is 'rdfs:label'
+  else if a.type is 'Object property' and b.type is 'Object property'
+    if (a.predicate.prefix+a.predicate.suffix) < (b.predicate.prefix+a.predicate.suffix)
       -1
-    else if b.predicate is 'rdfs:label'
+    else
       1
   else if a.type is 'Data property'
     -1

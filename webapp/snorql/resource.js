@@ -3,20 +3,26 @@
   var direct, direct_table, enter_direct, enter_inverse, inverse, inverse_table, o_format, p_format;
 
   p_format = function(predicate) {
-    var match;
-    match = predicate.match(/(.*):(.*)/);
-    return "<span class='small prefix' title='" + D2R_namespacePrefixes[match[1]] + "'>" + match[1] + ":</span><span>" + match[2] + "</span>";
+    return "<a href='" + predicate.uri + "' title='" + predicate.uri + "'><span class='small prefix" + (predicate.prefix === 'dogi:' ? ' dogi_prefix' : '') + "'>" + predicate.prefix + "</span><span class='suffix'>" + predicate.suffix + "</span><a>";
   };
 
   o_format = function(object) {
-    var match;
-    match = object.match(/(.*)\^\^(http:\/\/.*)/);
+    var k, match, v;
+    match = object.value.match(/(.*)\^\^(http:\/\/.*)/);
     if (match !== null) {
-      return "<span class='literal'>" + match[1] + "</span> <span class='small literal' title='" + match[2] + "'>(" + (match[2].slice(match[2].indexOf('#') + 1)) + ")</span>";
-    } else if (object.indexOf("http") === 0) {
-      return "<span class='uri'><<a href='" + object + "'>" + object + "</a>></span>";
+      return "<span class='literal'>" + match[1] + "</span> <span class='small literal' title='" + match[2] + "'>(<a target='_blank' class='datatype' href='" + match[2] + "'>" + (match[2].slice(match[2].indexOf('#') + 1)) + "</a>)</span>";
+    } else if (object.isURI) {
+      for (k in D2R_namespacePrefixes) {
+        v = D2R_namespacePrefixes[k];
+        if (object.value.indexOf(v) === 0) {
+          return "<a href='" + object.value + "' title='" + object.value + "'><span class='small prefix" + (k === 'dogi' ? ' dogi_prefix' : '') + "'>" + k + ":</span><span class='suffix'>" + (object.value.slice(v.length)) + "</span><a>";
+        }
+      }
+      return "<span class='uri'><<a href='" + object.value + "'>" + object.value + "</a>></span>";
+    } else if (object.value.indexOf("http") === 0) {
+      return "<span class='uri'><a href='" + object.value + "'>" + object.value + "</a></span>";
     } else {
-      return "<span class='literal'>" + object + "</span>";
+      return "<span class='literal'>" + object.value + "</span>";
     }
   };
 
@@ -46,13 +52,15 @@
 
   triples_data.direct.sort(function(a, b) {
     if (a.type === 'Data property' && b.type === 'Data property') {
-      if (a.predicate === 'dc:title') {
+      if ((a.predicate.prefix + a.predicate.suffix) < (b.predicate.prefix + a.predicate.suffix)) {
         return -1;
-      } else if (b.predicate === 'dc:title') {
+      } else {
         return 1;
-      } else if (a.predicate === 'rdfs:label') {
+      }
+    } else if (a.type === 'Object property' && b.type === 'Object property') {
+      if ((a.predicate.prefix + a.predicate.suffix) < (b.predicate.prefix + a.predicate.suffix)) {
         return -1;
-      } else if (b.predicate === 'rdfs:label') {
+      } else {
         return 1;
       }
     } else if (a.type === 'Data property') {

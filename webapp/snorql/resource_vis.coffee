@@ -1,6 +1,5 @@
 switch resource.uri.split('/').slice(-2)[0]
   when 'Agent' then draw_agent_diagram()
-  else console.log 'new class'
 
 ###if resource.uri.split('/').slice(-2)[0] is 'Agent'
 
