@@ -8,9 +8,9 @@
 
   data_ticks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 20000];
 
-  width = d3.select('body').node().getBoundingClientRect().width - 2 * margin;
+  width = d3.select('#main').node().getBoundingClientRect().width - 2 * margin;
 
-  height = d3.select('body').node().getBoundingClientRect().height - 2 * margin;
+  height = d3.select('#main').node().getBoundingClientRect().height - 2 * margin;
 
   svg = d3.select('svg').attr({
     width: width + 2 * margin
