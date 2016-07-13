@@ -37,24 +37,40 @@
   });
 
   d3.json('data.json', function(error, data) {
+    var ticks, vert_lines;
+    ticks = [0, data.results.bindings.length * 0.01, data.results.bindings.length * 0.02, data.results.bindings.length * 0.05, data.results.bindings.length * 0.1, data.results.bindings.length * 0.2, data.results.bindings.length * 0.25, data.results.bindings.length * 0.5, data.results.bindings.length * 0.75, data.results.bindings.length];
     x.domain(d3.extent(data.results.bindings, function(d, i) {
       return i;
     }));
     y.domain(d3.extent(data.results.bindings, function(d) {
       return parseInt(d.cont.value);
     }));
-    x_axis.tickValues([0, data.results.bindings.length * 0.01, data.results.bindings.length * 0.02, data.results.bindings.length * 0.05, data.results.bindings.length * 0.1, data.results.bindings.length * 0.2, data.results.bindings.length * 0.25, data.results.bindings.length * 0.5, data.results.bindings.length * 0.75, data.results.bindings.length]).tickFormat(function(d) {
+    x_axis.tickValues(ticks).tickFormat(function(d) {
       if (d !== 0) {
         return (d / data.results.bindings.length * 100) + "%";
       } else {
         return '';
       }
     });
-    x_axis2.tickValues([0, data.results.bindings.length * 0.01, data.results.bindings.length * 0.02, data.results.bindings.length * 0.05, data.results.bindings.length * 0.1, data.results.bindings.length * 0.2, data.results.bindings.length * 0.25, data.results.bindings.length * 0.5, data.results.bindings.length * 0.75, data.results.bindings.length]).tickFormat(function(d) {
+    x_axis2.tickValues(ticks).tickFormat(function(d) {
       if (d !== 0) {
         return "(" + d + ")";
       } else {
         return '';
+      }
+    });
+    vert_lines = svg.selectAll('.vert_line').data(ticks);
+    vert_lines.enter().append('line').attr({
+      "class": 'vert_line'
+    });
+    vert_lines.attr({
+      y1: height,
+      y2: 0,
+      x1: function(d) {
+        return x(d);
+      },
+      x2: function(d) {
+        return x(d);
       }
     });
     svg.append('g').attr({
@@ -67,7 +83,7 @@
     }).call(x_axis).append('text').attr({
       x: width - 40,
       y: -15
-    }).text('% Agents');
+    }).text('% Authors');
     svg.append('g').attr({
       "class": 'y axis'
     }).call(y_axis).append('text').attr({

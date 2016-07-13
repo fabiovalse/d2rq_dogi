@@ -32,16 +32,33 @@ line = d3.svg.line()
 
 d3.json 'data.json', (error, data) ->
 
+  ticks = [0, data.results.bindings.length*0.01, data.results.bindings.length*0.02, data.results.bindings.length*0.05, data.results.bindings.length*0.1, data.results.bindings.length*0.2, data.results.bindings.length*0.25, data.results.bindings.length*0.5, data.results.bindings.length*0.75, data.results.bindings.length]
+
   x.domain(d3.extent(data.results.bindings, (d,i) -> i))
   y.domain(d3.extent(data.results.bindings, (d) -> parseInt(d.cont.value)))
 
   x_axis
-    .tickValues [0, data.results.bindings.length*0.01, data.results.bindings.length*0.02, data.results.bindings.length*0.05, data.results.bindings.length*0.1, data.results.bindings.length*0.2, data.results.bindings.length*0.25, data.results.bindings.length*0.5, data.results.bindings.length*0.75, data.results.bindings.length]
+    .tickValues ticks
     .tickFormat (d) -> if d isnt 0 then "#{d/data.results.bindings.length*100}%" else ''
 
   x_axis2
-    .tickValues [0, data.results.bindings.length*0.01, data.results.bindings.length*0.02, data.results.bindings.length*0.05, data.results.bindings.length*0.1, data.results.bindings.length*0.2, data.results.bindings.length*0.25, data.results.bindings.length*0.5, data.results.bindings.length*0.75, data.results.bindings.length]
+    .tickValues ticks
     .tickFormat (d) -> if d isnt 0 then "(#{d})" else ''
+
+  # vertical lines
+  vert_lines = svg.selectAll '.vert_line'
+    .data ticks
+
+  vert_lines.enter().append 'line'
+    .attr
+      class: 'vert_line'
+
+  vert_lines
+    .attr
+      y1: height
+      y2: 0
+      x1: (d) -> x d
+      x2: (d) -> x d
 
   svg.append 'g'
     .attr 
@@ -58,7 +75,7 @@ d3.json 'data.json', (error, data) ->
         .attr
           x: width-40
           y: -15
-        .text '% Agents'
+        .text '% Authors'
 
   svg.append 'g'
     .attr 

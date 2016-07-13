@@ -2,7 +2,7 @@ html, body {
   padding: 0;
   margin: 0;
 }
-body {
+svg {
   font: 10px sans-serif;
 }
 
@@ -11,12 +11,9 @@ body {
   stroke: #000;
   shape-rendering: crispEdges;
 }
-
-/*.x.axis path, .x.axis .tick {*/
 .x.axis path, .x2.axis path {
   display: none;
 }
-
 .x2 .tick line {
   display: none;
 }
@@ -25,4 +22,9 @@ body {
   fill: none;
   stroke: steelblue;
   stroke-width: 1.5px;
+}
+
+.vert_line {
+  stroke: #ccc;
+  stroke-width: 1px;
 }
