@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+<html>
   <head>
     <title>
-#if ($label)
-      $label.string | $server_name
-#else
-      Description of $uri | $server_name
-#end
+      #if ($label)
+        $label.string
+      #else
+        $uri
+      #end
     </title>
     <link rel="stylesheet" type="text/css" href="${home_link}snorql/resource.css" />
     <link rel="stylesheet" type="text/css" href="${home_link}snorql/vis.css" />
     <link rel="stylesheet" type="text/css" href="${home_link}snorql/style.css" />
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Noto+Serif'>
+    
     <link rel="alternate" type="application/rdf+xml" href="$rdf_link?output=rdfxml" title="This page in RDF (XML)" />
     <link rel="alternate" type="text/turtle" href="$rdf_link?output=ttl" title="This page in RDF (Turtle)" />
-    <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
     
-    <script type="text/javascript" src="${home_link}snorql/namespaces.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="${home_link}snorql/namespaces.js" type="text/javascript"></script>
     <script type="text/javascript">
       /* RDF triples stored in Velocity variables are passed to Javascript
       */
@@ -27,8 +27,13 @@
       #foreach($property in $properties)
         var property = {};
 
-        property.predicate = "${property.propertyPrefix()}${property.propertyLocalName()}";
-        property.object = "${property.value()}".replace(/&quot;/g, '');
+        property.predicate = {prefix: "${property.propertyPrefix()}", suffix: "${property.propertyLocalName()}", uri: "${property.propertyURI()}"};
+
+        #if ($property.value().isURI())
+          property.object = {value: "${property.value().URI}".replace(/&quot;/g, ''), isURI: true};
+        #else
+          property.object = {value: "${property.value()}".replace(/&quot;/g, ''), isURI: false};
+        #end
 
         #if ($property.value().isLiteral())
           property.type = 'Data property';
@@ -64,6 +69,19 @@
           <table id="inverse"></table>
         </div>
       </div>
+
+      #* 
+      #if ($metadata)
+        <br/> <br/>
+        <a name="meta"></a>
+        <h2>Metadata</h2>
+        <div id="metadata-tables">
+          #set($bnidCount = 0)
+          #set($idadd = 0)
+          #listProperties ($metadataroot $metadata) 
+        </div>
+      #end
+      *#
 
     </div>
 

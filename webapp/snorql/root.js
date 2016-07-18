@@ -37,7 +37,7 @@
       "main": true
     }, {
       "class": "Source Of Law",
-      "desc": "A source of law considered as a whole.",
+      "desc": "The origin of a law. For instance, it can be international, national, regional, and so on. It represents a source as a whole or a certain partition such as an article, paragraph, letter, item or annex.",
       "translation": "",
       "table": "tabSourceOfLaw",
       "main": true

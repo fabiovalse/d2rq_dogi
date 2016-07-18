@@ -3,9 +3,6 @@
   switch (resource.uri.split('/').slice(-2)[0]) {
     case 'Agent':
       draw_agent_diagram();
-      break;
-    default:
-      console.log('new class');
   }
 
 

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>How is structured the hierarchy of the DoGi classification? Which law branches are present?</title>
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="//wafi.iit.cnr.it/webvis/libs/jigmaps/zip.js"></script>
+    <script src="//wafi.iit.cnr.it/webvis/libs/jigmaps/tree_utils.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+  </head>  
+
+  <body>
+
+    <div id="header">
+      <div id="logo">
+        <div>
+          <div>LINKED</div>
+          <div>DATA</div>
+        </div>
+        <div>DOGI</div>
+      </div>
+    </div>
+
+    <div id="main">
+      <div id="radio">
+        <div><b>How is structured the hierarchy of the DoGi classification? Which law branches are present?</b></div>
+        <br>
+        The diagram shows the hierarchy, especially devised by DoGi, for classifying juridical acadamic articles. Each slice represents a distinct branch of the law or a specialization of it. For instance, <i>AMM</i> stands for Administrative Law and while its child <i>AMM.06.</i> stands for Administrative Justice. The width of each element depends on the:
+        <br><br>
+        <div><label><input type="radio" name="mode" value="count" checked></label> n. of children within its sub-hierarchy (suitable for navigating the hierarchy)</div>
+        <div><label><input type="radio" name="mode" value="size"></label> n. of academic articles classified by entries in its sub-hierarchy (suitable for comparing different entries)</div>
+      </div>
+      <svg></svg>
+      <script src="index.js"></script>
+    </div>
+
+  </body>
+</html>
