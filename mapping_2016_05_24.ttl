@@ -1,27 +1,37 @@
 @prefix map: <#> .
-#@prefix db: <> .
-@prefix dogi: <> .
-@prefix vocab: <vocab/> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix d2r: <http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf#> .
+@prefix meta: <http://www4.wiwiss.fu-berlin.de/bizer/d2r-server/metadata#> .
+@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
+
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
-@prefix d2r: <http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf#> .
-@prefix jdbc: <http://d2rq.org/terms/jdbc/> .
-@prefix dbo: <http://dbpedia.org/ontology/> .
-@prefix foaf: <http://xmlns.com/foaf/#> .
+
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix foaf: <http://xmlns.com/foaf/#> .
 @prefix schema: <http://schema.org/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix lexvo: <http://www.lexvo.org/page/> .
+
+@prefix dogi: <> .
 
 <> a d2r:Server;
   rdfs:label "D2R Server";
   d2r:baseURI <http://www.dogi.cnr.it/>;
   d2r:vocabularyIncludeInstances true;
   d2rq:useAllOptimizations true;
+  d2r:enableMetadata true;
+
+  meta:datasetTitle "My dataset";
+  meta:datasetDescription "My dataset contains many nice resources.";
+  meta:datasetSource "This other dataset";
+  meta:operatorName "John Doe";
+  meta:operatorHomepage "";
   .
 
 map:database a d2rq:Database;
@@ -43,38 +53,38 @@ map:tabDocumenti a d2rq:ClassMap;
 map:legDocResp_IDResponsabilita a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:creator;
-  d2rq:join "tabDocumenti.IDDoc = legDocResp.IDDoc";
-  d2rq:join "legDocResp.IDResponsabilita = tabResponsabilita.IDResponsabilita";
+  d2rq:join "tabDocumenti.IDDoc => legDocResp.IDDoc";
+  d2rq:join "legDocResp.IDResponsabilita => tabResponsabilita.IDResponsabilita";
   d2rq:uriPattern "Agent/@@tabResponsabilita.IDResponsabilita@@";
   d2rq:condition "legDocResp.Tipo = 0"; # Tipo = 0 denotes the author of the article
   .
 map:legDocResp_IDResponsabilita_2 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:contributor;
-  d2rq:join "tabDocumenti.IDDoc = legDocResp.IDDoc";
-  d2rq:join "legDocResp.IDResponsabilita = tabResponsabilita.IDResponsabilita";
+  d2rq:join "tabDocumenti.IDDoc => legDocResp.IDDoc";
+  d2rq:join "legDocResp.IDResponsabilita => tabResponsabilita.IDResponsabilita";
   d2rq:uriPattern "Agent/@@tabResponsabilita.IDResponsabilita@@";
   d2rq:condition "legDocResp.Tipo = 1"; # Tipo = 1 denotes the Dogi editor who created the Dogi document
   .
 map:tabDocumenti__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property rdfs:label;
-  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 0";
   .
 map:tabDocumenti_SourceOfLaw a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property bibo:cites;
-  d2rq:join "tabDocumenti.IDDoc = legDocSourceOfLaw.IDDoc";
-  d2rq:join "legDocSourceOfLaw.IDSourceOfLaw = tabSourceOfLaw.IDSourceOfLaw";
+  d2rq:join "tabDocumenti.IDDoc => legDocSourceOfLaw.IDDoc";
+  d2rq:join "legDocSourceOfLaw.IDSourceOfLaw => tabSourceOfLaw.IDSourceOfLaw";
   d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.IDSourceOfLaw@@";
   .
 map:tabDocumenti_Classificazione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:subject;
-  d2rq:join "tabDocumenti.IDDoc = legDocClassificazione.IDDoc";
-  d2rq:join "legDocClassificazione.IDClassificazione = tabClassificazioni.Id";
+  d2rq:join "tabDocumenti.IDDoc => legDocClassificazione.IDDoc";
+  d2rq:join "legDocClassificazione.IDClassificazione => tabClassificazioni.Id";
   d2rq:uriSqlExpression "CONCAT('http://www.dogi.cnr.it/resource/Classification/', CONCAT(tabClassificazioni.NS, (CASE WHEN (tabClassificazioni.ND != '') THEN CONCAT('_', tabClassificazioni.ND) ELSE '' END)))";
   .
 map:tabDocumenti_AnnoProd a d2rq:PropertyBridge;
@@ -88,8 +98,8 @@ map:tabDocumenti_PagInizio a d2rq:PropertyBridge;
   d2rq:property bibo:pageStart;
   d2rq:datatype xsd:integer;
   d2rq:column "tabDocumenti.PagInizio";
-  d2rq:join "tabDocumenti.IDRifBibl = tabRifBibl.IDRifBibl";
-  d2rq:join "tabRifBibl.IDRivista = tabRiviste.IDRivista";
+  d2rq:join "tabDocumenti.IDRifBibl => tabRifBibl.IDRifBibl";
+  d2rq:join "tabRifBibl.IDRivista => tabRiviste.IDRivista";
   d2rq:condition "LEFT(tabRiviste.IDRivista, 1) != '9'";
   .
 map:tabDocumenti_PagInizio_2 a d2rq:PropertyBridge;
@@ -97,8 +107,8 @@ map:tabDocumenti_PagInizio_2 a d2rq:PropertyBridge;
   d2rq:property bibo:numPages;
   d2rq:datatype xsd:integer;
   d2rq:column "tabDocumenti.PagInizio";
-  d2rq:join "tabDocumenti.IDRifBibl = tabRifBibl.IDRifBibl";
-  d2rq:join "tabRifBibl.IDRivista = tabRiviste.IDRivista";
+  d2rq:join "tabDocumenti.IDRifBibl => tabRifBibl.IDRifBibl";
+  d2rq:join "tabRifBibl.IDRivista => tabRiviste.IDRivista";
   d2rq:condition "tabDocumenti.PagFine = 0";
   d2rq:condition "LEFT(tabRiviste.IDRivista, 1) = '9'";
   .
@@ -113,7 +123,7 @@ map:tabDocumenti_IDTD a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dogi:documentType;
   d2rq:lang "it";
-  d2rq:join "tabDocumenti.IDTD = tabTipoDoc.IDTD";
+  d2rq:join "tabDocumenti.IDTD => tabTipoDoc.IDTD";
   d2rq:column "tabTipoDoc.TipoDoc";
   d2rq:additionalPropertyDefinitionProperty map:documentType_label;
   d2rq:additionalPropertyDefinitionProperty map:documentType_comment;
@@ -139,7 +149,7 @@ map:documentType_range a d2rq:AdditionalProperty;
 map:tabDocumenti_IDBib a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dogi:bibliographyType;
-  d2rq:join "tabDocumenti.IDBib = tabBib.IDBib";
+  d2rq:join "tabDocumenti.IDBib => tabBib.IDBib";
   d2rq:uriPattern "BibliographyType/@@tabBib.URILabel@@";
   d2rq:additionalPropertyDefinitionProperty map:bibliographyType_label;
   d2rq:additionalPropertyDefinitionProperty map:bibliographyType_comment;
@@ -165,25 +175,25 @@ map:bibliographyType_range a d2rq:AdditionalProperty;
 map:tabDocumenti_LIN a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646]. http://id.loc.gov/vocabulary/iso639-2/<<<ita>>>.html
-  d2rq:join "tabDocumenti.LIN = tabLingua.IDLingua";
+  d2rq:join "tabDocumenti.LIN => tabLingua.IDLingua";
   d2rq:uriPattern "http://www.lexvo.org/page/iso639-3/@@tabLingua.ISO639-2@@";
   .
 map:tabDocumenti_LO a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
-  d2rq:join "tabDocumenti.LO = tabLingua.IDLingua";
+  d2rq:join "tabDocumenti.LO => tabLingua.IDLingua";
   d2rq:uriPattern "http://www.lexvo.org/page/iso639-3/@@tabLingua.ISO639-2@@";
   .
 map:tabDocumenti_LR a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
-  d2rq:join "tabDocumenti.LR = tabLingua.IDLingua";
+  d2rq:join "tabDocumenti.LR => tabLingua.IDLingua";
   d2rq:uriPattern "http://www.lexvo.org/page/iso639-3/@@tabLingua.ISO639-2@@";
   .
 map:tabDocumenti_LA a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
-  d2rq:join "tabDocumenti.LA = tabLingua.IDLingua";
+  d2rq:join "tabDocumenti.LA => tabLingua.IDLingua";
   d2rq:uriPattern "http://www.lexvo.org/page/iso639-3/@@tabLingua.ISO639-2@@";
   .
 map:tabDocumenti_DataIns a d2rq:PropertyBridge;
@@ -200,14 +210,14 @@ map:tabDocumenti_Nota a d2rq:PropertyBridge;
 map:tabDocumenti_Testo_Titolo a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:title;
-  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 0";
   .
 map:tabDocumenti_Testo_Riassunto_500 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dogi:abstractEditedByJournal;
-  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
   d2rq:lang "it";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabDocumenti.IDTAbs = 500";
@@ -237,7 +247,7 @@ map:journal_article_range a d2rq:AdditionalProperty;
 map:tabDocumenti_Testo_Riassunto_800 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dogi:abstractEditedByAuthor;
-  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
   d2rq:lang "it";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabDocumenti.IDTAbs = 800";
@@ -267,7 +277,7 @@ map:journal_article2_range a d2rq:AdditionalProperty;
 map:tabDocumenti_Testo_Riassunto_900 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dogi:abstractEditedByDogi;
-  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
   d2rq:lang "it";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabDocumenti.IDTAbs = 900";
@@ -297,14 +307,14 @@ map:journal_article3_range a d2rq:AdditionalProperty;
 map:tabDocumenti_Testo_Sommario a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:tableOfContents;
-  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 2";
   .
 map:tabDocumenti_Testo_Traduzione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dogi:translation;
-  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 3";
   d2rq:additionalPropertyDefinitionProperty map:translation_label;
@@ -330,21 +340,21 @@ map:translation_range a d2rq:AdditionalProperty;
 map:tabDocumenti_Testo_TestoNota a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property skos:note;
-  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 4";
   .
 map:tabDocumenti_Testo_InTemaDi a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:description;
-  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 7";
   .
 map:tabDocumenti_Testo_AbstractInglese a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property bibo:abstract;
-  d2rq:join "tabDocumenti.IDDoc = tabTesti.IDDoc";
+  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
   d2rq:lang "en";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 8";
@@ -352,14 +362,14 @@ map:tabDocumenti_Testo_AbstractInglese a d2rq:PropertyBridge;
 map:tabDocumenti_Parte a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property bibo:section;
-  d2rq:join "tabDocumenti.IDRifBibl = tabRifBibl.IDRifBibl";
+  d2rq:join "tabDocumenti.IDRifBibl => tabRifBibl.IDRifBibl";
   d2rq:column "tabRifBibl.Parte";
   d2rq:condition "tabRifBibl.Parte != ''";
   .
 map:tabDocumenti_Fascicolo a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property bibo:issue;
-  d2rq:join "tabDocumenti.IDRifBibl = tabRifBibl.IDRifBibl";
+  d2rq:join "tabDocumenti.IDRifBibl => tabRifBibl.IDRifBibl";
   d2rq:uriPattern "Issue/@@tabRifBibl.IDRifBibl@@";
   .
 
@@ -549,14 +559,14 @@ map:annex_comment a d2rq:AdditionalProperty;
 map:tabSourceOfLaw_NomeFonte a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dcterms:description;
-  d2rq:join "tabSourceOfLaw.IDNomeFonte = tabNomeFonte.IDNomeFonte";
+  d2rq:join "tabSourceOfLaw.IDNomeFonte => tabNomeFonte.IDNomeFonte";
   d2rq:column "tabNomeFonte.NomeFonte";
   .
 map:tabSourceOfLaw_NomeFonte_2 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dcterms:description;
   d2rq:lang "it";
-  d2rq:join "tabSourceOfLaw.IDTP = tabTP.IDTP";
+  d2rq:join "tabSourceOfLaw.IDTP => tabTP.IDTP";
   d2rq:column "tabTP.TipoProvvedimento";
   d2rq:condition "tabSourceOfLaw.IDNomeFonte = 0";
   .
@@ -625,7 +635,7 @@ map:decreto_comment a d2rq:AdditionalProperty;
 map:tabSourceOfLaw_IDRegione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:region;
-  d2rq:join "tabSourceOfLaw.IDRegione = tabRegioni.IDRegione";
+  d2rq:join "tabSourceOfLaw.IDRegione => tabRegioni.IDRegione";
   d2rq:column "tabRegioni.Regione";
   d2rq:additionalPropertyDefinitionProperty map:region_label;
   d2rq:additionalPropertyDefinitionProperty map:region_comment;
@@ -642,7 +652,7 @@ map:tabSourceOfLaw_IDCitta a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:city;
   d2rq:lang "it";
-  d2rq:join "tabSourceOfLaw.IDCitta = tabCitta.IDCitta";
+  d2rq:join "tabSourceOfLaw.IDCitta => tabCitta.IDCitta";
   d2rq:column "tabCitta.Citta";
   d2rq:additionalPropertyDefinitionProperty map:city_label;
   d2rq:additionalPropertyDefinitionProperty map:city_comment;
@@ -658,7 +668,7 @@ map:city_comment a d2rq:AdditionalProperty;
 map:tabSourceOfLaw_IDProvincia a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:province;
-  d2rq:join "tabSourceOfLaw.IDProvincia = tabProvince.IDProvincia";
+  d2rq:join "tabSourceOfLaw.IDProvincia => tabProvince.IDProvincia";
   d2rq:column "tabProvince.Provincia";
   d2rq:condition "tabSourceOfLaw.IDProvincia != 0";
   d2rq:additionalPropertyDefinitionProperty map:province_label;
@@ -675,7 +685,7 @@ map:province_comment a d2rq:AdditionalProperty;
 map:tabSourceOfLaw_IDSezione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:section;
-  d2rq:join "tabSourceOfLaw.IDSezione = tabSezioni.IDSezione";
+  d2rq:join "tabSourceOfLaw.IDSezione => tabSezioni.IDSezione";
   d2rq:column "tabSezioni.Sezione";
   d2rq:condition "tabSourceOfLaw.IDSezione != 0";
   d2rq:additionalPropertyDefinitionProperty map:section_label;
@@ -692,7 +702,7 @@ map:section_comment a d2rq:AdditionalProperty;
 map:tabSourceOfLaw_IDAutorita a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:authority;
-  d2rq:join "tabSourceOfLaw.IDAutorita = tabAutorita.IDAutorita";
+  d2rq:join "tabSourceOfLaw.IDAutorita => tabAutorita.IDAutorita";
   d2rq:column "tabAutorita.Autorita";
   d2rq:condition "tabSourceOfLaw.IDAutorita != 0";
   d2rq:additionalPropertyDefinitionProperty map:authority_label;
@@ -709,7 +719,7 @@ map:authority_comment a d2rq:AdditionalProperty;
 map:tabSourceOfLaw_IDAmministrazione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:amministrazione;
-  d2rq:join "tabSourceOfLaw.IDAmministrazione = tabAmministrazioni.IDAmministrazione";
+  d2rq:join "tabSourceOfLaw.IDAmministrazione => tabAmministrazioni.IDAmministrazione";
   d2rq:column "tabAmministrazioni.Amministrazione";
   d2rq:condition "tabSourceOfLaw.IDAmministrazione != 0";
   d2rq:additionalPropertyDefinitionProperty map:amministrazione_label;
@@ -726,7 +736,7 @@ map:amministrazione_comment a d2rq:AdditionalProperty;
 map:tabSourceOfLaw_IDStato a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:country;
-  d2rq:join "tabSourceOfLaw.IDStato = tabStati.IDStato";
+  d2rq:join "tabSourceOfLaw.IDStato => tabStati.IDStato";
   d2rq:uriPattern "Country/@@tabStati.IDStato@@";
   d2rq:additionalPropertyDefinitionProperty map:country_label;
   d2rq:additionalPropertyDefinitionProperty map:country_comment;
@@ -742,7 +752,7 @@ map:country_comment a d2rq:AdditionalProperty;
 map:tabSourceOfLaw_IDMinistero a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:ministry;
-  d2rq:join "tabSourceOfLaw.IDMinistero = tabMinisteri.IDMinistero";
+  d2rq:join "tabSourceOfLaw.IDMinistero => tabMinisteri.IDMinistero";
   d2rq:uriPattern "Ministry/@@tabMinisteri.IDMinistero@@";
   d2rq:additionalPropertyDefinitionProperty map:ministry_label;
   d2rq:additionalPropertyDefinitionProperty map:ministry_comment;
@@ -758,7 +768,7 @@ map:ministry_comment a d2rq:AdditionalProperty;
 map:tabSourceOfLaw_DBpedia a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property owl:sameAs;
-  d2rq:join "tabSourceOfLaw.IDSourceOfLaw = CAMERA_leggi.IDSourceOfLaw";
+  d2rq:join "tabSourceOfLaw.IDSourceOfLaw => CAMERA_leggi.IDSourceOfLaw";
   d2rq:column "CAMERA_leggi.uri";
   .
 
@@ -779,17 +789,29 @@ map:classification_subClassOf a d2rq:AdditionalProperty;
 map:classification__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabClassificazioni;
   d2rq:property rdfs:label;
-  d2rq:join "tabClassificazioni.NS = tabSistematici.CodiceS";
-  d2rq:column "tabSistematici.Descrizione";
-  d2rq:condition "tabClassificazioni.ND IS NULL";
+  d2rq:column "tabClassificazioni.label";
   .
-map:classification__label_2 a d2rq:PropertyBridge;
+#map:classification__label a d2rq:PropertyBridge;
+#  d2rq:belongsToClassMap map:tabClassificazioni;
+#  d2rq:property rdfs:label;
+#  d2rq:join "tabClassificazioni.NS = tabSistematici.CodiceS";
+#  d2rq:column "tabSistematici.Descrizione";
+#  d2rq:condition "tabClassificazioni.ND IS NULL";
+#  .
+#map:classification__label_2 a d2rq:PropertyBridge;
+#  d2rq:belongsToClassMap map:tabClassificazioni;
+#  d2rq:property rdfs:label;
+#  d2rq:join "tabClassificazioni.NS = tabSistematici.CodiceS";
+#  d2rq:join "tabClassificazioni.ND = tabDescrittori.CodiceD";
+#  d2rq:sqlExpression "CONCAT(tabSistematici.Descrizione, CONCAT(': ', tabDescrittori.Descrizione))";
+#  d2rq:condition "tabClassificazioni.ND IS NOT NULL";
+#  .
+map:classification_IdPadre a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabClassificazioni;
-  d2rq:property rdfs:label;
-  d2rq:join "tabClassificazioni.NS = tabSistematici.CodiceS";
-  d2rq:join "tabClassificazioni.ND = tabDescrittori.CodiceD";
-  d2rq:sqlExpression "CONCAT(tabSistematici.Descrizione, CONCAT(': ', tabDescrittori.Descrizione))";
-  d2rq:condition "tabClassificazioni.ND IS NOT NULL";
+  d2rq:property skos:broader;
+  d2rq:join "tabClassificazioni.IdPadre => ParentClass.Id";
+  d2rq:alias "tabClassificazioni AS ParentClass";
+  d2rq:uriPattern "Classification/@@ParentClass.NS@@";
   .
 map:classification_NS a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabClassificazioni;
@@ -820,7 +842,7 @@ map:descrittore_label a d2rq:AdditionalProperty;
   .
 map:descrittore_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
-  d2rq:propertyValue "  "@en;
+  d2rq:propertyValue ""@en;
   .
 
 ### Table tabDescrittori
@@ -971,7 +993,7 @@ map:tabResponsabilita_SecondoElemento a d2rq:PropertyBridge;
 map:tabResponsabilita_DBpedia a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabResponsabilita;
   d2rq:property owl:sameAs;
-  d2rq:join "tabResponsabilita.IDResponsabilita = DBpedia_autori.IDResponsabilita";
+  d2rq:join "tabResponsabilita.IDResponsabilita => DBpedia_autori.IDResponsabilita";
   d2rq:column "DBpedia_autori.uri";
   .
 
@@ -997,7 +1019,7 @@ map:tabRifBibl__label a d2rq:PropertyBridge;
 map:tabRifBibl_IDRivista a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
   d2rq:property dcterms:isPartOf;
-  d2rq:join "tabRifBibl.IDRivista = tabRiviste.IDRivista";
+  d2rq:join "tabRifBibl.IDRivista => tabRiviste.IDRivista";
   d2rq:uriPattern "Journal/@@tabRiviste.IDRivista@@";
   .
 map:tabRifBibl_Fascicolo a d2rq:PropertyBridge;
@@ -1114,7 +1136,7 @@ map:tabRiviste_ACNPurl a d2rq:PropertyBridge;
 map:tabRiviste_BPR a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRiviste;
   d2rq:property owl:sameAs;
-  d2rq:join "tabRiviste.IDRivista = BPR_riviste.IDRivista";
+  d2rq:join "tabRiviste.IDRivista => BPR_riviste.IDRivista";
   d2rq:column "BPR_riviste.uri";
   .
 
