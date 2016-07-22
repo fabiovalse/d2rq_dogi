@@ -754,6 +754,7 @@ map:tabSourceOfLaw_IDMinistero a d2rq:PropertyBridge;
   d2rq:property dogi:ministry;
   d2rq:join "tabSourceOfLaw.IDMinistero => tabMinisteri.IDMinistero";
   d2rq:uriPattern "Ministry/@@tabMinisteri.IDMinistero@@";
+  d2rq:condition "tabSourceOfLaw.IDMinistero != 0";
   d2rq:additionalPropertyDefinitionProperty map:ministry_label;
   d2rq:additionalPropertyDefinitionProperty map:ministry_comment;
   .
