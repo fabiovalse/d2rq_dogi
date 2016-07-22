@@ -1,0 +1,57 @@
+{
+  "head": {
+    "vars": [ "c" , "cont" ]
+  } ,
+  "results": {
+    "bindings": [
+      {
+        "c": { "type": "uri" , "value": "http://xmlns.com/foaf/#Agent" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "23677" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Issue" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8194" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.w3.org/2004/02/skos/core#Concept" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "6802" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/resource/SourceOfLaw" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "111458" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Article" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "77582" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://xmlns.com/foaf/#Person" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "23620" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://xmlns.com/foaf/#Organization" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/resource/Ministry" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "56" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://purl.org/dc/elements/1.1/Location" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "219" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Journal" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "270" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/resource/Classification" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7577" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/resource/BibliographyType" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      }
+    ]
+  }
+}
