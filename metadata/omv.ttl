@@ -71,7 +71,7 @@
 	
 .
 
-:IIT-C R a omv:Organization;
+:IIT-CNR a omv:Organization;
 	name "Institute of Informatics and Telematics - National Research Council, Italy";
 	acronym "IIT-CNR";
 .
