@@ -15,9 +15,8 @@
 <> a void:DatasetDescription;
 	dcterms:title "A VoID Description of the DoGi Linked Open Dataset";
 	# TODO add other people
-	dcterms:creator :Valsecchi;
-	dcterms:creator :LoDuca;
-	dcterms:creator :Marchetti;
+	dcterms:creator :IIT-CNR;
+	dcterms:creator :ITTIG-CNR;
 	foaf:primaryTopic :DoGi;
 	.
 
@@ -30,9 +29,8 @@
 	dcterms:source <http://www.dogi.cnr.it> ;
 	dcterms:modified "2016-06-01"^^xsd:date ;
 	# TODO add other people
-	dcterms:publisher :Valsecchi;
-	dcterms:publisher :LoDuca;
-	dcterms:publisher :Marchetti;
+	dcterms:publisher :IIT-CNR;
+	dcterms:publisher :ITTIG-CNR;
 	dcterms:contributor :IIT-CNR;
 	dcterms:contributor :ITTIG-CNR;
 	
@@ -69,7 +67,7 @@
 	void:exampleResource <http://www.dogi.cnr.it/resource/Ministry/1>;
 	void:exampleResource <http://www.dogi.cnr.it/resource/Country/1>;
 	
-	void:uriSpace "http://dogi.cnr.it/resource";
+	void:uriSpace "http://www.dogi.cnr.it/resource";
 	
 	void:vocabulary <http://rdfs.org/ns/void#>;
 	void:vocabulary <http://www.w3.org/2002/07/owl#>;
@@ -93,22 +91,6 @@
 	void:distinctObjects ;
 	void:classes 11;
 	.
-
-#TODO add other people (Connect to organizations)
-:Valsecchi a foaf:Person ;
-  	rdfs:label "Fabio Valsecchi" ;
-  	foaf:mbox <mailto:fabio.valsecchi@iit.cnr.it> ;
-  	.
-  	
-:LoDuca a foaf:Person ;
-  	rdfs:label "Angelica Lo Duca" ;
-  	foaf:mbox <mailto:angelica.loduca@iit.cnr.it> ;
-  	.
-
-:Marchetti a foaf:Person ;
-  	rdfs:label "Andrea Marchetti" ;
-  	foaf:mbox <mailto:andrea.marchetti@iit.cnr.it> ;
-  	.
   	
 :ITTIG-CNR a foaf:Organization;
 	rdfs:label "Institute of Legal Information Theory and Techniques - National Research Council, Italy";

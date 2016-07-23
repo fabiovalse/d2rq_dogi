@@ -31,13 +31,14 @@
 	#TODO put modification date
 	omv:modificationDate "??"^xsd:date;
 	# TODO put 0:n contributors. They must be omv:Party (omv:Person or omv:Organization)
-	omv:hasContributor :IIT;
-	omv:hasContributor :ITTIG;
-	omv:hasCreator :Valsecchi;
+	omv:hasContributor :IIT-CNR;
+	omv:hasContributor :ITTIG-CNR;
+	omv:hasCreator :IIT-CNR;
+	omv:hasCreator :ITTIG-CNR;
 	
 	#The parties (i.e. organisations, people) that have expressed support or approval to this ontology.
-	omv:endorsedBy :IIT;
-	omv:endorsedBy :ITTIG;
+	omv:endorsedBy :IIT-CNR;
+	omv:endorsedBy :ITTIG-CNR;
 	omv:hasDomain :Domain;
 	omv:isOfType :Type;
 	omv:knownUsage "Represent DoGi concepts and resources";
@@ -70,21 +71,16 @@
 	
 .
 
-:IIT a omv:Organization;
+:IIT-C R a omv:Organization;
 	name "Institute of Informatics and Telematics - National Research Council, Italy";
 	acronym "IIT-CNR";
 .
 
-:ITTIG a omv:Organization;
+:ITTIG-CNR a omv:Organization;
 	name "Institute of Legal Information Theory and Techniques - National Research Council, Italy";
 	acronym "ITTIG-CNR";
 .
 
-:Valsecchi a omv:Person;
-	omv:lastName "Valsecchi";
-	omv:firstName "Fabio";
-	omv:eMail "fabio.valsecchi@iit.cnr.it";
-.
 
 :Domain a omv:OntologyDomain;
 	omv:URI <https://www.dmoz.org/Society/Law/>;
