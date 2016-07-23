@@ -36,7 +36,7 @@
 
 map:database a d2rq:Database;
   d2rq:jdbcDriver "com.mysql.jdbc.Driver";
-  d2rq:jdbcDSN "jdbc:mysql://localhost/dogi_2016_05_24";
+  d2rq:jdbcDSN "jdbc:mysql://localhost/dogi_2016_07_21";
   d2rq:username "root";
   d2rq:password "wafimysql";
   jdbc:autoReconnect "true";
@@ -754,6 +754,7 @@ map:tabSourceOfLaw_IDMinistero a d2rq:PropertyBridge;
   d2rq:property dogi:ministry;
   d2rq:join "tabSourceOfLaw.IDMinistero => tabMinisteri.IDMinistero";
   d2rq:uriPattern "Ministry/@@tabMinisteri.IDMinistero@@";
+  d2rq:condition "tabSourceOfLaw.IDMinistero != 0";
   d2rq:additionalPropertyDefinitionProperty map:ministry_label;
   d2rq:additionalPropertyDefinitionProperty map:ministry_comment;
   .

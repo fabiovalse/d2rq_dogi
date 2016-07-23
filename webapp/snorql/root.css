@@ -18,21 +18,23 @@ svg {
 
 #desc {
   width: 100%;
-  background: #f2f2f2;
+  background: powderblue;
   text-align: justify;
   font-size: 18px;
   line-height: 2.5;
   padding: 70px 0px 70px 0px;
+  border-bottom: 2px solid #bbb;
+  border-top: 0.5px solid #bbb;
 }
 #desc > * {
-  width: 70%;
+  width: 50%;
   margin: auto;
 }
 
 #nav {
   position: absolute;
   bottom: -20px;
-  right: 50px;
+  right: 20%;
 }
 #nav span {
   margin-right: 15px;
@@ -43,7 +45,7 @@ svg {
   transition: color 0.4s linear;
 }
 #nav span a:hover {
-  color: steelblue;
+  color: sienna;
 }
 
 /*  SUBSECTION
@@ -52,6 +54,7 @@ svg {
   font-size: 26px;
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
 }
 .subsection .subtitle {
   color: gray;
@@ -65,14 +68,15 @@ svg {
 /*  General
 */
 a {
-  color: steelblue;
+  color: sienna;
+  font-weight: bold;
 }
 a:hover {
   text-decoration: none;
   cursor: pointer;
 }
 i.fa {
-  color: steelblue;
+  color: skyblue;
   font-size: 50px;
   margin-right: 10px;
 }
@@ -90,10 +94,12 @@ ol {
 .main_class {
   margin-bottom: 15px;
 }
-
 .main_class div {
   color: gray;
   font-size: 14px;
+}
+.main_class a {
+  color: rgb(107,172,206);
 }
 
 #other_classes {
@@ -117,11 +123,12 @@ ol {
 */
 pre {
   margin: 0px;
-  background: #f2f2f2;
-  border-left: 2px solid #333;
+  background: rgb(250,250,250);
+  border-left: 3px solid rgb(170,170,170);
+  color: #666;
 }
 .query {
-  margin: 0px 0px 15px 20px;
+  margin: 30px 0px 0px 20px;
 }
 .run_query i {
   font-size: 18px;
@@ -200,4 +207,26 @@ svg .bar_amount {
 }
 .partner img {
   height: 75px;
+}
+
+/* footer
+*/
+#footer {
+  width: 100%;
+  background: #444;
+  color: #ddd;
+  margin-top: 40px;
+  border-top: 6px solid #777777;
+}
+#footer > * {
+  width: 60%;
+  margin: auto;
+  padding: 30px;
+}
+.footer_desc {
+  display: flex;
+  align-items: center;
+}
+.footer_desc i {
+  color: gray;
 }

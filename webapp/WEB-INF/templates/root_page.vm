@@ -24,7 +24,7 @@
             <div>LINKED</div>
             <div>DATA</div>
           </div>
-          <div>DOGI</div>
+          <div>DoGi</div>
         </div>
         <div id="nav">
           <span><a href="#download">DOWNLOAD</a></span>
@@ -38,6 +38,9 @@
         <div>
           LINKED DATA <a href="http://www.ittig.cnr.it/dogi/en/Index.php">DOGI</a> is a bibliographic Linked Open Data source containing references about <b>articles</b> published in <b>Italian legal journals</b>. Each article consists of <b>bibliographic information</b> enhanced with <b>abstracts</b>, <b>summaries</b>, a selection of <b>legislative and jurisprudential references</b>, classification codes based on the indexing DoGi system and other interesting information.
         </div>
+        <div style="color: brown; font-size: 17px; margin-top: 40px">
+          <i style="color: brown; font-size: 17px" class="fa fa-exclamation-triangle" aria-hidden="true"></i> This is a beta site. Data could be incomplete or incorrect since the project is still in its development phase.
+        </div>
       </div>
     </div>
 
@@ -46,7 +49,8 @@
       <div class="subsection bottom_line" id="download">
         <div class="title"><i class="fa fa-download"></i> Download the latest dump</div>
         <div class="subtitle"></div>
-          <a href="/snorql/dump/dump_2016_05_24.nt" download>Dump 24/05/2016</a>
+          <div><a href="/snorql/dump/dump_2016_07_21.nt" download>Dump 21/07/2016</a></div>
+          <div><a href="/snorql/dump/dump_2016_05_24.nt" download>Dump 24/05/2016</a></div>
         </ol>
       </div>
 
@@ -64,7 +68,7 @@
 
         <div class="subtitle">Some basic SPARQL queries:</div>
         <div class="query">
-          <div><a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%3Fsource+%3Fsource_label+%3Fsource_name+%3Furn+%7B%0D%0A++%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FArticle%2F247613%3E+bibo%3Acites+%3Fsource+.%0D%0A++%3Fsource+rdfs%3Alabel+%3Fsource_label+%3B%0D%0A++++++++++++++++dcterms%3Adescription+%3Fsource_name+.%0D%0A++OPTIONAL+%7B%0D%0A++++%3Fsource+dogi%3AurnNir+%3Furn+.%0D%0A++%7D%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>Which are the <i>Sources of law</i> cited by a certain <i>Article</i>?</div>
+          <div>Which are the <i>Sources of law</i> cited by a certain <i>Article</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%3Fsource+%3Fsource_label+%3Fsource_name+%3Furn+%7B%0D%0A++%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FArticle%2F247613%3E+bibo%3Acites+%3Fsource+.%0D%0A++%3Fsource+rdfs%3Alabel+%3Fsource_label+%3B%0D%0A++++++++++++++++dcterms%3Adescription+%3Fsource_name+.%0D%0A++OPTIONAL+%7B%0D%0A++++%3Fsource+dogi%3AurnNir+%3Furn+.%0D%0A++%7D%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
           <pre><code>
   SELECT ?source ?source_label ?source_name ?urn {
     &lt;http://www.dogi.cnr.it/resource/Article/247613&gt; bibo:cites ?source .
@@ -77,7 +81,7 @@
           </code></pre>
         </div>
         <div class="query">
-          <div><a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%3Fclass+%3Flabel+%7B%0D%0A++%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FArticle%2F247613%3E+dcterms%3Asubject+%3Fclass+.%0D%0A++%3Fclass+rdfs%3Alabel+%3Flabel+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>How it is classified (in term of <i>Classification codes</i>) a certain <i>Article</i>?</div>
+          <div>How it is classified (in term of <i>Classification codes</i>) a certain <i>Article</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%3Fclass+%3Flabel+%7B%0D%0A++%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FArticle%2F247613%3E+dcterms%3Asubject+%3Fclass+.%0D%0A++%3Fclass+rdfs%3Alabel+%3Flabel+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
           <pre><code>
   SELECT ?class ?label {
     &lt;http://www.dogi.cnr.it/resource/Article/247613&gt; dcterms:subject ?class .
@@ -86,7 +90,7 @@
           </code></pre>
         </div>
         <div class="query">
-          <div><a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%28COUNT+%28%3Farticle%29+AS+%3Fcont%29+%7B%0D%0A++%3Farticle+bibo%3Acites+%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FSourceOfLaw%2F179%3E+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>How many articles cite a certain <i>Source of law</i>?</div>
+          <div>How many articles cite a certain <i>Source of law</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%28COUNT+%28%3Farticle%29+AS+%3Fcont%29+%7B%0D%0A++%3Farticle+bibo%3Acites+%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FSourceOfLaw%2F179%3E+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
           <pre><code>
   SELECT (COUNT (?article) AS ?cont) {
     ?article bibo:cites &lt;http://www.dogi.cnr.it/resource/SourceOfLaw/179&gt; .
@@ -94,7 +98,7 @@
           </code></pre>
         </div>
         <div class="query">
-          <div><a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%28COUNT%28%3Farticle%29+AS+%3Fcont%29+%7B%0D%0A++%3Farticle+dcterms%3Asubject+%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FClassification%2FS0306%3E+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>How many articles are classified according to a certain <i>Classification code</i>?</div>
+          <div>How many articles are classified according to a certain <i>Classification code</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%28COUNT%28%3Farticle%29+AS+%3Fcont%29+%7B%0D%0A++%3Farticle+dcterms%3Asubject+%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FClassification%2FS0306%3E+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
           <pre><code>
   SELECT (COUNT(?article) AS ?cont) {
     ?article dcterms:subject &lt;http://www.dogi.cnr.it/resource/Classification/S0306&gt; .
@@ -115,7 +119,7 @@
         <div id="other_classes"></div>
       </div>
 
-      <div class="subsection" id="visualize">
+      <div class="subsection bottom_line" id="visualize">
         <div class="title"><i class="fa fa-bar-chart"></i> Get insights from data</div>
         <div class="subtitle">The bar-chart shows the amount of resources for each of the major class of the dataset.</div>
         <svg></svg>
@@ -137,6 +141,13 @@
 
           <div class="vis_box">
             <div>
+              <a href="snorql/vis/5"><img src="snorql/vis/5/thumbnail.png"/></a>
+            </div>
+            <div class="vis_desc">How are organized Sistematici and Descrittori? Which are the connections between them?</div>
+          </div>
+
+          <div class="vis_box">
+            <div>
               <a href="snorql/vis/4"><img src="snorql/vis/4/thumbnail.png"/></a>
             </div>
             <div class="vis_desc">Which kind of Source of Law are contained in DoGi? In which quantity?</div>
@@ -154,9 +165,20 @@
 
     </div>
 
+    <div class="subsection" id="publications">
+      <div class="title"><i class="fa fa-book"></i> Publications and presentations</div>
+      <div class="subtitle"></div>
+      <div>
+        May 2016 - <a target="_blank" href="http://www.oa.unito.it/new/open-research-data-and-open-science/">Open research data and open science</a>
+      </div>
+    </div>
+
     <div id="footer">
-      <div id="contact">
-        This web page shows the results of the collaboration between two institutes of the National Research Council (CNR):
+      <div id="contact" class="footer_desc">
+        <i class="fa fa-envelope-o fa-large"></i><span>For any additional information about the project you can contact us at @</span>
+      </div>
+      <div class="footer_desc">
+        <i class="fa fa-group fa-large"></i><span>This web page shows the results of the collaboration between two institutes of the National Research Council (CNR):</span>
       </div>
       <div id="partners">
         <div class="partner">
