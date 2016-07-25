@@ -27,7 +27,7 @@
 	dcterms:license <???> ;
 	foaf:homepage <http://www.dogi.cnr.it> ;
 	dcterms:source <http://www.dogi.cnr.it> ;
-	dcterms:modified "2016-06-01"^^xsd:date ;
+	dcterms:modified "2016-07-21"^^xsd:date ;
 	# TODO add other people
 	dcterms:publisher :IIT-CNR;
 	dcterms:publisher :ITTIG-CNR;
@@ -52,8 +52,7 @@
 	void:sparqlEndpoint <http://www.dogi.cnr.it/snorql/>;
 	void:sparqlEndpoint <http://www.dogi.cnr.it/sparql>;
 	
-	# TODO add link to the dump
-	void:dataDump <??>;
+	void:dataDump <http://www.dogi.cnr.it/snorql/dump/dump_2016_07_21.nt>;
 	
 	void:exampleResource <http://www.dogi.cnr.it/resource/Journal/0021> ;
 	void:exampleResource <http://www.dogi.cnr.it/resource/Issue/23065>;
