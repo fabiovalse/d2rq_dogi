@@ -135,13 +135,10 @@
 :License a omv:LincenseModel;
 	# string, mandatory
 	# TODO add license
-	omv:name "";
-	omv:acronym "";
-	omv:description "";
-	omv:documentation "";
-	# A party that specified the license model (optional, cardinality 0:n)
-	omv:specifiedBy ??;
-.
+	omv:name "Creative Commons Attribution-ShareAlike 4.0 International";
+	omv:acronym "CC-BY-SA-4.0";
+	omv:documentation "https://creativecommons.org/licenses/by-sa/4.0/";
+	.
 
 :Bibo a omv:Ontology;
 	omv:URI <http://purl.org/ontology/bibo/>;

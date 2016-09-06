@@ -24,7 +24,7 @@
 	dcterms:title "DoGi Linked Open Dataset";
 	dcterms:description "RDF version of the DoGi Dataset" ;
 	# TODO add license
-	dcterms:license <???> ;
+	dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
 	foaf:homepage <http://www.dogi.cnr.it> ;
 	dcterms:source <http://www.dogi.cnr.it> ;
 	dcterms:modified "2016-07-21"^^xsd:date ;
