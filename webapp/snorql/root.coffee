@@ -4,13 +4,13 @@ bar_height = 15
 classes_amounts = {}
 
 data = [
-  {"class": "Journal", "desc": "Italian academic journals related to the legal discipline.", "translation": "", "table": "tabRiviste", "main": true},
+  {"class": "Journal", "desc": "Academic contributions published within an issue of an Italian legal journal.", "translation": "", "table": "tabRiviste", "main": true},
   {"class": "Issue", "desc": "Periodical publications of Italian legal journals.", "translation": "", "table": "tabRifBibl", "main": true},
   {"class": "Article", "desc": "Academic articles published within an issue of an Italian legal journals.", "translation": "", "table": "tabDocumenti", "main": true},
   {"class": "Classification", "desc": "Scheme codes, specifically developed within DoGi, for classifying academic legal articles (i.e., a pair sistematico-descrittore or a sistematico).", "translation": "", "table": "tabClassificazioni", "main": true},
-  {"class": "Source Of Law", "desc": "The origin of a law. For instance, it can be international, national, regional, and so on. It represents a source as a whole or a certain partition such as an article, paragraph, letter, item or annex.", "translation": "", "table": "tabSourceOfLaw", "main": true},
-  {"class": "Agent", "desc": "Agents (i.e., persons or organizations) responsible of the authorship of an academic article.", "translation": "", "table": "tabResponsabilita", "main": true},
-  {"class": "Bibliography Type", "desc": "Types of bibliography used by a certain academic article (e.g., at the end of the article, footnote).", "translation": "", "table": "tabBib", "main": true},
+  {"class": "Source Of Law", "desc": "Legislative or jurisprudential sources cited in the contribution.  They can be international, European  national, regional sources and can be represented as a whole or as a specific partition (article, paragraph, letter, item or annex…).", "translation": "", "table": "tabSourceOfLaw", "main": true},
+  {"class": "Agent", "desc": "Authority (person or organization) responsible of the authorship of an academic contribution.", "translation": "", "table": "tabResponsabilita", "main": true},
+  {"class": "Bibliography Type", "desc": "Types of bibliography used by a certain academic contribution (e.g., at the end of the article, footnote).", "translation": "", "table": "tabBib", "main": true},
   {"class": "Descrittore", "desc": "An additional descriptor associated to a sistematico for better qualifying its context and meaning.", "translation": "", "table": "tabDescrittori", "main": false},
   {"class": "Sistematico", "desc": "A descriptor for legal documentation identifying a certain law branch (e.g., Administrative Law, Civil Law, Criminal Law).", "translation": "", "table": "tabSistematici", "main": false},
   {"class": "Ministry", "desc": "Administrative Structure responsible for a government sector.", "translation": "", "table": "tabMinisteri", "main": false},

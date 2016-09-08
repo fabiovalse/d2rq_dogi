@@ -13,7 +13,7 @@
   data = [
     {
       "class": "Journal",
-      "desc": "Italian academic journals related to the legal discipline.",
+      "desc": "Academic contributions published within an issue of an Italian legal journal.",
       "translation": "",
       "table": "tabRiviste",
       "main": true
@@ -37,19 +37,19 @@
       "main": true
     }, {
       "class": "Source Of Law",
-      "desc": "The origin of a law. For instance, it can be international, national, regional, and so on. It represents a source as a whole or a certain partition such as an article, paragraph, letter, item or annex.",
+      "desc": "Legislative or jurisprudential sources cited in the contribution.  They can be international, European  national, regional sources and can be represented as a whole or as a specific partition (article, paragraph, letter, item or annex…).",
       "translation": "",
       "table": "tabSourceOfLaw",
       "main": true
     }, {
       "class": "Agent",
-      "desc": "Agents (i.e., persons or organizations) responsible of the authorship of an academic article.",
+      "desc": "Authority (person or organization) responsible of the authorship of an academic contribution.",
       "translation": "",
       "table": "tabResponsabilita",
       "main": true
     }, {
       "class": "Bibliography Type",
-      "desc": "Types of bibliography used by a certain academic article (e.g., at the end of the article, footnote).",
+      "desc": "Types of bibliography used by a certain academic contribution (e.g., at the end of the article, footnote).",
       "translation": "",
       "table": "tabBib",
       "main": true
