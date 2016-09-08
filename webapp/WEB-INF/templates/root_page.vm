@@ -36,7 +36,7 @@
       </div>
       <div id="desc">
         <div>
-          LINKED DATA <a href="http://www.ittig.cnr.it/dogi/en/Index.php">DOGI</a> is a bibliographic Linked Open Data source containing references about <b>articles</b> published in <b>Italian legal journals</b>. Each article consists of <b>bibliographic information</b> enhanced with <b>abstracts</b>, <b>summaries</b>, a selection of <b>legislative and jurisprudential references</b>, classification codes based on the indexing DoGi system and other interesting information.
+          LINKED DATA <a href="http://www.ittig.cnr.it/dogi/en/Index.php">DOGI</a> is a bibliographic Linked Open Data source containing references about <b>contributions</b> published in <b>Italian legal journals</b>. For each contribution, a record DoGi is created. The record includes: a) <b>bibliographic information</b> enhanced with <b>abstracts</b>, <b>summaries</b> (ToCs and/or extended keywords); b) selection of <b>legislative and jurisprudential references</b>; c) one or more classification codes based on <b>DoGi classification schema</b>; d) other additional information related to the literary genres of the contribution analyzed.
         </div>
         <div style="color: brown; font-size: 17px; margin-top: 40px">
           <i style="color: brown; font-size: 17px" class="fa fa-exclamation-triangle" aria-hidden="true"></i> This is a beta site. Data could be incomplete or incorrect since the project is still in its development phase.
@@ -150,7 +150,7 @@
             <div>
               <a href="snorql/vis/4"><img src="snorql/vis/4/thumbnail.png"/></a>
             </div>
-            <div class="vis_desc">Which kind of Source of Law are contained in DoGi? In which quantity?</div>
+            <div class="vis_desc">Which kind of Source of Law are cited in DoGi? In which quantity?</div>
           </div>
 
           <div class="vis_box">
