@@ -1,0 +1,172 @@
+@prefix omv: <http://omv.ontoware.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<> a omv:Ontology;
+	omv:URI <??>;
+	omv:name "DoGi Ontology";
+	#acronym - A short name by which an ontology is formally known
+	omv:acronym "dogi";
+	omv:description "The ontology related to Linked Data DoGi";
+	#documentation - URL for further documentation - range: string
+	omv:documentation "";
+	#reference - List of bibliographic references describing the ontology and its applications
+	omv:reference "";
+	omv:notes "";
+	omv:naturalLanguage "English";
+	
+	# TODO add other keywords
+	omv:keywords "juridical documents";
+	omv:keywords "???";
+	
+	#keyClasses - range string.
+	omv:keyClasses "SourceOfLaw";
+	omv:keyClasses "Classification";
+	omv:keyClasses "Ministry";
+	omv:keyClasses "BibliographyType";
+	
+	#TODO update
+	omv:status "draft";
+	#TODO put creation date
+	omv:creationDate "??"^xsd:date;
+	#TODO put modification date
+	omv:modificationDate "??"^xsd:date;
+	# TODO put 0:n contributors. They must be omv:Party (omv:Person or omv:Organization)
+	omv:hasContributor :IIT-CNR;
+	omv:hasContributor :ITTIG-CNR;
+	omv:hasCreator :IIT-CNR;
+	omv:hasCreator :ITTIG-CNR;
+	
+	#The parties (i.e. organisations, people) that have expressed support or approval to this ontology.
+	omv:endorsedBy :IIT-CNR;
+	omv:endorsedBy :ITTIG-CNR;
+	omv:hasDomain :Domain;
+	omv:isOfType :Type;
+	omv:knownUsage "Represent DoGi concepts and resources";
+	omv:hasOntologyLanguage :Language;
+	# The presentation syntax for the ontology language
+	omv:hasOntologySyntax :Syntax;
+	# The location where the ontology can be found. It should be accessible via a URL. It can be the same as the value for URI property
+	# Cardinality 1:n - required
+	omv:resourceLocator "";
+	# version required
+	omv:version "1.0";
+	omv:hasLicense :License;
+	
+	# References another ontology metadata instance that describes an ontology containing definitions, whose meaning is considered to be part of the meaning of the ontology described by this ontology metadata instance
+	# cardinality 0:n
+	# TODO add other ontologies
+	omv:useImports :Bibo;
+	omv:useImports :Skos;
+	omv:useImports :Dc;
+	omv:useImports :Foaf;
+	omv:useImports :Schema;
+	omv:useImports :Owl;
+	
+	# TODO update if new classes are added
+	omv:numberOfClasses 4^xsd:unsignedLong;
+	# TODO put number of properties
+	omv:numberOfProperties ??^xsd:unsignedLong;
+	# TODO put number of individuals
+	omv:numberOfIndividuals ??xsd:unsignedLong;
+	
+.
+
+:IIT-CNR a omv:Organization;
+	name "Institute of Informatics and Telematics - National Research Council, Italy";
+	acronym "IIT-CNR";
+.
+
+:ITTIG-CNR a omv:Organization;
+	name "Institute of Legal Information Theory and Techniques - National Research Council, Italy";
+	acronym "ITTIG-CNR";
+.
+
+
+:Domain a omv:OntologyDomain;
+	omv:URI <https://www.dmoz.org/Society/Law/>;
+	omv:name "Law";
+.
+
+:Type a omv:OntologyType;
+	# The name by which an ontology type is formally known (string, mandatory)
+	# Possible types are: 
+	# • upper level ontologies describing general, domain-independent concepts e.g. space, time.
+	# • core ontologies describing the most important concepts in a specific domain
+	# • domain ontology describing some domain of the world
+	# • task ontology describing generic types of tasks or activities e.g. selling, selecting.
+	# • application ontology describing some domain in an application-dependent manner 
+	omv:name "Domain ontology";
+	omv:acronym "dogi-type";
+	omv:description "The dogi-type ontology is related to the juridical field";
+	# The url for further documentation (string, optional)
+	# TODO add documentation url
+	omv:documentation "";
+	omv:definedBy :IIT;
+	omv:definedBy :ITTIG;
+. 
+	
+:Language a omv:OntologyLanguage;
+	# Possible names are:
+	# • OWL
+	# • OWL-DL
+	# • OWL-Lite 
+	# • OWL-Full 
+	# • DAML-OIL 
+	# • RDF(S)
+	omv:name "";
+	omv:acronym "";
+	omv:description "";
+	omv:documentation "";
+	# The party who developed the language
+	omv:developedBy ??;
+.
+
+:Syntax a omv:OntologySyntax;
+	# Possible names are:
+	# • OWL-XML 
+	# • RDF/XML
+	omv:name "";
+	omv:acronym "";
+	omv:description "";
+	omv:documentation "";
+	omv:developedBy :Valsecchi;
+.
+
+:License a omv:LincenseModel;
+	# string, mandatory
+	# TODO add license
+	omv:name "Creative Commons Attribution-ShareAlike 4.0 International";
+	omv:acronym "CC-BY-SA-4.0";
+	omv:documentation "https://creativecommons.org/licenses/by-sa/4.0/";
+	.
+
+:Bibo a omv:Ontology;
+	omv:URI <http://purl.org/ontology/bibo/>;
+	omv:name "The Bibliographic Ontology";
+.
+
+:Skos a omv:Ontology;
+	omv:URI <http://www.w3.org/2004/02/skos/core#>;
+	omv:name "Simple Knowledge Organization System";
+.
+
+:Dc a omv:Ontology;
+	omv:URI <http://purl.org/dc/terms/>;
+	omv:name "DCMI Metadata Terms";
+.
+
+:Foaf a omv:Ontology;
+	omv:URI <http://xmlns.com/foaf/#>;
+	omv:name "FOAF Vocabulary";
+.
+
+:Schema a omv:Ontology;
+	omv:URI <http://schema.org/>;
+	omv:name "Schema Ontology";
+.
+
+:Owl a omv:Ontology;
+	omv:URI <http://www.w3.org/2002/07/owl#>;
+	omv:name "The OWL 2 Schema vocabulary (OWL 2)";
+.
+	
