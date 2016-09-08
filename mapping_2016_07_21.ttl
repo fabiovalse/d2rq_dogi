@@ -1,3 +1,5 @@
+@prefix dogi: <> .
+
 @prefix map: <#> .
 @prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
 @prefix d2r: <http://sites.wiwiss.fu-berlin.de/suhl/bizer/d2r-server/config.rdf#> .
@@ -17,21 +19,15 @@
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix lexvo: <http://www.lexvo.org/page/> .
-
-@prefix dogi: <> .
+@prefix lexvont: <http://lexvo.org/ontology#> .
 
 <> a d2r:Server;
-  rdfs:label "D2R Server";
+  rdfs:label "Linked Data DoGi";
   d2r:baseURI <http://www.dogi.cnr.it/>;
+  #d2r:port 2020;
   d2r:vocabularyIncludeInstances true;
-  d2rq:useAllOptimizations true;
-  d2r:enableMetadata true;
-
-  meta:datasetTitle "My dataset";
-  meta:datasetDescription "My dataset contains many nice resources.";
-  meta:datasetSource "This other dataset";
-  meta:operatorName "John Doe";
-  meta:operatorHomepage "";
+  #d2rq:useAllOptimizations true;
+  #d2r:enableMetadata true;
   .
 
 map:database a d2rq:Database;
@@ -174,25 +170,25 @@ map:bibliographyType_range a d2rq:AdditionalProperty;
   .
 map:tabDocumenti_LIN a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646]. http://id.loc.gov/vocabulary/iso639-2/<<<ita>>>.html
+  d2rq:property lexvont:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646]. http://id.loc.gov/vocabulary/iso639-2/<<<ita>>>.html
   d2rq:join "tabDocumenti.LIN => tabLingua.IDLingua";
   d2rq:uriPattern "http://www.lexvo.org/page/iso639-3/@@tabLingua.ISO639-2@@";
   .
 map:tabDocumenti_LO a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
+  d2rq:property lexvont:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
   d2rq:join "tabDocumenti.LO => tabLingua.IDLingua";
   d2rq:uriPattern "http://www.lexvo.org/page/iso639-3/@@tabLingua.ISO639-2@@";
   .
 map:tabDocumenti_LR a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
+  d2rq:property lexvont:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
   d2rq:join "tabDocumenti.LR => tabLingua.IDLingua";
   d2rq:uriPattern "http://www.lexvo.org/page/iso639-3/@@tabLingua.ISO639-2@@";
   .
 map:tabDocumenti_LA a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dcterms:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
+  d2rq:property lexvont:language; # Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].
   d2rq:join "tabDocumenti.LA => tabLingua.IDLingua";
   d2rq:uriPattern "http://www.lexvo.org/page/iso639-3/@@tabLingua.ISO639-2@@";
   .
@@ -203,7 +199,7 @@ map:tabDocumenti_DataIns a d2rq:PropertyBridge;
   .
 map:tabDocumenti_Nota a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property skos:note;
+  d2rq:property dcterms:source;
   d2rq:condition "tabDocumenti.Nota != ''";
   d2rq:column "tabDocumenti.Nota";
   .
@@ -226,6 +222,8 @@ map:tabDocumenti_Testo_Riassunto_500 a d2rq:PropertyBridge;
   d2rq:additionalPropertyDefinitionProperty map:journal_article_comment;
   d2rq:additionalPropertyDefinitionProperty map:journal_article_domain;
   d2rq:additionalPropertyDefinitionProperty map:journal_article_range;
+  d2rq:additionalPropertyDefinitionProperty map:journal_article_subPropertyOf;
+  d2rq:additionalPropertyDefinitionProperty map:journal_article_subPropertyOf_2;
   .
 map:journal_article_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -243,6 +241,14 @@ map:journal_article_range a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:range;
   d2rq:propertyValue rdf:langString;
   .
+map:journal_article_subPropertyOf a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subPropertyOf;
+  d2rq:propertyValue bibo:abstract;
+  .
+map:journal_article_subPropertyOf_2 a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subPropertyOf;
+  d2rq:propertyValue dcterms:abstract;
+  .
 
 map:tabDocumenti_Testo_Riassunto_800 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
@@ -256,6 +262,8 @@ map:tabDocumenti_Testo_Riassunto_800 a d2rq:PropertyBridge;
   d2rq:additionalPropertyDefinitionProperty map:journal_article2_comment;
   d2rq:additionalPropertyDefinitionProperty map:journal_article2_domain;
   d2rq:additionalPropertyDefinitionProperty map:journal_article2_range;
+  d2rq:additionalPropertyDefinitionProperty map:journal_article2_subPropertyOf;
+  d2rq:additionalPropertyDefinitionProperty map:journal_article2_subPropertyOf_2;
   .
 map:journal_article2_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -273,6 +281,14 @@ map:journal_article2_range a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:range;
   d2rq:propertyValue rdf:langString;
   .
+map:journal_article2_subPropertyOf a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subPropertyOf;
+  d2rq:propertyValue bibo:abstract;
+  .
+map:journal_article2_subPropertyOf_2 a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subPropertyOf;
+  d2rq:propertyValue dcterms:abstract;
+  .
 
 map:tabDocumenti_Testo_Riassunto_900 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
@@ -286,6 +302,8 @@ map:tabDocumenti_Testo_Riassunto_900 a d2rq:PropertyBridge;
   d2rq:additionalPropertyDefinitionProperty map:journal_article3_comment;
   d2rq:additionalPropertyDefinitionProperty map:journal_article3_domain;
   d2rq:additionalPropertyDefinitionProperty map:journal_article3_range;
+  d2rq:additionalPropertyDefinitionProperty map:journal_article3_subPropertyOf;
+  d2rq:additionalPropertyDefinitionProperty map:journal_article3_subPropertyOf_2;
   .
 map:journal_article3_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -302,6 +320,14 @@ map:journal_article3_domain a d2rq:AdditionalProperty;
 map:journal_article3_range a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:range;
   d2rq:propertyValue rdf:langString;
+  .
+map:journal_article3_subPropertyOf a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subPropertyOf;
+  d2rq:propertyValue bibo:abstract;
+  .
+map:journal_article3_subPropertyOf_2 a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subPropertyOf;
+  d2rq:propertyValue dcterms:abstract;
   .
 
 map:tabDocumenti_Testo_Sommario a d2rq:PropertyBridge;
@@ -339,7 +365,7 @@ map:translation_range a d2rq:AdditionalProperty;
 
 map:tabDocumenti_Testo_TestoNota a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property skos:note;
+  d2rq:property dcterms:source;
   d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 4";
@@ -461,7 +487,7 @@ map:tabSourceOfLaw_normattiva a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property schema:url;
   d2rq:property foaf:page;
-  d2rq:sqlExpression "CONCAT('http://www.normattiva.it/uri-res/N2Ls?', tabSourceOfLaw.urnNirAtto)";
+  d2rq:sqlExpression "CASE WHEN (tabSourceOfLaw.urnNirPart != '') THEN (CONCAT(CONCAT('http://www.normattiva.it/uri-res/N2Ls?', tabSourceOfLaw.urnNirAtto), CONCAT(';~', tabSourceOfLaw.urnNirPart))) ELSE CONCAT('http://www.normattiva.it/uri-res/N2Ls?', tabSourceOfLaw.urnNirAtto) END";
   d2rq:condition "tabSourceOfLaw.urnNirAtto != ''";
   .
 map:tabSourceOfLaw_celexAtto a d2rq:PropertyBridge;
@@ -792,28 +818,13 @@ map:classification__label a d2rq:PropertyBridge;
   d2rq:property rdfs:label;
   d2rq:column "tabClassificazioni.label";
   .
-#map:classification__label a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabClassificazioni;
-#  d2rq:property rdfs:label;
-#  d2rq:join "tabClassificazioni.NS = tabSistematici.CodiceS";
-#  d2rq:column "tabSistematici.Descrizione";
-#  d2rq:condition "tabClassificazioni.ND IS NULL";
-#  .
-#map:classification__label_2 a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabClassificazioni;
-#  d2rq:property rdfs:label;
-#  d2rq:join "tabClassificazioni.NS = tabSistematici.CodiceS";
-#  d2rq:join "tabClassificazioni.ND = tabDescrittori.CodiceD";
-#  d2rq:sqlExpression "CONCAT(tabSistematici.Descrizione, CONCAT(': ', tabDescrittori.Descrizione))";
-#  d2rq:condition "tabClassificazioni.ND IS NOT NULL";
-#  .
-map:classification_IdPadre a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabClassificazioni;
-  d2rq:property skos:broader;
-  d2rq:join "tabClassificazioni.IdPadre => ParentClass.Id";
-  d2rq:alias "tabClassificazioni AS ParentClass";
-  d2rq:uriPattern "Classification/@@ParentClass.NS@@";
-  .
+# map:classification_IdPadre a d2rq:PropertyBridge;
+#   d2rq:belongsToClassMap map:tabClassificazioni;
+#   d2rq:property skos:broader;
+#   d2rq:join "tabClassificazioni.IdPadre => ParentClass.Id";
+#   d2rq:alias "tabClassificazioni AS ParentClass";
+#   d2rq:uriPattern "Classification/@@ParentClass.NS@@";
+#   .
 map:classification_NS a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabClassificazioni;
   d2rq:property dogi:sistematico;
@@ -862,7 +873,7 @@ map:descrittore_subClassOf a d2rq:AdditionalProperty;
   .
 map:tabDescrittori__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDescrittori;
-  d2rq:property rdfs:label;
+  d2rq:property skos:prefLabel;
   d2rq:pattern "Descrittore @@tabDescrittori.CodiceD@@";
   .
 #map:tabDescrittori_CodiceD a d2rq:PropertyBridge;
@@ -874,6 +885,11 @@ map:tabDescrittori_Descrizione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDescrittori;
   d2rq:property dcterms:description;
   d2rq:column "tabDescrittori.Descrizione";
+  .
+map:tabDescrittori_Concept_Scheme a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabDescrittori;
+  d2rq:property skos:inScheme;
+  d2rq:uriPattern "ConceptScheme/Descrittori";
   .
 
 ### Table tabBib
@@ -1155,11 +1171,6 @@ map:sistematico_subClassOf a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:subClassOf;
   d2rq:propertyValue owl:Thing;
   .
-map:tabSistematici__label a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabSistematici;
-  d2rq:property rdfs:label;
-  d2rq:pattern "Sistematico@@tabSistematici.CodiceS@@";
-  .
 map:tabSistematici_CodiceS a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSistematici;
   d2rq:property dcterms:identifier;
@@ -1167,18 +1178,49 @@ map:tabSistematici_CodiceS a d2rq:PropertyBridge;
   .
 map:tabSistematici_SiglaC a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSistematici;
-  d2rq:property dcterms:identifier;
+  d2rq:property skos:notation;
   d2rq:column "tabSistematici.SiglaC";
   .
 map:tabSistematici_Descrizione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSistematici;
-  d2rq:property dcterms:description;
+  d2rq:property skos:prefLabel;
   d2rq:column "tabSistematici.Descrizione";
   .
 map:tabSistematici_CodiceS_Padre a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSistematici;
   d2rq:property skos:broader;
   d2rq:uriPattern "Sistematico/@@tabSistematici.CodiceS_Padre@@";
+  .
+map:tabSistematici_CodiceS_Padre_2 a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabSistematici;
+  d2rq:property skos:narrower;
+  d2rq:join "tabSistematici.CodiceS => tabSistematici_Padre.CodiceS_Padre";
+  d2rq:alias "tabSistematici AS tabSistematici_Padre";
+  d2rq:uriPattern "Sistematico/@@tabSistematici_Padre.CodiceS@@";
+  .
+map:tabSistematici_CodiceS_Padre_3 a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabSistematici;
+  d2rq:property skos:topConceptOf;
+  d2rq:uriPattern "ConceptScheme/Sistematici";
+  d2rq:condition "tabSistematici.CodiceS_Padre IS NULL";
+  .
+map:tabSistematici_Concept_Scheme a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabSistematici;
+  d2rq:property skos:inScheme;
+  d2rq:uriPattern "ConceptScheme/Sistematici";
+  .
+
+### Table tabConceptScheme
+###
+map:tabConceptScheme a d2rq:ClassMap;
+  d2rq:dataStorage map:database;
+  d2rq:uriPattern "ConceptScheme/@@tabConceptScheme.Name@@";
+  d2rq:class skos:ConceptScheme;
+  .
+map:tabConceptScheme__label a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabConceptScheme;
+  d2rq:property skos:prefLabel;
+  d2rq:column "tabConceptScheme.Name";
   .
 
 ### Table tabStati
