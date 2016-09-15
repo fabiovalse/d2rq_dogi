@@ -7,7 +7,9 @@
     <link rel="stylesheet" type="text/css" href="${home_link}snorql/style.css" />
     <link rel="alternate" type="application/rdf+xml" href="$rdf_link?output=rdfxml" title="This page in RDF (XML)" />
     <link rel="alternate" type="text/turtle" href="$rdf_link?output=ttl" title="This page in RDF (Turtle)" />
-    <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
+    
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -17,29 +19,28 @@
   </head>
   <body>
     
-    <div id="root_header">
-      <div id="top_header">
-        <div id="logo">
-          <div>
-            <div>LINKED</div>
-            <div>DATA</div>
-          </div>
-          <div>DoGi</div>
-        </div>
-        <div id="nav">
-          <span><a href="#download">DOWNLOAD</a></span>
-          <span><a href="#query">QUERY</a></span>
-          <span><a href="#navigate">NAVIGATE</a></span>
-          <span><a href="#visualize">VISUALIZE</a></span>
-          <span><a href="#contact">CONTACT</a></span>
-        </div>
+    <div id="nav_out">
+      <div id="nav_in">
+        <span><a href="#download">DOWNLOAD</a></span>
+        <span><a href="#query">QUERY</a></span>
+        <span><a href="#navigate">ONTOLOGY</a></span>
+        <span><a href="#visualize">VISUALIZATION</a></span>
+        <span><a href="#contact">CONTACT</a></span>
       </div>
+    </div>
+    <div id="root_header">
       <div id="desc">
         <div>
-          LINKED DATA <a href="http://www.ittig.cnr.it/dogi/en/Index.php">DOGI</a> is a bibliographic Linked Open Data source containing references about <b>contributions</b> published in <b>Italian legal journals</b>. For each contribution, a record DoGi is created. The record includes: a) <b>bibliographic information</b> enhanced with <b>abstracts</b>, <b>summaries</b> (ToCs and/or extended keywords); b) selection of <b>legislative and jurisprudential references</b>; c) one or more classification codes based on <b>DoGi classification schema</b>; d) other additional information related to the literary genres of the contribution analyzed.
+          <span class="ld_dogi">LINKED DATA DOGI</span> is a bibliographic Linked Open Data source containing references about contributions published in Italian legal journals. For each contribution, a record DoGi is created and described by:
+          <ul>
+            <li>bibliographic information enhanced with abstracts, summaries (ToCs and/or extended keywords);</li>
+            <li>selection of legislative and jurisprudential references;</li>
+            <li>one or more classification codes based on DoGi classification schema;</li>
+            <li>other additional information related to the literary genres of the contribution analyzed.</li>
+          </ul>
         </div>
         <div style="color: brown; font-size: 17px; margin-top: 40px">
-          <i style="color: brown; font-size: 17px" class="fa fa-exclamation-triangle" aria-hidden="true"></i> This is a beta site. Data could be incomplete or incorrect since the project is still in its development phase.
+          <i style="color: brown; font-size: 17px" class="fa fa-exclamation-triangle" aria-hidden="true"></i> This is a beta site. Data could be incomplete or incorrect since the project is still in development.
         </div>
       </div>
     </div>
@@ -49,128 +50,138 @@
       <div class="subsection bottom_line" id="download">
         <div class="title"><i class="fa fa-download"></i> Download the latest dump</div>
         <div class="subtitle"></div>
+        <div class="body">
           <div><a href="/snorql/dump/dump_2016_07_21.nt" download>Dump 21/07/2016</a></div>
           <div><a href="/snorql/dump/dump_2016_05_24.nt" download>Dump 24/05/2016</a></div>
-        </ol>
+        </div>
       </div>
 
       <div class="subsection bottom_line" id="query">
         <div class="title"><i class="fa fa-database"></i> Query the dataset</div>
-        <div class="subtitle">Choose an endpoint according to your needs:</div>
-        <ol>
-          <li>
-            Query the dataset by writing SPARQL queries on the <a href="snorql/">endpoint</a>.
-          </li>
-          <li>
-            Use the SPARQL REST <a href="sparql?query=SELECT ?s ?o ?p {?s ?o ?p} LIMIT 3">API</a> for calling the endpoint from your code.
-          </li>
-        </ol>
+        
+        <div class="body">
+          <div class="subtitle">Choose an endpoint according to your needs:</div>
+          <ol>
+            <li>
+              Query the dataset by writing SPARQL queries on the <a href="snorql/">endpoint</a>.
+            </li>
+            <li>
+              Use the SPARQL REST <a href="sparql?query=SELECT ?s ?o ?p {?s ?o ?p} LIMIT 3">API</a> for calling the endpoint from your code.
+            </li>
+          </ol>
 
-        <div class="subtitle">Some basic SPARQL queries:</div>
-        <div class="query">
-          <div>Which are the <i>Sources of law</i> cited by a certain <i>Article</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%3Fsource+%3Fsource_label+%3Fsource_name+%3Furn+%7B%0D%0A++%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FArticle%2F247613%3E+bibo%3Acites+%3Fsource+.%0D%0A++%3Fsource+rdfs%3Alabel+%3Fsource_label+%3B%0D%0A++++++++++++++++dcterms%3Adescription+%3Fsource_name+.%0D%0A++OPTIONAL+%7B%0D%0A++++%3Fsource+dogi%3AurnNir+%3Furn+.%0D%0A++%7D%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
-          <pre><code>
-  SELECT ?source ?source_label ?source_name ?urn {
-    &lt;http://www.dogi.cnr.it/resource/Article/247613&gt; bibo:cites ?source .
-    ?source rdfs:label ?source_label ;
-                  dcterms:description ?source_name .
-    OPTIONAL {
-      ?source dogi:urnNir ?urn .
+          <div class="subtitle">Some basic SPARQL queries:</div>
+          <div class="query">
+            <div>Which are the <i>Sources of law</i> cited by a certain <i>Article</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%3Fsource+%3Fsource_label+%3Fsource_name+%3Furn+%7B%0D%0A++%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FArticle%2F247613%3E+bibo%3Acites+%3Fsource+.%0D%0A++%3Fsource+rdfs%3Alabel+%3Fsource_label+%3B%0D%0A++++++++++++++++dcterms%3Adescription+%3Fsource_name+.%0D%0A++OPTIONAL+%7B%0D%0A++++%3Fsource+dogi%3AurnNir+%3Furn+.%0D%0A++%7D%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
+            <pre><code>
+    SELECT ?source ?source_label ?source_name ?urn {
+      &lt;http://www.dogi.cnr.it/resource/Article/247613&gt; bibo:cites ?source .
+      ?source rdfs:label ?source_label ;
+                    dcterms:description ?source_name .
+      OPTIONAL {
+        ?source dogi:urnNir ?urn .
+      }
     }
-  }
-          </code></pre>
-        </div>
-        <div class="query">
-          <div>How it is classified (in term of <i>Classification codes</i>) a certain <i>Article</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%3Fclass+%3Flabel+%7B%0D%0A++%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FArticle%2F247613%3E+dcterms%3Asubject+%3Fclass+.%0D%0A++%3Fclass+rdfs%3Alabel+%3Flabel+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
-          <pre><code>
-  SELECT ?class ?label {
-    &lt;http://www.dogi.cnr.it/resource/Article/247613&gt; dcterms:subject ?class .
-    ?class rdfs:label ?label .
-  }
-          </code></pre>
-        </div>
-        <div class="query">
-          <div>How many articles cite a certain <i>Source of law</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%28COUNT+%28%3Farticle%29+AS+%3Fcont%29+%7B%0D%0A++%3Farticle+bibo%3Acites+%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FSourceOfLaw%2F179%3E+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
-          <pre><code>
-  SELECT (COUNT (?article) AS ?cont) {
-    ?article bibo:cites &lt;http://www.dogi.cnr.it/resource/SourceOfLaw/179&gt; .
-  }
-          </code></pre>
-        </div>
-        <div class="query">
-          <div>How many articles are classified according to a certain <i>Classification code</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%28COUNT%28%3Farticle%29+AS+%3Fcont%29+%7B%0D%0A++%3Farticle+dcterms%3Asubject+%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FClassification%2FS0306%3E+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
-          <pre><code>
-  SELECT (COUNT(?article) AS ?cont) {
-    ?article dcterms:subject &lt;http://www.dogi.cnr.it/resource/Classification/S0306&gt; .
-  }
-          </code></pre>
+            </code></pre>
+          </div>
+          <div class="query">
+            <div>How it is classified (in term of <i>Classification codes</i>) a certain <i>Article</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%3Fclass+%3Flabel+%7B%0D%0A++%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FArticle%2F247613%3E+dcterms%3Asubject+%3Fclass+.%0D%0A++%3Fclass+rdfs%3Alabel+%3Flabel+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
+            <pre><code>
+    SELECT ?class ?label {
+      &lt;http://www.dogi.cnr.it/resource/Article/247613&gt; dcterms:subject ?class .
+      ?class rdfs:label ?label .
+    }
+            </code></pre>
+          </div>
+          <div class="query">
+            <div>How many articles cite a certain <i>Source of law</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%28COUNT+%28%3Farticle%29+AS+%3Fcont%29+%7B%0D%0A++%3Farticle+bibo%3Acites+%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FSourceOfLaw%2F179%3E+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
+            <pre><code>
+    SELECT (COUNT (?article) AS ?cont) {
+      ?article bibo:cites &lt;http://www.dogi.cnr.it/resource/SourceOfLaw/179&gt; .
+    }
+            </code></pre>
+          </div>
+          <div class="query">
+            <div>How many articles are classified according to a certain <i>Classification code</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%28COUNT%28%3Farticle%29+AS+%3Fcont%29+%7B%0D%0A++%3Farticle+dcterms%3Asubject+%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FClassification%2FS0306%3E+.%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
+            <pre><code>
+    SELECT (COUNT(?article) AS ?cont) {
+      ?article dcterms:subject &lt;http://www.dogi.cnr.it/resource/Classification/S0306&gt; .
+    }
+            </code></pre>
+          </div>
         </div>
       </div>
 
       <div class="subsection bottom_line" id="navigate">
-        <div class="title"><i class="fa fa-compass"></i> Navigate the dataset</div>
-        <div class="subtitle">The class diagram below shows the RDF classes of the dataset. Major classes are blue while minor are brown. Gray edges show how the instances (resources) of the classes are connected:</div>
-        <div id="class_diagram">
-          <img src="/snorql/img/class_diagram.png" />
+      <div class="title"><i class="fa fa-compass"></i> Ontology</div>
+        <div class="body">
+          <div class="subtitle">The class diagram below shows the RDF classes of the dataset. Major classes are blue while minor are brown. Gray edges show how the instances (resources) of the classes are connected:</div>
+          <div id="class_diagram">
+            <img src="/snorql/img/class_diagram.png" />
+          </div>
+          <div class="subtitle">The major classes are the following:</div>
+          <div id="main_classes"></div>
+          <div class="subtitle">The minor classes are:</div>
+          <div id="other_classes"></div>
         </div>
-        <div class="subtitle">The major classes are the following:</div>
-        <div id="main_classes"></div>
-        <div class="subtitle">The minor classes are:</div>
-        <div id="other_classes"></div>
       </div>
 
       <div class="subsection bottom_line" id="visualize">
         <div class="title"><i class="fa fa-bar-chart"></i> Get insights from data</div>
-        <div class="subtitle">The bar-chart shows the amount of resources for each of the major class of the dataset.</div>
-        <svg></svg>
-        <div class="subtitle">Browse the following visualizations in order to get insights from the data.</div>
-        <div id="vis_list">
-          <div class="vis_box">
-            <div>
-              <a href="snorql/vis/1"><img src="snorql/vis/1/thumbnail.png"/></a>
+        <div class="body">
+          <div class="subtitle">The bar-chart shows the amount of resources for each of the major class of the dataset.</div>
+          <svg></svg>
+          <div class="subtitle">Browse the following visualizations in order to get insights from the data.</div>
+          <div id="vis_list">
+            <div class="vis_box">
+              <div>
+                <a href="snorql/vis/1"><img src="snorql/vis/1/thumbnail.png"/></a>
+              </div>
+              <div class="vis_desc">Which is the amount of articles published on journals rated as A and not-A during time?</div>
             </div>
-            <div class="vis_desc">Which is the amount of articles published on journals rated as A and not-A during time?</div>
-          </div>
-          
-          <div class="vis_box">
-            <div>
-              <a href="snorql/vis/3"><img src="snorql/vis/3/thumbnail.png"/></a>
+            
+            <div class="vis_box">
+              <div>
+                <a href="snorql/vis/3"><img src="snorql/vis/3/thumbnail.png"/></a>
+              </div>
+              <div class="vis_desc">How is structured the hierarchy of the DoGi classification? Which law branches are present?</div>
             </div>
-            <div class="vis_desc">How is structured the hierarchy of the DoGi classification? Which law branches are present?</div>
-          </div>
 
-          <div class="vis_box">
-            <div>
-              <a href="snorql/vis/5"><img src="snorql/vis/5/thumbnail.png"/></a>
+            <div class="vis_box">
+              <div>
+                <a href="snorql/vis/5"><img src="snorql/vis/5/thumbnail.png"/></a>
+              </div>
+              <div class="vis_desc">How are organized Sistematici and Descrittori? Which are the connections between them?</div>
             </div>
-            <div class="vis_desc">How are organized Sistematici and Descrittori? Which are the connections between them?</div>
-          </div>
 
-          <div class="vis_box">
-            <div>
-              <a href="snorql/vis/4"><img src="snorql/vis/4/thumbnail.png"/></a>
+            <div class="vis_box">
+              <div>
+                <a href="snorql/vis/4"><img src="snorql/vis/4/thumbnail.png"/></a>
+              </div>
+              <div class="vis_desc">Which kind of Source of Law are cited in DoGi? In which quantity?</div>
             </div>
-            <div class="vis_desc">Which kind of Source of Law are cited in DoGi? In which quantity?</div>
-          </div>
 
-          <div class="vis_box">
-            <div>
-              <a href="snorql/vis/2"><img src="snorql/vis/2/thumbnail.png"/></a>
+            <div class="vis_box">
+              <div>
+                <a href="snorql/vis/2"><img src="snorql/vis/2/thumbnail.png"/></a>
+              </div>
+              <div class="vis_desc">How are distributed the articles published by the authors in DoGi?</div>
             </div>
-            <div class="vis_desc">How are distributed the articles published by the authors in DoGi?</div>
-          </div>
 
+          </div>
         </div>
       </div>
 
-    </div>
-
-    <div class="subsection" id="publications">
-      <div class="title"><i class="fa fa-book"></i> Publications and presentations</div>
-      <div class="subtitle"></div>
-      <div>
-        May 2016 - <a target="_blank" href="http://www.oa.unito.it/new/open-research-data-and-open-science/">Open research data and open science</a>
+      <div class="subsection" id="publications">
+        <div class="title"><i class="fa fa-book"></i> Publications and presentations</div>
+        <div class="body">
+          <div class="subtitle"></div>
+          <div>
+            May 2016 - <a target="_blank" href="http://www.oa.unito.it/new/open-research-data-and-open-science/">Open research data and open science</a>
+          </div>
+        </div>
       </div>
+
     </div>
 
     <div id="footer">

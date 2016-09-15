@@ -11,6 +11,7 @@ svg {
 */
 #root_header {
   width: 100%;
+  background: #fafafa;
 }
 #top_header {
   position: relative;
@@ -18,33 +19,46 @@ svg {
 
 #desc {
   width: 100%;
-  background: powderblue;
   text-align: justify;
-  font-size: 18px;
-  line-height: 2.5;
-  padding: 70px 0px 70px 0px;
+  font-size: 22px;
+  line-height: 2;
+  padding: 120px 0px 70px 0px;
   border-bottom: 2px solid #bbb;
-  border-top: 0.5px solid #bbb;
 }
 #desc > * {
   width: 65%;
   margin: auto;
 }
 
-#nav {
-  position: absolute;
-  bottom: -20px;
-  right: 20%;
+#desc ul {
+  font-size: 16px;
 }
-#nav span {
+
+#nav_out {
+  position: fixed;
+  background: #fdfdfd;
+  height: 45px;
+  width: 100%;
+  -webkit-box-shadow: 0 0 7px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 0 7px rgba(0,0,0,.2);
+  box-shadow: 0 0 7px rgba(0,0,0,.2);
+}
+#nav_in {
+  position: absolute;
+  top: 13;
+  right: 10;
+  font-size: 14;
+}
+#nav_in span {
   margin-right: 15px;
 }
-#nav span a {
+#nav_in span a {
+  font-family: 'Droid Sans';
   text-decoration: none;
   color: #333;
   transition: color 0.4s linear;
 }
-#nav span a:hover {
+#nav_in span a:hover {
   color: sienna;
 }
 
@@ -55,11 +69,15 @@ svg {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  font-family: 'Droid Sans';
 }
 .subsection .subtitle {
   color: gray;
   margin-bottom: 10px;
   text-align: justify;
+}
+.subsection .body {
+  margin-left: 59px;
 }
 .bottom_line {
   border-bottom: 1px solid #f2f2f2;
@@ -143,7 +161,6 @@ pre {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center
 }
 .vis_box div:not(.vis_desc) {
   border-radius: 5px;

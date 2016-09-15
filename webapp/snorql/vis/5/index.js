@@ -69,28 +69,14 @@
     transform: "translate(" + margin + ", " + margin + ")"
   });
 
-  d3.json('data.json', function(error, data) {
+  d3.json('tree.json', function(error, root) {
     return d3.csv('label.csv', function(error, data_labels) {
-      var collapse, root, table;
+      var collapse;
       data_labels.forEach(function(d) {
         var id;
         id = "" + d.ns + (d.nd !== 'NULL' ? '_' + d.nd : '');
         return labels[id] = d.label;
       });
-      table = data.results.bindings.map(function(d) {
-        return {
-          node: d.s.value,
-          parent: (d.s_parent != null ? d.s_parent.value : 'DoGi')
-        };
-      });
-      table.push({
-        node: 'DoGi'
-      });
-      root = (d3.stratify().id(function(d) {
-        return d.node;
-      }).parentId(function(d) {
-        return d.parent;
-      }))(table);
       collapse = function(d) {
         if (d.children != null) {
           d._children = d.children;
@@ -123,7 +109,7 @@
         height += distance;
       }
       n.x = height;
-      return n.y = n.depth * (width / max_depth);
+      return n.y = (n.depth - 1) * (width / max_depth) + 118;
     });
     svg.attr({
       width: width - margin,
@@ -135,7 +121,7 @@
     link = g_link.selectAll('path.link').data(links.filter(function(d) {
       return d.source.depth > 0;
     }), (function(d) {
-      return d.source.id + d.target.id;
+      return d.source.name + d.target.name;
     }));
     link.transition().duration(duration).attr({
       d: diagonal
@@ -158,7 +144,7 @@
     node = g_node.selectAll('g.node').data(nodes.filter(function(d) {
       return d.depth > 0;
     }), (function(d) {
-      return d.id;
+      return d.name;
     }));
     node.transition().duration(duration).attr({
       transform: function(d) {
@@ -203,7 +189,7 @@
      */
     node_enter.append('a').attr({
       href: function(d) {
-        return d.id;
+        return d.url;
       },
       target: '_blank'
     }).append('text').attr;
@@ -221,7 +207,7 @@
     });
     tspans = text.selectAll('tspan').data((function(d) {
       var words;
-      words = labels[d.id.split('/').slice(-1)].split(' ');
+      words = d.url === '' ? d.name.split(' ') : labels[d.url.split('/').slice(-1)].split(' ');
       if (words.length > 1) {
         return [
           {

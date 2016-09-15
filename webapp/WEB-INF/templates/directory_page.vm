@@ -10,8 +10,8 @@
     <link rel="alternate" type="application/rdf+xml" href="$rdf_link?output=rdfxml" title="This page in RDF (XML)" />
     <link rel="alternate" type="text/turtle" href="$rdf_link?output=ttl" title="This page in RDF (Turtle)" />
     
-    <link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
     <script src="//wafi.iit.cnr.it/webvis/libs/jigmaps/zip.js"></script>
     <script src="//wafi.iit.cnr.it/webvis/libs/jigmaps/tree_utils.js"></script>
@@ -31,13 +31,7 @@
   <body>
 
     <div id="header">
-      <div id="logo">
-        <div>
-          <div>LINKED</div>
-          <div>DATA</div>
-        </div>
-        <div>DoGi</div>
-      </div>
+      <span class="ld_dogi">LINKED DATA DOGI</span>
     </div>
 
     <div id="main">

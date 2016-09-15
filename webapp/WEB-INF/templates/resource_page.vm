@@ -11,7 +11,9 @@
     <link rel="stylesheet" type="text/css" href="${home_link}snorql/resource.css" />
     <link rel="stylesheet" type="text/css" href="${home_link}snorql/vis.css" />
     <link rel="stylesheet" type="text/css" href="${home_link}snorql/style.css" />
-    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Noto+Serif'>
+    
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     
     <link rel="alternate" type="application/rdf+xml" href="$rdf_link?output=rdfxml" title="This page in RDF (XML)" />
     <link rel="alternate" type="text/turtle" href="$rdf_link?output=ttl" title="This page in RDF (Turtle)" />

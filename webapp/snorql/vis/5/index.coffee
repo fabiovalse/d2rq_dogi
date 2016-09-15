@@ -38,21 +38,13 @@ g_node = svg.append 'g'
   .attr
     transform: "translate(#{margin}, #{margin})"
 
-d3.json 'data.json', (error, data) ->
+d3.json 'tree.json', (error, root) ->
   d3.csv 'label.csv', (error, data_labels) ->
   
     data_labels.forEach (d) ->
       id = "#{d.ns}#{if d.nd isnt 'NULL' then '_'+d.nd else ''}"
 
       labels[id] = d.label
-
-    table = data.results.bindings.map (d) -> {node: d.s.value, parent: (if d.s_parent? then d.s_parent.value else 'DoGi')}
-    table.push {node: 'DoGi'}
-
-    root = (d3.stratify()
-      .id (d) -> d.node
-      .parentId (d) -> d.parent
-      )(table)
 
     collapse = (d) ->
       if d.children?
@@ -83,7 +75,7 @@ update = (root) ->
         height += distance
         
     n.x = height
-    n.y = n.depth * (width / max_depth)
+    n.y = (n.depth-1) * (width / max_depth) + 118
   
   svg
     .attr
@@ -93,7 +85,7 @@ update = (root) ->
   ### links
   ###    
   link = g_link.selectAll 'path.link'
-    .data (links.filter (d) -> d.source.depth > 0), ((d) -> d.source.id+d.target.id)
+    .data (links.filter (d) -> d.source.depth > 0), ((d) -> d.source.name+d.target.name)
 
   link.transition().duration(duration)
     .attr
@@ -119,7 +111,7 @@ update = (root) ->
   ### nodes
   ###
   node = g_node.selectAll 'g.node'
-    .data (nodes.filter (d) -> d.depth > 0), ((d) -> d.id)
+    .data (nodes.filter (d) -> d.depth > 0), ((d) -> d.name)
 
   node.transition().duration(duration)
     .attr
@@ -156,7 +148,7 @@ update = (root) ->
   ###
   node_enter.append 'a'
     .attr
-      href: (d) -> d.id
+      href: (d) -> d.url
       target: '_blank'
     .append 'text'
       .attr
@@ -168,7 +160,7 @@ update = (root) ->
 
   tspans = text.selectAll 'tspan'
     .data ((d) -> 
-      words = labels[d.id.split('/').slice(-1)].split(' ')
+      words = if d.url is '' then d.name.split(' ') else labels[d.url.split('/').slice(-1)].split(' ')
       if words.length > 1
         return [{text: words.slice(0,Math.floor(words.length/2)).join(' '), is_leaf: not(d.children? or (d._children? and d._children.length > 0))}, {text: words.slice(Math.floor(words.length/2)).join(' '), is_leaf: not(d.children? or (d._children? and d._children.length > 0))}]
       else
