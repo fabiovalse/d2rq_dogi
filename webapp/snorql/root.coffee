@@ -74,16 +74,28 @@ d3.json "snorql/data/classes.json", (classes_data) ->
     .attr
       class: 'main_class'
 
-  enter_classes.append 'a'
+  enter_classes.append 'div'
+    .attr
+      class: 'square major'
+
+  title_desc = enter_classes.append 'div'
+    .attr
+      class: 'title_desc'
+
+  title_desc.append 'a'
     .attr
       href: (d) -> "directory/#{d.table}"
     .text (d) -> d.class
 
-  enter_classes.append 'div'
+  title_desc.append 'div'
     .text (d) -> "#{d.desc}"
 
   ### OTHER Classes
   ###
+  d3.select('#other_classes').append 'div'
+    .attr
+      class: 'square minor'
+
   other_classes = d3.select('#other_classes').selectAll 'span'
     .data data.filter((d) -> d.main is false)
 

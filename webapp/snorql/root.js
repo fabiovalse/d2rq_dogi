@@ -93,7 +93,7 @@
     /* Since there is not a direct mapping between rdf:type and class label
         a index for storing classes amounts is created
      */
-    var c, classes, enter_classes, i, key, other_classes, ref, x, y;
+    var c, classes, enter_classes, i, key, other_classes, ref, title_desc, x, y;
     ref = classes_data.results.bindings;
     for (i in ref) {
       c = ref[i];
@@ -142,19 +142,28 @@
     enter_classes = classes.enter().append('div').attr({
       "class": 'main_class'
     });
-    enter_classes.append('a').attr({
+    enter_classes.append('div').attr({
+      "class": 'square major'
+    });
+    title_desc = enter_classes.append('div').attr({
+      "class": 'title_desc'
+    });
+    title_desc.append('a').attr({
       href: function(d) {
         return "directory/" + d.table;
       }
     }).text(function(d) {
       return d["class"];
     });
-    enter_classes.append('div').text(function(d) {
+    title_desc.append('div').text(function(d) {
       return "" + d.desc;
     });
 
     /* OTHER Classes
      */
+    d3.select('#other_classes').append('div').attr({
+      "class": 'square minor'
+    });
     other_classes = d3.select('#other_classes').selectAll('span').data(data.filter(function(d) {
       return d.main === false;
     }));

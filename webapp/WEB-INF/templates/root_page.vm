@@ -10,6 +10,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <script src="http://d3js.org/d3.v3.min.js"></script>
@@ -35,10 +36,10 @@
         <div id="main_desc">A bibliographic Linked Open Data source storing references about contributions published in Italian legal journals.</div>
         For each contribution, a record DoGi is created and described by:
         <ul>
-          <li>bibliographic information enhanced with abstracts, summaries (ToCs and/or extended keywords);</li>
-          <li>selection of legislative and jurisprudential references;</li>
-          <li>one or more classification codes based on DoGi classification schema;</li>
-          <li>other additional information related to the literary genres of the contribution analyzed.</li>
+          <li>bibliographic information enhanced with <b>abstracts</b>, <b>summaries</b> (ToCs and/or extended keywords);</li>
+          <li>selection of legislative and jurisprudential <b>references</b>;</li>
+          <li>one or more <b>classification codes</b> based on DoGi classification schema;</li>
+          <li>other additional information related to the <b>literary genres</b> of the contribution analyzed.</li>
         </ul>
       </div>
       <div style="color: brown; font-size: 17px; margin-top: 40px">
@@ -120,9 +121,8 @@
           <div id="class_diagram">
             <img src="/snorql/img/class_diagram.png" />
           </div>
-          <div class="subtitle">The major classes are the following:</div>
           <div id="main_classes"></div>
-          <div class="subtitle">The minor classes are:</div>
+          <br>
           <div id="other_classes"></div>
         </div>
       </div>
