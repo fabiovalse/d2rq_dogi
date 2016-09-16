@@ -26,6 +26,7 @@ body > * {
   font-size: 22px;
   font-weight: bold;
   font-family: 'Droid Sans';
+  margin-left: 10px;
 }
 
 #page_title {

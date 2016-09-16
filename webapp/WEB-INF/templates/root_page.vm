@@ -24,8 +24,8 @@
       <span class="ld_dogi logo">LINKED DATA DOGI</span>
       <div id="nav_in">
         <span><a href="#download">DOWNLOAD</a></span>
-        <span><a href="#query">QUERY</a></span>
         <span><a href="#navigate">ONTOLOGY</a></span>
+        <span><a href="#query">QUERY</a></span>
         <span><a href="#visualize">VISUALIZATION</a></span>
         <span><a href="#contact">CONTACT</a></span>
       </div>
@@ -55,6 +55,19 @@
         <div class="body">
           <div><a href="/snorql/dump/dump_2016_07_21.nt" download>Dump 21/07/2016</a></div>
           <div><a href="/snorql/dump/dump_2016_05_24.nt" download>Dump 24/05/2016</a></div>
+        </div>
+      </div>
+
+      <div class="subsection bottom_line" id="navigate">
+      <div class="title"><i class="fa fa-compass"></i> Ontology</div>
+        <div class="body">
+          <div class="subtitle">The class diagram below shows the RDF classes of the dataset. Major classes are blue while minor are brown. Gray edges show how the instances (resources) of the classes are connected:</div>
+          <div id="class_diagram">
+            <img src="/snorql/img/class_diagram.png" />
+          </div>
+          <div id="main_classes"></div>
+          <br>
+          <div id="other_classes"></div>
         </div>
       </div>
 
@@ -111,19 +124,6 @@
     }
             </code></pre>
           </div>
-        </div>
-      </div>
-
-      <div class="subsection bottom_line" id="navigate">
-      <div class="title"><i class="fa fa-compass"></i> Ontology</div>
-        <div class="body">
-          <div class="subtitle">The class diagram below shows the RDF classes of the dataset. Major classes are blue while minor are brown. Gray edges show how the instances (resources) of the classes are connected:</div>
-          <div id="class_diagram">
-            <img src="/snorql/img/class_diagram.png" />
-          </div>
-          <div id="main_classes"></div>
-          <br>
-          <div id="other_classes"></div>
         </div>
       </div>
 
