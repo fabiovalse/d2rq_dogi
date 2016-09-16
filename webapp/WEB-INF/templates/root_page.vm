@@ -20,6 +20,7 @@
   <body>
     
     <div id="nav_out">
+      <span class="ld_dogi logo">LINKED DATA DOGI</span>
       <div id="nav_in">
         <span><a href="#download">DOWNLOAD</a></span>
         <span><a href="#query">QUERY</a></span>
@@ -28,20 +29,20 @@
         <span><a href="#contact">CONTACT</a></span>
       </div>
     </div>
-    <div id="root_header">
-      <div id="desc">
-        <div>
-          <span class="ld_dogi">LINKED DATA DOGI</span> is a bibliographic Linked Open Data source containing references about contributions published in Italian legal journals. For each contribution, a record DoGi is created and described by:
-          <ul>
-            <li>bibliographic information enhanced with abstracts, summaries (ToCs and/or extended keywords);</li>
-            <li>selection of legislative and jurisprudential references;</li>
-            <li>one or more classification codes based on DoGi classification schema;</li>
-            <li>other additional information related to the literary genres of the contribution analyzed.</li>
-          </ul>
-        </div>
-        <div style="color: brown; font-size: 17px; margin-top: 40px">
-          <i style="color: brown; font-size: 17px" class="fa fa-exclamation-triangle" aria-hidden="true"></i> This is a beta site. Data could be incomplete or incorrect since the project is still in development.
-        </div>
+    
+    <div id="desc">
+      <div>
+        <div id="main_desc">A bibliographic Linked Open Data source storing references about contributions published in Italian legal journals.</div>
+        For each contribution, a record DoGi is created and described by:
+        <ul>
+          <li>bibliographic information enhanced with abstracts, summaries (ToCs and/or extended keywords);</li>
+          <li>selection of legislative and jurisprudential references;</li>
+          <li>one or more classification codes based on DoGi classification schema;</li>
+          <li>other additional information related to the literary genres of the contribution analyzed.</li>
+        </ul>
+      </div>
+      <div style="color: brown; font-size: 17px; margin-top: 40px">
+        <i style="color: brown; font-size: 17px" class="fa fa-exclamation-triangle" aria-hidden="true"></i> This is a beta site. Data could be incomplete or incorrect since the project is still in development.
       </div>
     </div>
 

@@ -3,37 +3,8 @@ svg {
   margin-bottom: 50px;
 }
 
-.root {
-  margin-top: 0px !important;
-}
-
-/*  HEADER and LOGO
+/*  NAV e DESC
 */
-#root_header {
-  width: 100%;
-  background: #fafafa;
-}
-#top_header {
-  position: relative;
-}
-
-#desc {
-  width: 100%;
-  text-align: justify;
-  font-size: 22px;
-  line-height: 2;
-  padding: 120px 0px 70px 0px;
-  border-bottom: 2px solid #bbb;
-}
-#desc > * {
-  width: 65%;
-  margin: auto;
-}
-
-#desc ul {
-  font-size: 16px;
-}
-
 #nav_out {
   position: fixed;
   background: #fdfdfd;
@@ -60,6 +31,30 @@ svg {
 }
 #nav_in span a:hover {
   color: sienna;
+}
+.logo {
+  position: absolute;
+  top: 10;
+  left: 10;
+}
+
+#desc {
+  width: 100%;
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.8;
+  padding: 120px 0px 70px 0px;
+  border-bottom: 2px solid #bbb;
+  background: #fafafa;
+}
+#desc > * {
+  width: 65%;
+  margin: auto;
+}
+#main_desc {
+  font-size: 34px;
+  line-height: 1.5;
+  margin-bottom: 70px;
 }
 
 /*  SUBSECTION
