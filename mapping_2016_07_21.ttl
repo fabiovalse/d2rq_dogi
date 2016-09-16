@@ -14,7 +14,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dbo: <http://dbpedia.org/ontology/> .
-@prefix foaf: <http://xmlns.com/foaf/#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix schema: <http://schema.org/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -24,10 +24,9 @@
 <> a d2r:Server;
   rdfs:label "Linked Data DoGi";
   d2r:baseURI <http://www.dogi.cnr.it/>;
-  #d2r:port 2020;
   d2r:vocabularyIncludeInstances true;
-  #d2rq:useAllOptimizations true;
-  #d2r:enableMetadata true;
+  d2rq:useAllOptimizations true;
+  d2r:enableMetadata true;
   .
 
 map:database a d2rq:Database;
@@ -210,21 +209,23 @@ map:tabDocumenti_Testo_Titolo a d2rq:PropertyBridge;
   d2rq:column "tabTesti.Testo";
   d2rq:condition "tabTesti.Tipo = 0";
   .
-map:tabDocumenti_Testo_Riassunto_500 a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dogi:abstractEditedByJournal;
-  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
-  d2rq:lang "it";
-  d2rq:column "tabTesti.Testo";
-  d2rq:condition "tabDocumenti.IDTAbs = 500";
-  d2rq:condition "tabTesti.Tipo = 1";
-  d2rq:additionalPropertyDefinitionProperty map:journal_article_label;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article_comment;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article_domain;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article_range;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article_subPropertyOf;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article_subPropertyOf_2;
-  .
+# STANDBY in attesa di autorizzazione
+#
+# map:tabDocumenti_Testo_Riassunto_500 a d2rq:PropertyBridge;
+#   d2rq:belongsToClassMap map:tabDocumenti;
+#   d2rq:property dogi:abstractEditedByJournal;
+#   d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
+#   d2rq:lang "it";
+#   d2rq:column "tabTesti.Testo";
+#   d2rq:condition "tabDocumenti.IDTAbs = 500";
+#   d2rq:condition "tabTesti.Tipo = 1";
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article_label;
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article_comment;
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article_domain;
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article_range;
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article_subPropertyOf;
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article_subPropertyOf_2;
+#   .
 map:journal_article_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
   d2rq:propertyValue "Abstract edited by journal"@en;
@@ -249,22 +250,23 @@ map:journal_article_subPropertyOf_2 a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:subPropertyOf;
   d2rq:propertyValue dcterms:abstract;
   .
-
-map:tabDocumenti_Testo_Riassunto_800 a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dogi:abstractEditedByAuthor;
-  d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
-  d2rq:lang "it";
-  d2rq:column "tabTesti.Testo";
-  d2rq:condition "tabDocumenti.IDTAbs = 800";
-  d2rq:condition "tabTesti.Tipo = 1";
-  d2rq:additionalPropertyDefinitionProperty map:journal_article2_label;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article2_comment;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article2_domain;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article2_range;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article2_subPropertyOf;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article2_subPropertyOf_2;
-  .
+# STANDBY in attesa di autorizzazione
+#
+# map:tabDocumenti_Testo_Riassunto_800 a d2rq:PropertyBridge;
+#   d2rq:belongsToClassMap map:tabDocumenti;
+#   d2rq:property dogi:abstractEditedByAuthor;
+#   d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
+#   d2rq:lang "it";
+#   d2rq:column "tabTesti.Testo";
+#   d2rq:condition "tabDocumenti.IDTAbs = 800";
+#   d2rq:condition "tabTesti.Tipo = 1";
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_label;
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_comment;
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_domain;
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_range;
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_subPropertyOf;
+#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_subPropertyOf_2;
+#   .
 map:journal_article2_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
   d2rq:propertyValue "Abstract edited by author"@en;
@@ -1154,7 +1156,7 @@ map:tabRiviste_BPR a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRiviste;
   d2rq:property owl:sameAs;
   d2rq:join "tabRiviste.IDRivista => BPR_riviste.IDRivista";
-  d2rq:column "BPR_riviste.uri";
+  d2rq:uriColumn "BPR_riviste.uri";
   .
 
 ### Table tabSistematici
