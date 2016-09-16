@@ -226,30 +226,30 @@ map:tabDocumenti_Testo_Titolo a d2rq:PropertyBridge;
 #   d2rq:additionalPropertyDefinitionProperty map:journal_article_subPropertyOf;
 #   d2rq:additionalPropertyDefinitionProperty map:journal_article_subPropertyOf_2;
 #   .
-map:journal_article_label a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Abstract edited by journal"@en;
-  .
-map:journal_article_comment a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:comment;
-  d2rq:propertyValue "An abstract curated by the editorial staff of the journal."@en;
-  .
-map:journal_article_domain a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:domain;
-  d2rq:propertyValue bibo:Article;
-  .
-map:journal_article_range a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:range;
-  d2rq:propertyValue rdf:langString;
-  .
-map:journal_article_subPropertyOf a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:subPropertyOf;
-  d2rq:propertyValue bibo:abstract;
-  .
-map:journal_article_subPropertyOf_2 a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:subPropertyOf;
-  d2rq:propertyValue dcterms:abstract;
-  .
+# map:journal_article_label a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:label;
+#   d2rq:propertyValue "Abstract edited by journal"@en;
+#   .
+# map:journal_article_comment a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:comment;
+#   d2rq:propertyValue "An abstract curated by the editorial staff of the journal."@en;
+#   .
+# map:journal_article_domain a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:domain;
+#   d2rq:propertyValue bibo:Article;
+#   .
+# map:journal_article_range a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:range;
+#   d2rq:propertyValue rdf:langString;
+#   .
+# map:journal_article_subPropertyOf a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:subPropertyOf;
+#   d2rq:propertyValue bibo:abstract;
+#   .
+# map:journal_article_subPropertyOf_2 a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:subPropertyOf;
+#   d2rq:propertyValue dcterms:abstract;
+#   .
 # STANDBY in attesa di autorizzazione
 #
 # map:tabDocumenti_Testo_Riassunto_800 a d2rq:PropertyBridge;
@@ -267,30 +267,30 @@ map:journal_article_subPropertyOf_2 a d2rq:AdditionalProperty;
 #   d2rq:additionalPropertyDefinitionProperty map:journal_article2_subPropertyOf;
 #   d2rq:additionalPropertyDefinitionProperty map:journal_article2_subPropertyOf_2;
 #   .
-map:journal_article2_label a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Abstract edited by author"@en;
-  .
-map:journal_article2_comment a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:comment;
-  d2rq:propertyValue "An abstract written by the author of the article."@en;
-  .
-map:journal_article2_domain a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:domain;
-  d2rq:propertyValue bibo:Article;
-  .
-map:journal_article2_range a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:range;
-  d2rq:propertyValue rdf:langString;
-  .
-map:journal_article2_subPropertyOf a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:subPropertyOf;
-  d2rq:propertyValue bibo:abstract;
-  .
-map:journal_article2_subPropertyOf_2 a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:subPropertyOf;
-  d2rq:propertyValue dcterms:abstract;
-  .
+# map:journal_article2_label a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:label;
+#   d2rq:propertyValue "Abstract edited by author"@en;
+#   .
+# map:journal_article2_comment a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:comment;
+#   d2rq:propertyValue "An abstract written by the author of the article."@en;
+#   .
+# map:journal_article2_domain a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:domain;
+#   d2rq:propertyValue bibo:Article;
+#   .
+# map:journal_article2_range a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:range;
+#   d2rq:propertyValue rdf:langString;
+#   .
+# map:journal_article2_subPropertyOf a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:subPropertyOf;
+#   d2rq:propertyValue bibo:abstract;
+#   .
+# map:journal_article2_subPropertyOf_2 a d2rq:AdditionalProperty;
+#   d2rq:propertyName rdfs:subPropertyOf;
+#   d2rq:propertyValue dcterms:abstract;
+#   .
 
 map:tabDocumenti_Testo_Riassunto_900 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
@@ -489,14 +489,14 @@ map:tabSourceOfLaw_normattiva a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property schema:url;
   d2rq:property foaf:page;
-  d2rq:sqlExpression "CASE WHEN (tabSourceOfLaw.urnNirPart != '') THEN (CONCAT(CONCAT('http://www.normattiva.it/uri-res/N2Ls?', tabSourceOfLaw.urnNirAtto), CONCAT(';~', tabSourceOfLaw.urnNirPart))) ELSE CONCAT('http://www.normattiva.it/uri-res/N2Ls?', tabSourceOfLaw.urnNirAtto) END";
+  d2rq:uriSqlExpression "CASE WHEN (tabSourceOfLaw.urnNirPart != '') THEN (CONCAT(CONCAT('http://www.normattiva.it/uri-res/N2Ls?', tabSourceOfLaw.urnNirAtto), CONCAT(';~', tabSourceOfLaw.urnNirPart))) ELSE CONCAT('http://www.normattiva.it/uri-res/N2Ls?', tabSourceOfLaw.urnNirAtto) END";
   d2rq:condition "tabSourceOfLaw.urnNirAtto != ''";
   .
 map:tabSourceOfLaw_celexAtto a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property schema:url;
   d2rq:property foaf:page;
-  d2rq:sqlExpression "CONCAT('http://eur-lex.europa.eu/legal-content/IT/TXT/?uri=celex:', tabSourceOfLaw.celexAtto)";
+  d2rq:uriSqlExpression "CONCAT('http://eur-lex.europa.eu/legal-content/IT/TXT/?uri=celex:', tabSourceOfLaw.celexAtto)";
   d2rq:condition "tabSourceOfLaw.celexAtto != ''";
   .
 # ARTICLE = articolo + ripA
@@ -1047,18 +1047,18 @@ map:tabRifBibl_Fascicolo a d2rq:PropertyBridge;
   d2rq:datatype xsd:integer;
   d2rq:column "tabRifBibl.Fascicolo";
   .
-map:tabRifBibl_Data_1 a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabRifBibl;
-  d2rq:property dcterms:date;
-  d2rq:datatype xsd:gYearMonth; # CASE AAAA-MM-00
-  d2rq:condition "SUBSTRING(Data, 9, 2) = '00'";
-  d2rq:column "tabRifBibl.Data";
-  .
 map:tabRifBibl_Data_2 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
   d2rq:property dcterms:date;
-  d2rq:datatype xsd:data; # CASE AAAA-MM-DD
-  d2rq:condition "SUBSTRING(Data, 9, 2) != '00'";
+  d2rq:datatype xsd:date; # CASE AAAA-MM-DD
+  d2rq:condition "CHAR_LENGTH(Data) > 7";
+  d2rq:column "tabRifBibl.Data";
+  .
+map:tabRifBibl_Data_1 a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabRifBibl;
+  d2rq:property dcterms:date;
+  d2rq:datatype xsd:gYearMonth;
+  d2rq:condition "CHAR_LENGTH(Data) < 8";
   d2rq:column "tabRifBibl.Data";
   .
 map:tabRifBibl_Annata a d2rq:PropertyBridge;
@@ -1150,7 +1150,7 @@ map:rating_comment a d2rq:AdditionalProperty;
 map:tabRiviste_ACNPurl a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRiviste;
   d2rq:property foaf:page;
-  d2rq:column "tabRiviste.ACNPurl";
+  d2rq:uriColumn "tabRiviste.ACNPurl";
   .
 map:tabRiviste_BPR a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRiviste;
