@@ -13,7 +13,7 @@ vis = svg.append 'g'
   .attr
     width: width
     height: height
-    transform: "translate(#{margin+(width-width/1.5)}, #{margin})"
+    transform: "translate(#{margin+(width-width/1.3)}, #{margin})"
 
 thousands = d3.format(",.0f")
 
