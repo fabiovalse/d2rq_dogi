@@ -188,7 +188,7 @@
 
     <div id="footer">
       <div id="contact" class="footer_desc">
-        <i class="fa fa-envelope-o fa-large"></i><span>For any additional information about the project you can contact us at @</span>
+        <i class="fa fa-envelope-o fa-large"></i><span>For any additional information about the project consult the <a href="http://www.ittig.cnr.it/dogi/">DoGi initiative website</a> or contact us at @</span>
       </div>
       <div class="footer_desc">
         <i class="fa fa-group fa-large"></i><span>This web page shows the results of the collaboration between two institutes of the National Research Council (CNR):</span>

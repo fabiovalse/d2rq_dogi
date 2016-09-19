@@ -255,6 +255,7 @@ svg .bar_amount {
 }
 #footer > * {
   width: 65%;
+  max-width: 1000px;
   margin: auto;
   padding: 30px;
 }
