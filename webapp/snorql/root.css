@@ -3,7 +3,7 @@ svg {
   margin-bottom: 50px;
 }
 
-/*  NAV e DESC
+/*  TOP NAVIGATION BAR
 */
 #nav_out {
   position: fixed;
@@ -16,21 +16,20 @@ svg {
 }
 #nav_in {
   position: absolute;
-  top: 13;
+  top: 14;
   right: 10;
-  font-size: 14;
+  font-size: 13.5;
 }
 #nav_in span {
   margin-right: 15px;
 }
 #nav_in span a {
-  font-family: 'Droid Sans';
   text-decoration: none;
   color: #333;
   transition: color 0.4s linear;
 }
 #nav_in span a:hover {
-  color: brown;
+  color: rgb(69, 123, 157);
 }
 .logo {
   position: absolute;
@@ -38,42 +37,48 @@ svg {
   left: 10;
 }
 
+/* INITIAL DESCRIPTION
+*/
 #desc {
   width: 100%;
   text-align: justify;
   font-size: 16px;
   line-height: 1.8;
   padding: 120px 0px 70px 0px;
-  border-bottom: 2px solid #bbb;
-  background: #fafafa;
+  background: #f0f0f0;
+  color: #888;
 }
 #desc > * {
   width: 65%;
+  max-width: 1000px;
   margin: auto;
 }
 #main_desc {
-  font-family: 'Crimson Text';
+  font-family: 'Crimson Text', Georgia;
   font-size: 42px;
   line-height: 1.5;
-  margin-bottom: 70px;
+  margin-bottom: 35px;
+  color: #333;
+}
+#sub_desc {
+  font-style: italic;
+  font-family: Georgia;
+  font-size: 19px;
+  margin-bottom: 35px;
 }
 
 /*  SUBSECTION
 */
 .subsection .title {
+  font-family: Georgia;
   font-size: 26px;
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   
 }
-.subsection .subtitle {
-  color: gray;
-  margin-bottom: 10px;
-  text-align: justify;
-}
 .subsection .body {
-  margin-left: 59px;
+  color: #989898;
 }
 .bottom_line {
   border-bottom: 1px solid #f2f2f2;
@@ -81,8 +86,12 @@ svg {
 
 /*  General
 */
+#main > * {
+  max-width: 1000px;
+  margin: auto;
+}
 a {
-  color: brown;
+  color: rgb(69, 123, 157);
   font-weight: bold;
 }
 a:hover {
@@ -90,14 +99,28 @@ a:hover {
   cursor: pointer;
 }
 i.fa {
-  color: skyblue;
-  font-size: 50px;
+  color: rgb(69, 123, 157);
+  font-size: 30px;
   margin-right: 10px;
 }
 ol {
   line-height: 2;
 }
 
+.justify {
+  text-align: justify;
+}
+
+/*  Class diagram
+*/
+#class_diagram {
+  text-align: center;
+}
+#class_diagram img {
+  max-width: 600px;
+  width: 120%;
+  margin: 40px 0px 40px 0px;
+}
 #main_classes {
   padding: 0px 0px 10px 0px;
   text-align: justify;
@@ -107,21 +130,15 @@ ol {
   margin-bottom: 15px;
   display: flex;
 }
-.main_class div {
-  color: gray;
-}
-
 #other_classes {
   display: flex;
 }
-
 #main_classes, #other_classes {
   font-size: 14px;
 }
 .main_class a, #other_classes a {
   color: #303030;
 }
-
 .square {
   width: 22px;
   height: 22px;
@@ -134,19 +151,6 @@ ol {
 }
 .minor {
   background: rgb(175, 120, 64);
-}
-.justify {
-  text-align: justify;
-}
-
-/*  Class diagram
-*/
-#class_diagram {
-  text-align: center;
-}
-#class_diagram img {
-  width: 570px;
-  margin: 40px 0px 40px 0px;
 }
 
 /*  SPARQL QUERIES
@@ -186,7 +190,6 @@ pre {
   font-size: 13px;
   text-align: justify;
   margin-top: -8px;
-  color: gray;
 }
 .vis_box img {
   width: 200px;
@@ -245,10 +248,13 @@ svg .bar_amount {
   background: #444;
   color: #ddd;
   margin-top: 40px;
-  border-top: 6px solid #777777;
+  border-top: 3px solid #777777;
+  -webkit-box-shadow: 0 0 7px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 0 7px rgba(0,0,0,.2);
+  box-shadow: 0px 0 10px rgba(0,0,0,.2);
 }
 #footer > * {
-  width: 60%;
+  width: 65%;
   margin: auto;
   padding: 30px;
 }
@@ -257,5 +263,5 @@ svg .bar_amount {
   align-items: center;
 }
 .footer_desc i {
-  color: gray;
+  color: #989898;
 }

@@ -33,14 +33,18 @@
     
     <div id="desc">
       <div>
-        <div id="main_desc">A bibliographic Linked Open Data source storing references about contributions published in Italian legal journals.</div>
-        For each contribution, a record DoGi is created and described by:
+        <div id="main_desc">A bibliographic Linked Open Data source storing references about contributions published on Italian legal journals.</div>
+        <div id="sub_desc">The DoGi initiative collects data from 1970 counting almost 400.000 contributions. A team of experts organize and preserve printed and digital juridical journals creating every 2 months around 15.000 new bibliographic resources.</div>
+
+        Each resource is described by:
         <ul>
           <li>bibliographic information enhanced with <b>abstracts</b>, <b>summaries</b> (ToCs and/or extended keywords);</li>
           <li>selection of legislative and jurisprudential <b>references</b>;</li>
           <li>one or more <b>classification codes</b> based on DoGi classification schema;</li>
           <li>other additional information related to the <b>literary genres</b> of the contribution analyzed.</li>
         </ul>
+        The Linked Data DoGi project experiments Semantic Web technologies with a subset of data starting from 2000.
+        
       </div>
       <div style="color: brown; font-size: 17px; margin-top: 40px">
         <i style="color: brown; font-size: 17px" class="fa fa-exclamation-triangle" aria-hidden="true"></i> This is a beta site. Data could be incomplete or incorrect since the project is still in development.
@@ -51,17 +55,15 @@
 
       <div class="subsection bottom_line" id="download">
         <div class="title"><i class="fa fa-download"></i> Download the latest dump</div>
-        <div class="subtitle"></div>
         <div class="body">
-          <div><a href="/snorql/dump/dump_2016_07_21.nt" download>Dump 21/07/2016</a></div>
-          <div><a href="/snorql/dump/dump_2016_05_24.nt" download>Dump 24/05/2016</a></div>
+          <div>Dump 21/07/2016 <a href="/snorql/dump/dump_2016_07_21.nt" download>N-TRIPLE (.nt)</a> <a href="/snorql/dump/dump_2016_07_21.ttl" download>TURTLE (.ttl)</a></div>
         </div>
       </div>
 
       <div class="subsection bottom_line" id="navigate">
       <div class="title"><i class="fa fa-compass"></i> Ontology</div>
         <div class="body">
-          <div class="subtitle">The class diagram below shows the RDF classes of the dataset. Major classes are blue while minor are brown. Gray edges show how the instances (resources) of the classes are connected:</div>
+          The class diagram below shows the RDF classes of the dataset. Major classes are blue while minor are brown. Gray edges show how the instances (resources) of the classes are connected:
           <div id="class_diagram">
             <img src="/snorql/img/class_diagram.png" />
           </div>
@@ -75,7 +77,7 @@
         <div class="title"><i class="fa fa-database"></i> Query the dataset</div>
         
         <div class="body">
-          <div class="subtitle">Choose an endpoint according to your needs:</div>
+          Choose an endpoint according to your needs:
           <ol>
             <li>
               Query the dataset by writing SPARQL queries on the <a href="snorql/">endpoint</a>.
@@ -85,7 +87,7 @@
             </li>
           </ol>
 
-          <div class="subtitle">Some basic SPARQL queries:</div>
+          Some basic SPARQL queries:
           <div class="query">
             <div>Which are the <i>Sources of law</i> cited by a certain <i>Article</i>? <a title="Execute Query" class="run_query" target="_blank" href="http://www.dogi.cnr.it/snorql/?query=SELECT+%3Fsource+%3Fsource_label+%3Fsource_name+%3Furn+%7B%0D%0A++%3Chttp%3A%2F%2Fwww.dogi.cnr.it%2Fresource%2FArticle%2F247613%3E+bibo%3Acites+%3Fsource+.%0D%0A++%3Fsource+rdfs%3Alabel+%3Fsource_label+%3B%0D%0A++++++++++++++++dcterms%3Adescription+%3Fsource_name+.%0D%0A++OPTIONAL+%7B%0D%0A++++%3Fsource+dogi%3AurnNir+%3Furn+.%0D%0A++%7D%0D%0A%7D"><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a></div>
             <pre><code>
@@ -130,9 +132,9 @@
       <div class="subsection bottom_line" id="visualize">
         <div class="title"><i class="fa fa-bar-chart"></i> Get insights from data</div>
         <div class="body">
-          <div class="subtitle">The bar-chart shows the amount of resources for each of the major class of the dataset.</div>
+          The bar-chart shows the amount of resources for each of the major class of the dataset.
           <svg></svg>
-          <div class="subtitle">Browse the following visualizations in order to get insights from the data.</div>
+          Browse the following visualizations in order to get insights from the data.
           <div id="vis_list">
             <div class="vis_box">
               <div>
@@ -176,7 +178,6 @@
       <div class="subsection" id="publications">
         <div class="title"><i class="fa fa-book"></i> Publications and presentations</div>
         <div class="body">
-          <div class="subtitle"></div>
           <div>
             May 2016 - <a target="_blank" href="http://www.oa.unito.it/new/open-research-data-and-open-science/">Open research data and open science</a>
           </div>

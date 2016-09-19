@@ -2,32 +2,23 @@
 <html>
   <head>
     <title>Metadata of LINKED DATA DoGi</title>
-    <link rel="stylesheet" type="text/css" href="${home_link}snorql/style.css" />
     <link rel="alternate" type="application/rdf+xml" href="$rdf_link?output=rdfxml" title="This page in RDF (XML)" />
     <link rel="alternate" type="text/turtle" href="$rdf_link?output=ttl" title="This page in RDF (Turtle)" />
     
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   </head>
+  <style>
+    a {
+      color: #303030;
+    }
+  </style>
   <body>
-    <div id="header">
-      <div id="logo">
-        <div>
-          <div>LINKED</div>
-          <div>DATA</div>
-        </div>
-        <div>DoGi</div>
-      </div>
-    </div>
-    
-    <div id="main">
-		  <a name="meta"></a>
-  		<div id="metadata-tables">
-  		#set($bnidCount = 0)
-  		#set($idadd = 0)
-  		#listProperties ($dataset_iri $metadata 'block') 
-  		</div>
-    </div>
+		<div>
+		#set($bnidCount = 0)
+		#set($idadd = 0)
+		#listProperties ($dataset_iri $metadata 'block') 
+		</div>
 
     #* $home_link *#
   </body>

@@ -12,13 +12,12 @@ body {
   overflow: scroll;
 }
 body > * {
-  width: 60%;
+  width: 65%;
   margin: auto;
 }
 
 #header {
   width: 100%;
-  background: #fafafa;
   padding: 30px 0px 30px 0px;
   border-bottom: 2px solid #bbb;
 }
