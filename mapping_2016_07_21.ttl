@@ -153,7 +153,7 @@ map:tabDocumenti_IDBib a d2rq:PropertyBridge;
   .
 map:bibliographyType_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Bibliography Type."@en;
+  d2rq:propertyValue "Bibliography Type"@en;
   .
 map:bibliographyType_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
@@ -893,12 +893,19 @@ map:tabDescrittori_Concept_Scheme a d2rq:PropertyBridge;
   d2rq:property skos:inScheme;
   d2rq:uriPattern "ConceptScheme/Descrittori";
   .
+map:tabDescrittori_Top_Concept a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabDescrittori;
+  d2rq:property skos:topConceptOf;
+  d2rq:uriPattern "ConceptScheme/Descrittori";
+  .
 
 ### Table tabBib
 ###
 map:tabBib a d2rq:ClassMap;
   d2rq:dataStorage map:database;
   d2rq:uriPattern "BibliographyType/@@tabBib.URILabel@@";
+  d2rq:classDefinitionLabel "Type of bibliography"@en;
+  d2rq:classDefinitionComment "The type of bibliography can be at the end of an article, in the footnotes or in the body of the text."@en;
   d2rq:class dogi:BibliographyType;
   .
 map:tabBib__label a d2rq:PropertyBridge;
