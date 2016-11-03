@@ -64,8 +64,8 @@ echo "tabClassificazioni"
 ### (never tested within the script)
 mysql --user=root --password=$pass dogi_$date -e "ALTER TABLE dogi_${date}.tabSistematici ADD COLUMN Code VARCHAR(10) AFTER CodiceS"
 mysql --user=root --password=$pass dogi_$date -e "UPDATE dogi_${date}.tabSistematici SET Code = SUBSTRING_INDEX( Sigla,  '.', 1 )"
-#mysql --user=root --password=$pass dogi_$date -e "UPDATE dogi_${date}.tabSistematici INNER JOIN dogi_support.tabSistematici ON dogi_${date}.tabSistematici.CodiceS = dogi_support.tabSistematici.CodiceS SET dogi_${date}.tabSistematici.Descrizione = dogi_support.tabSistematici.Descrizione WHERE dogi_${date}.tabSistematici.CodiceS = dogi_support.tabSistematici.CodiceS"
-#mysql --user=root --password=$pass dogi_$date -e "UPDATE dogi_${date}.tabDescrittori INNER JOIN dogi_support.tabDescrittori ON dogi_${date}.tabDescrittori.CodiceD = dogi_support.tabDescrittori.CodiceD SET dogi_${date}.tabDescrittori.Descrizione = dogi_support.tabDescrittori.Descrizione WHERE dogi_${date}.tabDescrittori.CodiceD = dogi_support.tabDescrittori.CodiceD"
+mysql --user=root --password=$pass dogi_$date -e "UPDATE dogi_${date}.tabSistematici INNER JOIN dogi_support.tabSistematici ON dogi_${date}.tabSistematici.CodiceS = dogi_support.tabSistematici.CodiceS SET dogi_${date}.tabSistematici.Descrizione = dogi_support.tabSistematici.Descrizione WHERE dogi_${date}.tabSistematici.CodiceS = dogi_support.tabSistematici.CodiceS"
+mysql --user=root --password=$pass dogi_$date -e "UPDATE dogi_${date}.tabDescrittori INNER JOIN dogi_support.tabDescrittori ON dogi_${date}.tabDescrittori.CodiceD = dogi_support.tabDescrittori.CodiceD SET dogi_${date}.tabDescrittori.Descrizione = dogi_support.tabDescrittori.Descrizione WHERE dogi_${date}.tabDescrittori.CodiceD = dogi_support.tabDescrittori.CodiceD"
 
 echo "tabSistematici e tabDescrittori"
 
