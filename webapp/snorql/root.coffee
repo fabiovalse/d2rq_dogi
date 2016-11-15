@@ -12,9 +12,7 @@ data = [
   {"class": "Agent", "desc": "Authority (person or organization) responsible of the authorship of an academic contribution.", "translation": "", "table": "tabResponsabilita", "main": true},
   {"class": "Bibliography Type", "desc": "Types of bibliography used by a certain academic contribution (e.g., at the end of the article, footnote).", "translation": "", "table": "tabBib", "main": true},
   {"class": "Descrittore", "desc": "An additional descriptor associated to a sistematico for better qualifying its context and meaning.", "translation": "", "table": "tabDescrittori", "main": false},
-  {"class": "Sistematico", "desc": "A descriptor for legal documentation identifying a certain law branch (e.g., Administrative Law, Civil Law, Criminal Law).", "translation": "", "table": "tabSistematici", "main": false},
-  {"class": "Ministry", "desc": "Administrative Structure responsible for a government sector.", "translation": "", "table": "tabMinisteri", "main": false},
-  {"class": "Country", "desc": "Regions identified as a distinct entity in political geography.", "translation": "", "table": "tabStati", "main": false}
+  {"class": "Sistematico", "desc": "A descriptor for legal documentation identifying a certain law branch (e.g., Administrative Law, Civil Law, Criminal Law).", "translation": "", "table": "tabSistematici", "main": false}
 ]
 
 svg = d3.select 'svg'

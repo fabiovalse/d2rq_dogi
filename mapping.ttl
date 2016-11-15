@@ -890,39 +890,6 @@ map:amministrazione_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
   d2rq:propertyValue "A governative body."@en;
   .
-map:tabSourceOfLaw_IDStato a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabSourceOfLaw;
-  d2rq:property dogi:country;
-  d2rq:join "tabSourceOfLaw.IDStato => tabStati.IDStato";
-  d2rq:uriPattern "Country/@@tabStati.IDStato@@";
-  d2rq:additionalPropertyDefinitionProperty map:country_label;
-  d2rq:additionalPropertyDefinitionProperty map:country_comment;
-  .
-map:country_label a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Country"@en;
-  .
-map:country_comment a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:comment;
-  d2rq:propertyValue "A state."@en;
-  .
-map:tabSourceOfLaw_IDMinistero a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabSourceOfLaw;
-  d2rq:property dogi:ministry;
-  d2rq:join "tabSourceOfLaw.IDMinistero => tabMinisteri.IDMinistero";
-  d2rq:uriPattern "Ministry/@@tabMinisteri.IDMinistero@@";
-  d2rq:condition "tabSourceOfLaw.IDMinistero != 0";
-  d2rq:additionalPropertyDefinitionProperty map:ministry_label;
-  d2rq:additionalPropertyDefinitionProperty map:ministry_comment;
-  .
-map:ministry_label a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Ministry"@en;
-  .
-map:ministry_comment a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:comment;
-  d2rq:propertyValue "An administrative structure responsible for a government sector."@en;
-  .
 map:tabSourceOfLaw_DBpedia a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property owl:sameAs;
@@ -1020,45 +987,6 @@ map:tabBib__label a d2rq:PropertyBridge;
   d2rq:property rdfs:label;
   d2rq:lang "en";
   d2rq:pattern "@@tabBib.Translation@@";
-  .
-
-### Table tabMinisteri
-###
-map:tabMinisteri a d2rq:ClassMap;
-  d2rq:dataStorage map:database;
-  d2rq:uriPattern "Ministry/@@tabMinisteri.IDMinistero@@";
-  d2rq:classDefinitionLabel "Ministry"@en;
-  d2rq:classDefinitionComment "An administrative structure responsible for a government sector."@en;
-  d2rq:additionalClassDefinitionProperty map:subClassOf_owl_thing;
-  d2rq:class dogi:Ministry;
-  .
-map:tabMinisteri__label a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabMinisteri;
-  d2rq:property rdfs:label;
-  d2rq:lang "it";
-  d2rq:pattern "@@tabMinisteri.Ministero@@";
-  .
-map:tabMinisteri_Ministero a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabMinisteri;
-  d2rq:lang "it";
-  d2rq:property foaf:name;
-  d2rq:column "tabMinisteri.Ministero";
-  .
-map:tabMinisteri_SiglaMinistero a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabMinisteri;
-  d2rq:property dogi:abbreviation;
-  d2rq:lang "it";
-  d2rq:column "tabMinisteri.SiglaMinistero";
-  d2rq:additionalPropertyDefinitionProperty map:abbreviation_label;
-  d2rq:additionalPropertyDefinitionProperty map:abbreviation_comment;
-  .
-map:abbreviation_label a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Abbreviation"@en;
-  .
-map:abbreviation_comment a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:comment;
-  d2rq:propertyValue "The abbreviation of the name of a certain thing."@en;
   .
 
 ### Table tabResponsabilita
@@ -1337,26 +1265,6 @@ map:tabConceptScheme__label_2 a d2rq:PropertyBridge;
   d2rq:property skos:prefLabel;
   d2rq:lang "it";
   d2rq:column "tabConceptScheme.LabelIT";
-  .
-
-### Table tabStati
-###
-map:tabStati a d2rq:ClassMap;
-  d2rq:dataStorage map:database;
-  d2rq:uriPattern "Country/@@tabStati.IDStato@@";
-  d2rq:class dc:Location;
-  .
-map:tabStati__label a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabStati;
-  d2rq:property rdfs:label;
-  d2rq:lang "it";
-  d2rq:pattern "@@tabStati.Stato@@";
-  .
-map:tabStati_Stato a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabStati;
-  d2rq:property foaf:name;
-  d2rq:lang "it";
-  d2rq:column "tabStati.Stato";
   .
 
 ### subClassOf

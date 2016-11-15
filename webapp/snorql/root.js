@@ -65,18 +65,6 @@
       "translation": "",
       "table": "tabSistematici",
       "main": false
-    }, {
-      "class": "Ministry",
-      "desc": "Administrative Structure responsible for a government sector.",
-      "translation": "",
-      "table": "tabMinisteri",
-      "main": false
-    }, {
-      "class": "Country",
-      "desc": "Regions identified as a distinct entity in political geography.",
-      "translation": "",
-      "table": "tabStati",
-      "main": false
     }
   ];
 
