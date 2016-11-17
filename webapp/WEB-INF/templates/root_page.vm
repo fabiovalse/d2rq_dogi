@@ -73,7 +73,7 @@
       <div class="subsection bottom_line" id="download">
         <div class="title"><i class="fa fa-download"></i> Download the latest dump</div>
         <div class="body">
-          <div>Dump 21/07/2016 <a href="/snorql/dump/dump_2016_07_21.nt" download>N-TRIPLE (.nt)</a> <a href="/snorql/dump/dump_2016_07_21.ttl" download>TURTLE (.ttl)</a></div>
+          <div>Last dump <a href="/snorql/dump/dump.nt" download>N-TRIPLE (.nt)</a></div>
         </div>
       </div>
 
