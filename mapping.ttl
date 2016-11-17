@@ -31,7 +31,7 @@
 
 map:database a d2rq:Database;
   d2rq:jdbcDriver "com.mysql.jdbc.Driver";
-  d2rq:jdbcDSN "jdbc:mysql://localhost/dogi_2016_10_25";
+  d2rq:jdbcDSN "jdbc:mysql://localhost/dogi_2016_11_15";
   d2rq:username "root";
   d2rq:password "wafimysql";
   jdbc:autoReconnect "true";
@@ -42,7 +42,7 @@ map:database a d2rq:Database;
 ###
 map:tabDocumenti a d2rq:ClassMap;
   d2rq:dataStorage map:database;
-  d2rq:uriPattern "Article/@@tabDocumenti.IDDoc@@";
+  d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
   d2rq:class bibo:Article;
   .
 map:tabDocumenti_1 a d2rq:ClassMap;
@@ -52,7 +52,7 @@ map:tabDocumenti_1 a d2rq:ClassMap;
   d2rq:classDefinitionComment "A research paper is a ..."@en;
   d2rq:additionalClassDefinitionProperty map:subClassOf_bibo_Article;
   d2rq:condition "tabDocumenti.IDTD = '01'";
-  d2rq:uriPattern "Article/@@tabDocumenti.IDDoc@@";
+  d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
   .
 map:tabDocumenti_2 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
@@ -61,7 +61,7 @@ map:tabDocumenti_2 a d2rq:ClassMap;
   d2rq:classDefinitionComment "An article presented at a conference."@en;
   d2rq:additionalClassDefinitionProperty map:subClassOf_bibo_Article;
   d2rq:condition "tabDocumenti.IDTD = '02'";
-  d2rq:uriPattern "Article/@@tabDocumenti.IDDoc@@";
+  d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
   .
 map:tabDocumenti_3 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
@@ -70,7 +70,7 @@ map:tabDocumenti_3 a d2rq:ClassMap;
   d2rq:classDefinitionComment "A comment on a case law is a ..."@en;
   d2rq:additionalClassDefinitionProperty map:subClassOf_bibo_Article;
   d2rq:condition "tabDocumenti.IDTD = '03'";
-  d2rq:uriPattern "Article/@@tabDocumenti.IDDoc@@";
+  d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
   .
 map:tabDocumenti_4 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
@@ -79,7 +79,7 @@ map:tabDocumenti_4 a d2rq:ClassMap;
   d2rq:classDefinitionComment "A review is a ..."@en;
   d2rq:additionalClassDefinitionProperty map:subClassOf_bibo_Article;
   d2rq:condition "tabDocumenti.IDTD = '04'";
-  d2rq:uriPattern "Article/@@tabDocumenti.IDDoc@@";
+  d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
   .
 map:tabDocumenti_5 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
@@ -88,7 +88,7 @@ map:tabDocumenti_5 a d2rq:ClassMap;
   d2rq:classDefinitionComment "A bibliography is a ..."@en;
   d2rq:additionalClassDefinitionProperty map:subClassOf_bibo_Article;
   d2rq:condition "tabDocumenti.IDTD = '05'";
-  d2rq:uriPattern "Article/@@tabDocumenti.IDDoc@@";
+  d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
   .
 map:tabDocumenti_7 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
@@ -97,7 +97,7 @@ map:tabDocumenti_7 a d2rq:ClassMap;
   d2rq:classDefinitionComment "A comment on a legislation is a ..."@en;
   d2rq:additionalClassDefinitionProperty map:subClassOf_bibo_Article;
   d2rq:condition "tabDocumenti.IDTD = '07'";
-  d2rq:uriPattern "Article/@@tabDocumenti.IDDoc@@";
+  d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
   .
 map:tabDocumenti_8 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
@@ -106,7 +106,7 @@ map:tabDocumenti_8 a d2rq:ClassMap;
   d2rq:classDefinitionComment "A report on a case law is a ..."@en;
   d2rq:additionalClassDefinitionProperty map:subClassOf_bibo_Article;
   d2rq:condition "tabDocumenti.IDTD = '08'";
-  d2rq:uriPattern "Article/@@tabDocumenti.IDDoc@@";
+  d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
   .
 map:tabDocumenti_9 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
@@ -115,7 +115,7 @@ map:tabDocumenti_9 a d2rq:ClassMap;
   d2rq:classDefinitionComment "A report on a legislation is a ..."@en;
   d2rq:additionalClassDefinitionProperty map:subClassOf_bibo_Article;
   d2rq:condition "tabDocumenti.IDTD = '09'";
-  d2rq:uriPattern "Article/@@tabDocumenti.IDDoc@@";
+  d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
   .
 map:legDocResp_IDResponsabilita a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
@@ -143,7 +143,7 @@ map:tabDocumenti_SourceOfLaw a d2rq:PropertyBridge;
   d2rq:property bibo:cites;
   d2rq:join "tabDocumenti.IDDoc => legDocSourceOfLaw.IDDoc";
   d2rq:join "legDocSourceOfLaw.IDSourceOfLaw => tabSourceOfLaw.IDSourceOfLaw";
-  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.IDSourceOfLaw@@";
+  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.LocalURI@@";
   .
 map:tabDocumenti_Classificazione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
@@ -456,31 +456,27 @@ map:tabDocumenti_Parte a d2rq:PropertyBridge;
 map:tabDocumenti_Fascicolo a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property bibo:reproducedIn;
-  d2rq:join "tabDocumenti.IDRifBibl => tabRifBibl.IDRifBibl";
-  d2rq:uriPattern "Issue/@@tabRifBibl.IDRifBibl@@";
-  .
-map:tabDocumenti_Fascicolo_2 a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dcterms:isPartOf;
   d2rq:join "tabDocumenti.IDRifBibl => tabRifBibl.IDRifBibl";
-  d2rq:uriPattern "Issue/@@tabRifBibl.IDRifBibl@@";
+  d2rq:uriPattern "Issue/@@tabRifBibl.LocalURI@@";
   .
 
 ### Table tabSourceOfLaw
 ###
 map:tabSourceOfLaw a d2rq:ClassMap;
   d2rq:dataStorage map:database;
-  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.IDSourceOfLaw@@";
+  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.LocalURI@@";
   d2rq:classDefinitionLabel "Source of law"@en;
   d2rq:classDefinitionComment "A source of law is the origin of a law and it may be international, national, regional, ans so on. It represents a source as a whole or a certain partition such as an article, paragraph, letter, item or annex."@en;
   d2rq:additionalClassDefinitionProperty map:subClassOf_owl_thing;
   d2rq:additionalClassDefinitionProperty map:subClassOf_bibo_document;
   d2rq:additionalClassDefinitionProperty map:subClassOf_foaf_document;
+  d2rq:condition "tabSourceOfLaw.LocalURI != ''";
   d2rq:class dogi:SourceOfLaw;
   .
 map:tabSourceOfLaw_1 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
-  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.IDSourceOfLaw@@";
+  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.LocalURI@@";
   d2rq:condition "tabSourceOfLaw.ecli != ''";
   d2rq:additionalClassDefinitionProperty map:subClassOf_dogi_sourceOfLaw;
   d2rq:classDefinitionLabel "Case law"@en;
@@ -489,7 +485,7 @@ map:tabSourceOfLaw_1 a d2rq:ClassMap;
   .
 map:tabSourceOfLaw_2 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
-  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.IDSourceOfLaw@@";
+  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.LocalURI@@";
   d2rq:condition "tabSourceOfLaw.urnNirAtto != ''";
   d2rq:additionalClassDefinitionProperty map:subClassOf_dogi_sourceOfLaw;
   d2rq:classDefinitionLabel "Legislation"@en;
@@ -498,7 +494,7 @@ map:tabSourceOfLaw_2 a d2rq:ClassMap;
   .
 map:tabSourceOfLaw_3 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
-  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.IDSourceOfLaw@@";
+  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.LocalURI@@";
   d2rq:condition "tabSourceOfLaw.celexAtto != ''";
   d2rq:condition "tabSourceOfLaw.IDTP = 'GEC'";
   d2rq:additionalClassDefinitionProperty map:subClassOf_dogi_sourceOfLaw;
@@ -508,7 +504,7 @@ map:tabSourceOfLaw_3 a d2rq:ClassMap;
   .
 map:tabSourceOfLaw_4 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
-  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.IDSourceOfLaw@@";
+  d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.LocalURI@@";
   d2rq:condition "tabSourceOfLaw.celexAtto != ''";
   d2rq:condition "tabSourceOfLaw.IDTP = 'NIC'";
   d2rq:additionalClassDefinitionProperty map:subClassOf_dogi_sourceOfLaw;
@@ -1039,7 +1035,7 @@ map:tabResponsabilita_DBpedia a d2rq:PropertyBridge;
 ###
 map:tabRifBibl a d2rq:ClassMap;
   d2rq:dataStorage map:database;
-  d2rq:uriPattern "Issue/@@tabRifBibl.IDRifBibl@@";
+  d2rq:uriPattern "Issue/@@tabRifBibl.LocalURI@@";
   d2rq:class bibo:Issue;
   .
 map:tabRifBibl__label a d2rq:PropertyBridge;
@@ -1051,14 +1047,9 @@ map:tabRifBibl__label a d2rq:PropertyBridge;
 map:tabRifBibl_IDRivista a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
   d2rq:property bibo:reproducedIn;
-  d2rq:join "tabRifBibl.IDRivista => tabRiviste.IDRivista";
-  d2rq:uriPattern "Journal/@@tabRiviste.IDRivista@@";
-  .
-map:tabRifBibl_IDRivista_2 a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabRifBibl;
   d2rq:property dcterms:isPartOf;
   d2rq:join "tabRifBibl.IDRivista => tabRiviste.IDRivista";
-  d2rq:uriPattern "Journal/@@tabRiviste.IDRivista@@";
+  d2rq:uriPattern "Journal/@@tabRiviste.LocalURI@@";
   .
 map:tabRifBibl_Fascicolo a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
@@ -1122,14 +1113,14 @@ map:tabRifBibl_Article a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRifBibl;
   d2rq:property dcterms:hasPart;
   d2rq:join "tabRifBibl.IDRifBibl => tabDocumenti.IDRifBibl";
-  d2rq:uriPattern "Article/@@tabDocumenti.IDDoc@@";
+  d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
   .
 
 ### Table tabRiviste
 ###
 map:tabRiviste a d2rq:ClassMap;
   d2rq:dataStorage map:database;
-  d2rq:uriPattern "Journal/@@tabRiviste.IDRivista@@";
+  d2rq:uriPattern "Journal/@@tabRiviste.LocalURI@@";
   d2rq:condition "LEFT(tabRiviste.IDRivista, 1) IN ('0','1','2','3','4','5','6','7','8','9')";
   d2rq:class bibo:Journal;
   .
@@ -1197,7 +1188,7 @@ map:tabRiviste_Issue a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRiviste;
   d2rq:property dcterms:hasPart;
   d2rq:join "tabRiviste.IDRivista => tabRifBibl.IDRivista";
-  d2rq:uriPattern "Issue/@@tabRifBibl.IDRifBibl@@";
+  d2rq:uriPattern "Issue/@@tabRifBibl.LocalURI@@";
   .
 
 ### Table tabSistematici
