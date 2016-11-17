@@ -51,7 +51,7 @@ echo "tabBib"
 ### mysql --user=root --password=$pass dogi_$date -e "ALTER TABLE tabSourceOfLaw ADD IDSourceOfLaw int NOT NULL AUTO_INCREMENT primary key FIRST"
 ### mysql --user=root --password=$pass dogi_$date -e "CREATE TABLE legDocSourceOfLaw AS (SELECT IDSourceOfLaw, legDocFonte.IDDoc FROM tabSourceOfLaw INNER JOIN legDocFonte ON tabSourceOfLaw.IDFonte = legDocFonte.IDFonte AND tabSourceOfLaw.urnNirPart = legDocFonte.urnNirPart)"
 mysql --user=root --password=$pass dogi_$date -e "UPDATE legDocFonte set legDocFonte.LocalURI = (SELECT LocalURI FROM tabFonti WHERE tabFonti.IDFonte = legDocFonte.IDFonte) WHERE Articolo =  '' AND  RipA =  '' AND  Comma =  '' AND  RipC =  '' AND  Lettera =  '' AND  NumeroP =  '' AND  Allegato =  '' AND  testoPart =  '' AND  urnNirPart =  '' AND  urnLexPart =  '' AND  eliPart =  '' AND  celexPart =  ''"
-mysql --user=root --password=$pass dogi_$date -e "CREATE TABLE tabSourceOfLaw AS (SELECT IDTP, tabFonti.IDFonte, IDNomeFonte, Data, Numero, Testo, Altro, Ordinanza, Decreto, IDRegione, IDCitta, IDProvincia, IDSezione, IDAutorita, IDAmministrazione, IDStato, IDMinistero, urnNirAtto, urnLexAtto, ecli, eliAtto, celexAtto, Articolo, RipA, Comma, RipC, Lettera, NumeroP, Allegato, testoPart, urnNirPart, urnLexPart, eliPart, celexPart, legDocFonte.LocalURI FROM tabFonti JOIN legDocFonte ON tabFonti.IDFonte = legDocFonte.IDFonte GROUP BY IDFonte, legDocFonte.LocalURI)"
+mysql --user=root --password=$pass dogi_$date -e "CREATE TABLE tabSourceOfLaw AS (SELECT IDTP, tabFonti.IDFonte, IDNomeFonte, Data, Numero, Testo, Altro, Ordinanza, Decreto, IDRegione, IDCitta, IDProvincia, IDSezione, IDAutorita, IDAmministrazione, IDStato, IDMinistero, urnNirAtto, urnLexAtto, ecli, eliAtto, celexAtto, Articolo, RipA, Comma, RipC, Lettera, NumeroP, Allegato, testoPart, urnNirPart, urnLexPart, eliPart, celexPart, legDocFonte.LocalURI FROM tabFonti JOIN legDocFonte ON tabFonti.IDFonte = legDocFonte.IDFonte WHERE urnNirPart !=  'error' AND legDocFonte.LocalURI IS NOT NULL GROUP BY IDFonte, legDocFonte.LocalURI)"
 mysql --user=root --password=$pass dogi_$date -e "ALTER TABLE tabSourceOfLaw ADD IDSourceOfLaw int NOT NULL AUTO_INCREMENT primary key FIRST"
 mysql --user=root --password=$pass dogi_$date -e "CREATE TABLE legDocSourceOfLaw AS (SELECT IDSourceOfLaw, legDocFonte.IDDoc FROM tabSourceOfLaw INNER JOIN legDocFonte ON tabSourceOfLaw.IDFonte = legDocFonte.IDFonte AND tabSourceOfLaw.LocalURI = legDocFonte.LocalURI)"
 
@@ -111,6 +111,6 @@ echo "Linking"
 ### Dump Creation
 ###
 #cd /home/fvalse/d2rq-0.8.1/
-#./dump-rdf -o dump_$date.nt mapping_$date.ttl 
+#./dump-rdf -b 'http://www.dogi.cnr.it/resource/' -o dump_$date.nt.nt mapping.ttl
 #mv dump_$date.nt webapp/snorql/dump/
 #change the root template file for adding the new dump
