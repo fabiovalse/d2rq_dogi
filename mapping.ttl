@@ -26,7 +26,7 @@
   d2r:baseURI <http://www.dogi.cnr.it/>;
   d2r:vocabularyIncludeInstances true;
   d2rq:useAllOptimizations true;
-  d2r:enableMetadata true;
+  #d2r:enableMetadata true;
   .
 
 map:database a d2rq:Database;
@@ -141,6 +141,7 @@ map:tabDocumenti__label a d2rq:PropertyBridge;
 map:tabDocumenti_SourceOfLaw a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property bibo:cites;
+  d2rq:property dcterms:references;
   d2rq:join "tabDocumenti.IDDoc => legDocSourceOfLaw.IDDoc";
   d2rq:join "legDocSourceOfLaw.IDSourceOfLaw => tabSourceOfLaw.IDSourceOfLaw";
   d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.LocalURI@@";
@@ -460,6 +461,30 @@ map:tabDocumenti_Fascicolo a d2rq:PropertyBridge;
   d2rq:join "tabDocumenti.IDRifBibl => tabRifBibl.IDRifBibl";
   d2rq:uriPattern "Issue/@@tabRifBibl.LocalURI@@";
   .
+map:tabDocumenti_Data_1 a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabDocumenti;
+  d2rq:property bibo:issued;
+  d2rq:join "tabDocumenti.IDRifBibl => tabRifBibl.IDRifBibl";
+  d2rq:datatype xsd:date;
+  d2rq:condition "CHAR_LENGTH(Data) = 10"; # AAAA-MM-DD
+  d2rq:column "tabRifBibl.Data";
+  .
+map:tabDocumenti_Data_2 a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabDocumenti;
+  d2rq:property bibo:issued;
+  d2rq:join "tabDocumenti.IDRifBibl => tabRifBibl.IDRifBibl";
+  d2rq:datatype xsd:gYearMonth;
+  d2rq:condition "CHAR_LENGTH(Data) = 7"; # AAAA-MM-DD
+  d2rq:column "tabRifBibl.Data";
+  .
+map:tabDocumenti_Data_3 a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabDocumenti;
+  d2rq:property bibo:issued;
+  d2rq:join "tabDocumenti.IDRifBibl => tabRifBibl.IDRifBibl";
+  d2rq:datatype xsd:gYear;
+  d2rq:condition "CHAR_LENGTH(Data) = 4"; # AAAA-MM-DD
+  d2rq:column "tabRifBibl.Data";
+  .
 
 ### Table tabSourceOfLaw
 ###
@@ -468,11 +493,12 @@ map:tabSourceOfLaw a d2rq:ClassMap;
   d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.LocalURI@@";
   d2rq:classDefinitionLabel "Source of law"@en;
   d2rq:classDefinitionComment "A source of law is the origin of a law and it may be international, national, regional, ans so on. It represents a source as a whole or a certain partition such as an article, paragraph, letter, item or annex."@en;
-  d2rq:additionalClassDefinitionProperty map:subClassOf_owl_thing;
   d2rq:additionalClassDefinitionProperty map:subClassOf_bibo_document;
   d2rq:additionalClassDefinitionProperty map:subClassOf_foaf_document;
   d2rq:condition "tabSourceOfLaw.LocalURI != ''";
   d2rq:class dogi:SourceOfLaw;
+  d2rq:class bibo:Document;
+  d2rq:class foaf:Document;
   .
 map:tabSourceOfLaw_1 a d2rq:ClassMap;
   d2rq:dataStorage map:database;
@@ -521,6 +547,7 @@ map:tabSourceOfLaw__label a d2rq:PropertyBridge;
 map:tabSourceOfLaw_urnNirAtto a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:urnNir;
+  d2rq:property dcterms:identifier;
   d2rq:sqlExpression "CONCAT(tabSourceOfLaw.urnNirAtto, (CASE WHEN (tabSourceOfLaw.urnNirPart != '') THEN CONCAT(';', tabSourceOfLaw.urnNirPart) ELSE '' END))";
   d2rq:condition "tabSourceOfLaw.urnNirAtto != ''";
   d2rq:additionalPropertyDefinitionProperty map:urnNir_label;
@@ -549,6 +576,7 @@ map:urnNir_range a d2rq:AdditionalProperty;
 map:tabSourceOfLaw_celex a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:celex;
+  d2rq:property dcterms:identifier;
   d2rq:sqlExpression "CONCAT(tabSourceOfLaw.celexAtto, (CASE WHEN (tabSourceOfLaw.celexPart != '') THEN CONCAT(';', tabSourceOfLaw.celexPart) ELSE '' END))";
   d2rq:condition "tabSourceOfLaw.celexAtto != ''";
   d2rq:additionalPropertyDefinitionProperty map:celex_label;
@@ -577,6 +605,7 @@ map:celex_range a d2rq:AdditionalProperty;
 map:tabSourceOfLaw_ecli a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:ecli;
+  d2rq:property dcterms:identifier;
   d2rq:uriPattern "https://e-justice.europa.eu/ecli/@@tabSourceOfLaw.ecli@@";
   d2rq:condition "tabSourceOfLaw.ecli != ''";
   d2rq:additionalPropertyDefinitionProperty map:ecli_label;
@@ -892,6 +921,13 @@ map:tabSourceOfLaw_DBpedia a d2rq:PropertyBridge;
   d2rq:join "tabSourceOfLaw.IDSourceOfLaw => CAMERA_leggi.IDSourceOfLaw";
   d2rq:uriColumn "CAMERA_leggi.uri";
   .
+map:SourceOfLaw_tabDocumenti a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabSourceOfLaw;
+  d2rq:property dcterms:isReferencedBy;
+  d2rq:join "tabSourceOfLaw.IDSourceOfLaw => legDocSourceOfLaw.IDSourceOfLaw";
+  d2rq:join "legDocSourceOfLaw.IDDoc => tabDocumenti.IDDoc";
+  d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
+  .
 
 ### Table tabClassificazioni
 ###
@@ -900,7 +936,6 @@ map:tabClassificazioni a d2rq:ClassMap;
   d2rq:uriSqlExpression "CONCAT('http://www.dogi.cnr.it/resource/Classification/', CONCAT(tabClassificazioni.NS, (CASE WHEN (tabClassificazioni.ND != '') THEN CONCAT('_', tabClassificazioni.ND) ELSE '' END)))";
   d2rq:classDefinitionLabel "Classification"@en;
   d2rq:classDefinitionComment "An entry of the classification scheme for law, specifically developed for the DoGi database. It could be a pair category-subjectHeading or only a category."@en;
-  d2rq:additionalClassDefinitionProperty map:subClassOf_owl_thing;
   d2rq:class dogi:Classification;
   .
 map:classification__label a d2rq:PropertyBridge;
@@ -948,9 +983,9 @@ map:tabDescrittori a d2rq:ClassMap;
   d2rq:uriPattern "SubjectHeading/@@tabDescrittori.CodiceD@@";
   d2rq:classDefinitionLabel "Subject heading"@en;
   d2rq:classDefinitionComment "An additional descriptor that could be associated to a category for better qualifying its context and meaning."@en;
-  d2rq:additionalClassDefinitionProperty map:subClassOf_owl_thing;
   d2rq:additionalClassDefinitionProperty map:subClassOf_skos_concept;
   d2rq:class dogi:SubjectHeading;
+  d2rq:class skos:Concept;
   .
 map:tabDescrittori__label a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDescrittori;
@@ -1200,6 +1235,7 @@ map:tabSistematici a d2rq:ClassMap;
   d2rq:classDefinitionComment "A category is a code identifying a branch of the law."@en;
   d2rq:additionalClassDefinitionProperty map:subClassOf_skos_concept;
   d2rq:class dogi:Category;
+  d2rq:class skos:Concept;
   .
 map:tabSistematici_SiglaC a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSistematici;
@@ -1228,8 +1264,8 @@ map:tabSistematici_CodiceS_Padre_3 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSistematici;
   d2rq:property skos:topConceptOf;
   d2rq:join "tabSistematici.Code => tabConceptScheme.Code";
-  d2rq:uriPattern "ConceptScheme/@@tabConceptScheme.URI@@";
   d2rq:condition "tabSistematici.CodiceS_Padre IS NULL";
+  d2rq:uriPattern "ConceptScheme/@@tabConceptScheme.URI@@";
   .
 map:tabSistematici_Concept_Scheme a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSistematici;
@@ -1257,16 +1293,26 @@ map:tabConceptScheme__label_2 a d2rq:PropertyBridge;
   d2rq:lang "it";
   d2rq:column "tabConceptScheme.LabelIT";
   .
+map:tabConceptScheme_Top_concept_sistematici a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabConceptScheme;
+  d2rq:property skos:hasTopConcept;
+  d2rq:join "tabConceptScheme.Code => tabSistematici.Code";
+  d2rq:condition "tabSistematici.CodiceS_Padre IS NULL";
+  d2rq:uriPattern "Category/@@tabSistematici.CodiceS@@";
+  .
+# map:tabConceptScheme_Top_concept_descrittori a d2rq:PropertyBridge;
+#   d2rq:belongsToClassMap map:tabConceptScheme;
+#   d2rq:property skos:hasTopConcept;
+#   d2rq:join "tabConceptScheme.Code = tabDescrittori.CodiceD";
+#   d2rq:condition "tabSistematici.Code = ''";
+#   d2rq:uriPattern "SubjectHeading/@@tabDescrittori.CodiceD@@";
+#   .
 
 ### subClassOf
 ###
 map:subClassOf_skos_concept a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:subClassOf;
   d2rq:propertyValue skos:Concept;
-  .
-map:subClassOf_owl_thing a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:subClassOf;
-  d2rq:propertyValue owl:Thing;
   .
 map:subClassOf_bibo_document a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:subClassOf;
