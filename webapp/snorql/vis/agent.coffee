@@ -7,7 +7,7 @@ window.draw_agent_diagram = () ->
   SELECT ?label ?rate (COUNT(?article) AS ?cont) {
 
   ?article dcterms:creator <#{resource.uri}>;
-  bibo:issue ?issue.
+  dcterms:isPartOf ?issue.
 
   ?issue dcterms:isPartOf ?journal.
 

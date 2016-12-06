@@ -4,7 +4,7 @@
 
   left_padding = 150;
 
-  class_height = 30;
+  class_height = 32;
 
   bar_height = 15;
 
@@ -73,7 +73,7 @@
       return d.main === true;
     }).length * class_height
   }).append('g').attr({
-    transform: "translate(0, 20)"
+    transform: "translate(0, 0)"
   });
 
   d3.json("snorql/data/classes.json", function(classes_data) {

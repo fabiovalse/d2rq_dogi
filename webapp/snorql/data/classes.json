@@ -5,56 +5,104 @@
   "results": {
     "bindings": [
       {
-        "c": { "type": "uri" , "value": "http://www.w3.org/2004/02/skos/core#Concept" } ,
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "6814" }
+        "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Issue" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8794" }
       } ,
       {
-        "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Issue" } ,
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8646" }
+        "c": { "type": "uri" , "value": "http://www.w3.org/2004/02/skos/core#Concept" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "6815" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/Review" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "666" }
       } ,
       {
         "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Article" } ,
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "81738" }
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "83196" }
       } ,
       {
         "c": { "type": "uri" , "value": "http://www.w3.org/2004/02/skos/core#ConceptScheme" } ,
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2" }
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "25" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/ReportOnLegislation" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "513" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/CommentOnLegislation" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "2505" }
       } ,
       {
         "c": { "type": "uri" , "value": "http://xmlns.com/foaf/0.1/Person" } ,
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "24100" }
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "24742" }
       } ,
       {
-        "c": { "type": "uri" , "value": "http://purl.org/dc/elements/1.1/Location" } ,
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "219" }
+        "c": { "type": "uri" , "value": "http://xmlns.com/foaf/0.1/Document" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "68612" }
       } ,
       {
         "c": { "type": "uri" , "value": "http://xmlns.com/foaf/0.1/Organization" } ,
         "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "8" }
       } ,
       {
-        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/Classification" } ,
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7586" }
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/Legislation" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "37427" }
       } ,
       {
-        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/Ministry" } ,
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "57" }
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/ReportOnCaseLaw" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3700" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/Classification" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "7587" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/CommentOnCaseLaw" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "29608" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/Bibliography" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "21" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/ArticlePresentedAtConference" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "6539" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/ResearchPaper" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "39644" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Document" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "68612" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/Category" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "1545" }
       } ,
       {
         "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/SourceOfLaw" } ,
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "114934" }
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "68612" }
       } ,
       {
         "c": { "type": "uri" , "value": "http://purl.org/ontology/bibo/Journal" } ,
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "278" }
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "279" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/CaseLaw" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "31185" }
       } ,
       {
         "c": { "type": "uri" , "value": "http://xmlns.com/foaf/0.1/Agent" } ,
-        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "24156" }
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "24800" }
       } ,
       {
         "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/BibliographyType" } ,
         "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "3" }
+      } ,
+      {
+        "c": { "type": "uri" , "value": "http://www.dogi.cnr.it/SubjectHeading" } ,
+        "cont": { "datatype": "http://www.w3.org/2001/XMLSchema#integer" , "type": "typed-literal" , "value": "5270" }
       }
     ]
   }
