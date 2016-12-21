@@ -577,7 +577,7 @@ map:tabSourceOfLaw_celex a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:celex;
   d2rq:property dcterms:identifier;
-  d2rq:sqlExpression "CONCAT(tabSourceOfLaw.celexAtto, (CASE WHEN (tabSourceOfLaw.celexPart != '') THEN CONCAT(';', tabSourceOfLaw.celexPart) ELSE '' END))";
+  d2rq:sqlExpression "CONCAT(tabSourceOfLaw.celexAtto, tabSourceOfLaw.celexPart)";
   d2rq:condition "tabSourceOfLaw.celexAtto != ''";
   d2rq:additionalPropertyDefinitionProperty map:celex_label;
   d2rq:additionalPropertyDefinitionProperty map:celex_comment;
@@ -1177,7 +1177,7 @@ map:tabRiviste_ISSN_2 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRiviste;
   d2rq:property dcterms:identifier;
   d2rq:condition "tabRiviste.ISSN != ''";
-  d2rq:pattern "urn:@@tabRiviste.ISSN@@";
+  d2rq:pattern "urn:ISSN:@@tabRiviste.ISSN@@";
   .
 map:tabRiviste_Periodicita a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabRiviste;
