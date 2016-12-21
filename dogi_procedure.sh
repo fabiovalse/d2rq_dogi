@@ -6,7 +6,6 @@ if [ $# -eq 0 ]; then
 fi
 
 date=$1
-#old_date=$2
 
 ### Database creation
 ###
@@ -94,16 +93,11 @@ mysql --user=root --password=$pass dogi_$date -e "CREATE TABLE dogi_${date}.CAME
 
 echo "Linking"
 
-### Create new mapping file and restart server
-###
-#cd /home/fvalse/d2rq-0.8.1
-#cp mapping_$oldDate.ttl mapping_$date.ttl
-
 ### Update data for visualizations
 ###
 #cd /home/fvalse/d2rq-0.8.1
-#./d2r-query -f json mapping_$date.ttl "SELECT ?c (COUNT(?i) AS ?cont) { ?i a ?c } GROUP BY ?c" > webapp/snorql/data/classes.json
-#cp webapp/snorql/data/classes.json webapp/snorql/data/class_count/$date.json
+#cp webapp/snorql/data/classes.json webapp/snorql/data/classes.json.backup
+#./d2r-query -f json mapping.ttl "SELECT ?c (COUNT(?i) AS ?cont) { ?i a ?c } GROUP BY ?c" > webapp/snorql/data/classes.json
 
 ### Dump Creation
 ###
