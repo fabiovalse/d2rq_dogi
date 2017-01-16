@@ -18,7 +18,6 @@
 @prefix schema: <http://schema.org/> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix lexvo: <http://www.lexvo.org/page/> .
 @prefix lexvont: <http://lexvo.org/ontology#> .
 
 <> a d2r:Server;
@@ -144,18 +143,19 @@ map:tabDocumenti_SourceOfLaw a d2rq:PropertyBridge;
   d2rq:property dcterms:references;
   d2rq:join "tabDocumenti.IDDoc => legDocSourceOfLaw.IDDoc";
   d2rq:join "legDocSourceOfLaw.IDSourceOfLaw => tabSourceOfLaw.IDSourceOfLaw";
+  d2rq:condition "tabSourceOfLaw.LocalURI != ''";
   d2rq:uriPattern "SourceOfLaw/@@tabSourceOfLaw.LocalURI@@";
   .
 map:tabDocumenti_Classificazione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
-  d2rq:property dogi:hasClassification;
+  d2rq:property dogi:classification;
   d2rq:join "tabDocumenti.IDDoc => legDocClassificazione.IDDoc";
   d2rq:join "legDocClassificazione.IDClassificazione => tabClassificazioni.Id";
   d2rq:uriSqlExpression "CONCAT('http://www.dogi.cnr.it/resource/Classification/', CONCAT(tabClassificazioni.NS, (CASE WHEN (tabClassificazioni.ND != '') THEN CONCAT('_', tabClassificazioni.ND) ELSE '' END)))";
   d2rq:additionalPropertyDefinitionProperty map:Classificazione_label;
   d2rq:additionalPropertyDefinitionProperty map:Classificazione_comment;
-  d2rq:additionalPropertyDefinitionProperty map:Classificazione_domain;
-  d2rq:additionalPropertyDefinitionProperty map:Classificazione_range;
+  d2rq:additionalPropertyDefinitionProperty map:bibo_article_domain;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_classification_range;
   .
 map:Classificazione_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -165,13 +165,20 @@ map:Classificazione_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
   d2rq:propertyValue "Indicates a classification code of a certain article."@en;
   .
-map:Classificazione_domain a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:domain;
-  d2rq:propertyValue bibo:Article;
+map:tabDocumenti_Classificazione_sistematico a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabDocumenti;
+  d2rq:property dcterms:subject;
+  d2rq:join "tabDocumenti.IDDoc => legDocClassificazione.IDDoc";
+  d2rq:join "legDocClassificazione.IDClassificazione => tabClassificazioni.Id";
+  d2rq:uriPattern "Category/@@tabClassificazioni.NS@@";
   .
-map:Classificazione_range a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:range;
-  d2rq:propertyValue dogi:Classification;
+map:tabDocumenti_Classificazione_descrittore a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabDocumenti;
+  d2rq:property dcterms:subject;
+  d2rq:join "tabDocumenti.IDDoc => legDocClassificazione.IDDoc";
+  d2rq:join "legDocClassificazione.IDClassificazione => tabClassificazioni.Id";
+  d2rq:uriPattern "SubjectHeading/@@tabClassificazioni.ND@@";
+  d2rq:condition "tabClassificazioni.ND != ''";
   .
 map:tabDocumenti_PagInizio a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
@@ -206,8 +213,8 @@ map:tabDocumenti_IDBib a d2rq:PropertyBridge;
   d2rq:uriPattern "BibliographyType/@@tabBib.URILabel@@";
   d2rq:additionalPropertyDefinitionProperty map:bibliographyType_label;
   d2rq:additionalPropertyDefinitionProperty map:bibliographyType_comment;
-  d2rq:additionalPropertyDefinitionProperty map:bibliographyType_domain;
-  d2rq:additionalPropertyDefinitionProperty map:bibliographyType_range;
+  d2rq:additionalPropertyDefinitionProperty map:bibo_article_domain;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_bibliography_type_range;
   .
 map:bibliographyType_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -216,14 +223,6 @@ map:bibliographyType_label a d2rq:AdditionalProperty;
 map:bibliographyType_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
   d2rq:propertyValue "The type of bibliography included in the contribution."@en;
-  .
-map:bibliographyType_domain a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:domain;
-  d2rq:propertyValue bibo:Article;
-  .
-map:bibliographyType_range a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:range;
-  d2rq:propertyValue dogi:BibliographyType;
   .
 map:tabDocumenti_LIN a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
@@ -268,89 +267,6 @@ map:tabDocumenti_Citazione a d2rq:PropertyBridge;
   d2rq:lang "it";
   d2rq:column "tabDocumenti.Citazione";
   .
-## STANDBY in attesa di autorizzazione
-#
-# map:tabDocumenti_Testo_Riassunto_500 a d2rq:PropertyBridge;
-#   d2rq:belongsToClassMap map:tabDocumenti;
-#   d2rq:property dogi:abstractEditedByJournal;
-#   d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
-#   d2rq:lang "it";
-#   d2rq:column "tabTesti.Testo";
-#   d2rq:condition "tabDocumenti.IDTAbs = 500";
-#   d2rq:condition "tabTesti.Tipo = 1";
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article_label;
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article_comment;
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article_domain;
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article_range;
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article_subPropertyOf;
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article_subPropertyOf_2;
-#   .
-# map:journal_article_label a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:label;
-#   d2rq:propertyValue "Abstract edited by journal"@en;
-#   .
-# map:journal_article_comment a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:comment;
-#   d2rq:propertyValue "An abstract curated by the editorial staff of the journal."@en;
-#   .
-# map:journal_article_domain a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:domain;
-#   d2rq:propertyValue bibo:Article;
-#   .
-# map:journal_article_range a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:range;
-#   d2rq:propertyValue rdf:langString;
-#   .
-# map:journal_article_subPropertyOf a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:subPropertyOf;
-#   d2rq:propertyValue bibo:abstract;
-#   .
-# map:journal_article_subPropertyOf_2 a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:subPropertyOf;
-#   d2rq:propertyValue dcterms:abstract;
-#   .
-## STANDBY in attesa di autorizzazione
-#
-# map:tabDocumenti_Testo_Riassunto_800 a d2rq:PropertyBridge;
-#   d2rq:belongsToClassMap map:tabDocumenti;
-#   d2rq:property dogi:abstractEditedByAuthor;
-#   d2rq:join "tabDocumenti.IDDoc => tabTesti.IDDoc";
-#   d2rq:lang "it";
-#   d2rq:column "tabTesti.Testo";
-#   d2rq:condition "tabDocumenti.IDTAbs = 800";
-#   d2rq:condition "tabTesti.Tipo = 1";
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_label;
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_comment;
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_domain;
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_range;
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_subPropertyOf;
-#   d2rq:additionalPropertyDefinitionProperty map:journal_article2_subPropertyOf_2;
-#   .
-# map:journal_article2_label a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:label;
-#   d2rq:propertyValue "Abstract edited by author"@en;
-#   .
-# map:journal_article2_comment a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:comment;
-#   d2rq:propertyValue "An abstract written by the author of the article."@en;
-#   .
-# map:journal_article2_domain a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:domain;
-#   d2rq:propertyValue bibo:Article;
-#   .
-# map:journal_article2_range a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:range;
-#   d2rq:propertyValue rdf:langString;
-#   .
-# map:journal_article2_subPropertyOf a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:subPropertyOf;
-#   d2rq:propertyValue bibo:abstract;
-#   .
-# map:journal_article2_subPropertyOf_2 a d2rq:AdditionalProperty;
-#   d2rq:propertyName rdfs:subPropertyOf;
-#   d2rq:propertyValue dcterms:abstract;
-#   .
-
 map:tabDocumenti_Testo_Riassunto_900 a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
   d2rq:property dogi:abstractEditedByDogi;
@@ -361,10 +277,10 @@ map:tabDocumenti_Testo_Riassunto_900 a d2rq:PropertyBridge;
   d2rq:condition "tabTesti.Tipo = 1";
   d2rq:additionalPropertyDefinitionProperty map:journal_article3_label;
   d2rq:additionalPropertyDefinitionProperty map:journal_article3_comment;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article3_domain;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article3_range;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article3_subPropertyOf;
-  d2rq:additionalPropertyDefinitionProperty map:journal_article3_subPropertyOf_2;
+  d2rq:additionalPropertyDefinitionProperty map:bibo_article_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
+  d2rq:additionalPropertyDefinitionProperty map:subProperty_bibo_abstract;
+  d2rq:additionalPropertyDefinitionProperty map:subProperty_dcterms_abstract;
   .
 map:journal_article3_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -373,22 +289,6 @@ map:journal_article3_label a d2rq:AdditionalProperty;
 map:journal_article3_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
   d2rq:propertyValue "An abstract curated by the staff of DoGi."@en;
-  .
-map:journal_article3_domain a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:domain;
-  d2rq:propertyValue bibo:Article;
-  .
-map:journal_article3_range a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:range;
-  d2rq:propertyValue rdf:langString;
-  .
-map:journal_article3_subPropertyOf a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:subPropertyOf;
-  d2rq:propertyValue bibo:abstract;
-  .
-map:journal_article3_subPropertyOf_2 a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:subPropertyOf;
-  d2rq:propertyValue dcterms:abstract;
   .
 map:tabDocumenti_Testo_Sommario a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
@@ -406,6 +306,8 @@ map:tabDocumenti_Testo_Traduzione a d2rq:PropertyBridge;
   d2rq:column "tabTesti.Testo";
   d2rq:additionalPropertyDefinitionProperty map:translation_label;
   d2rq:additionalPropertyDefinitionProperty map:translation_comment;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
+  d2rq:additionalPropertyDefinitionProperty map:bibo_article_domain;
   .
 map:translation_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -413,15 +315,7 @@ map:translation_label a d2rq:AdditionalProperty;
   .
 map:translation_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
-  d2rq:propertyValue "The translation of the title of the contribution"@en;
-  .
-map:translation_domain a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:domain;
-  d2rq:propertyValue bibo:Article;
-  .
-map:translation_range a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:range;
-  d2rq:propertyValue rdf:langString;
+  d2rq:propertyValue "The translation of the title of the contribution."@en;
   .
 map:tabDocumenti_Testo_TestoNota a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabDocumenti;
@@ -552,8 +446,8 @@ map:tabSourceOfLaw_urnNirAtto a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.urnNirAtto != ''";
   d2rq:additionalPropertyDefinitionProperty map:urnNir_label;
   d2rq:additionalPropertyDefinitionProperty map:urnNir_comment;
-  d2rq:additionalPropertyDefinitionProperty map:urnNir_domain;
-  d2rq:additionalPropertyDefinitionProperty map:urnNir_range;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   d2rq:additionalPropertyDefinitionProperty map:subProperty_dcterms_identifier;
   .
 map:urnNir_label a d2rq:AdditionalProperty;
@@ -564,14 +458,7 @@ map:urnNir_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
   d2rq:propertyValue "The Uniform Resource Name (URN) of the Norma In Rete (NIR) project for the centralized access to the italian legislation."@en;
   .
-map:urnNir_domain a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:domain;
-  d2rq:propertyValue dogi:SourceOfLaw;
-  .
-map:urnNir_range a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:range;
-  d2rq:propertyValue rdf:langString;
-  .
+
 # URN CELEX
 map:tabSourceOfLaw_celex a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
@@ -581,8 +468,8 @@ map:tabSourceOfLaw_celex a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.celexAtto != ''";
   d2rq:additionalPropertyDefinitionProperty map:celex_label;
   d2rq:additionalPropertyDefinitionProperty map:celex_comment;
-  d2rq:additionalPropertyDefinitionProperty map:celex_domain;
-  d2rq:additionalPropertyDefinitionProperty map:celex_range;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   d2rq:additionalPropertyDefinitionProperty map:subProperty_dcterms_identifier;
   .
 map:celex_label a d2rq:AdditionalProperty;
@@ -593,14 +480,7 @@ map:celex_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
   d2rq:propertyValue "CELEX numbers are the unique reference numbers assigned to EU documents on CELEX: the documentation system for EU documents produced by the Office for Official Publications of the European Communities (EUR-OP). "@en;
   .
-map:celex_domain a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:domain;
-  d2rq:propertyValue dogi:SourceOfLaw;
-  .
-map:celex_range a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:range;
-  d2rq:propertyValue rdf:langString;
-  .
+
 # URN ECLI
 map:tabSourceOfLaw_ecli a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
@@ -610,8 +490,8 @@ map:tabSourceOfLaw_ecli a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.ecli != ''";
   d2rq:additionalPropertyDefinitionProperty map:ecli_label;
   d2rq:additionalPropertyDefinitionProperty map:ecli_comment;
-  d2rq:additionalPropertyDefinitionProperty map:ecli_domain;
-  d2rq:additionalPropertyDefinitionProperty map:ecli_range;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   d2rq:additionalPropertyDefinitionProperty map:subProperty_dcterms_identifier;
   .
 map:ecli_label a d2rq:AdditionalProperty;
@@ -621,14 +501,6 @@ map:ecli_label a d2rq:AdditionalProperty;
 map:ecli_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
   d2rq:propertyValue "Ecli ..."@en;
-  .
-map:ecli_domain a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:domain;
-  d2rq:propertyValue dogi:SourceOfLaw;
-  .
-map:ecli_range a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:range;
-  d2rq:propertyValue rdf:langString;
   .
 # External links
 map:tabSourceOfLaw_normattiva a d2rq:PropertyBridge;
@@ -653,6 +525,8 @@ map:tabSourceOfLaw_Articolo a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.Articolo != ''";
   d2rq:additionalPropertyDefinitionProperty map:article_label;
   d2rq:additionalPropertyDefinitionProperty map:article_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:article_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -670,6 +544,8 @@ map:tabSourceOfLaw_Comma a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.Comma != ''";
   d2rq:additionalPropertyDefinitionProperty map:paragraph_label;
   d2rq:additionalPropertyDefinitionProperty map:paragraph_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:paragraph_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -687,6 +563,8 @@ map:tabSourceOfLaw_Lettera a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.Lettera != ''";
   d2rq:additionalPropertyDefinitionProperty map:letter_label;
   d2rq:additionalPropertyDefinitionProperty map:letter_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:letter_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -704,6 +582,8 @@ map:tabSourceOfLaw_NumeroP a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.NumeroP != ''";
   d2rq:additionalPropertyDefinitionProperty map:number_label;
   d2rq:additionalPropertyDefinitionProperty map:number_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:number_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -721,6 +601,8 @@ map:tabSourceOfLaw_Allegato a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.Allegato != ''";
   d2rq:additionalPropertyDefinitionProperty map:annex_label;
   d2rq:additionalPropertyDefinitionProperty map:annex_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:annex_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -751,29 +633,23 @@ map:tabSourceOfLaw_Data a d2rq:PropertyBridge;
   d2rq:datatype xsd:date;
   d2rq:column "tabSourceOfLaw.Data";
   .
-# STAND-BY
-#map:tabSourceOfLaw_TipoProvvedimento a d2rq:PropertyBridge;
-#  d2rq:belongsToClassMap map:tabSourceOfLaw;
-#  d2rq:property dogi:tipoProvvedimento;
-#  d2rq:lang "it";
-#  d2rq:join "tabSourceOfLaw.IDTP = tabTP.IDTP";
-#  d2rq:column "tabTP.TipoProvvedimento";
-#  d2rq:additionalPropertyDefinitionProperty map:tipoProvvedimento_label;
-#  d2rq:additionalPropertyDefinitionProperty map:tipoProvvedimento_comment;
-#  .
-#map:tipoProvvedimento_label a d2rq:AdditionalProperty;
-#  d2rq:propertyName rdfs:label;
-#  d2rq:propertyValue "tipoProvvedimento"@en;
-#  .
-#map:tipoProvvedimento_comment a d2rq:AdditionalProperty;
-#  d2rq:propertyName rdfs:comment;
-#  d2rq:propertyValue "Type of source of law."@en;
-#  .
 map:tabSourceOfLaw_Numero a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dogi:number;
   d2rq:column "tabSourceOfLaw.Numero";
   d2rq:condition "tabSourceOfLaw.Numero != ''";
+  d2rq:additionalPropertyDefinitionProperty map:numero_label;
+  d2rq:additionalPropertyDefinitionProperty map:numero_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
+  .
+map:numero_label a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:label;
+  d2rq:propertyValue "Number"@en;
+  .
+map:numero_comment a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:comment;
+  d2rq:propertyValue "A number is ..."@en;
   .
 map:tabSourceOfLaw_Ordinanza a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
@@ -783,10 +659,12 @@ map:tabSourceOfLaw_Ordinanza a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.Ordinanza != 0";
   d2rq:additionalPropertyDefinitionProperty map:ordinanza_label;
   d2rq:additionalPropertyDefinitionProperty map:ordinanza_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:ordinanza_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Ordinanza"@en;
+  d2rq:propertyValue "Order"@en;
   .
 map:ordinanza_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
@@ -800,66 +678,16 @@ map:tabSourceOfLaw_Decreto a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.Decreto != 0";
   d2rq:additionalPropertyDefinitionProperty map:decreto_label;
   d2rq:additionalPropertyDefinitionProperty map:decreto_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:decreto_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Decreto"@en;
+  d2rq:propertyValue "Decree"@en;
   .
 map:decreto_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
   d2rq:propertyValue "A decree of a court."@en;
-  .
-map:tabSourceOfLaw_IDRegione a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabSourceOfLaw;
-  d2rq:property dogi:region;
-  d2rq:lang "it";
-  d2rq:join "tabSourceOfLaw.IDRegione => tabRegioni.IDRegione";
-  d2rq:column "tabRegioni.Regione";
-  d2rq:additionalPropertyDefinitionProperty map:region_label;
-  d2rq:additionalPropertyDefinitionProperty map:region_comment;
-  .
-map:region_label a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Region"@en;
-  .
-map:region_comment a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:comment;
-  d2rq:propertyValue "Administrative geographical divisions of a country."@en;
-  .
-map:tabSourceOfLaw_IDCitta a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabSourceOfLaw;
-  d2rq:property dogi:city;
-  d2rq:lang "it";
-  d2rq:join "tabSourceOfLaw.IDCitta => tabCitta.IDCitta";
-  d2rq:column "tabCitta.Citta";
-  d2rq:additionalPropertyDefinitionProperty map:city_label;
-  d2rq:additionalPropertyDefinitionProperty map:city_comment;
-  .
-map:city_label a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "City"@en;
-  .
-map:city_comment a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:comment;
-  d2rq:propertyValue "Urban municipality."@en;
-  .
-map:tabSourceOfLaw_IDProvincia a d2rq:PropertyBridge;
-  d2rq:belongsToClassMap map:tabSourceOfLaw;
-  d2rq:property dogi:province;
-  d2rq:lang "it";
-  d2rq:join "tabSourceOfLaw.IDProvincia => tabProvince.IDProvincia";
-  d2rq:column "tabProvince.Provincia";
-  d2rq:condition "tabSourceOfLaw.IDProvincia != 0";
-  d2rq:additionalPropertyDefinitionProperty map:province_label;
-  d2rq:additionalPropertyDefinitionProperty map:province_comment;
-  .
-map:province_label a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Province"@en;
-  .
-map:province_comment a d2rq:AdditionalProperty;
-  d2rq:propertyName rdfs:comment;
-  d2rq:propertyValue "District into which a country has been divided."@en;
   .
 map:tabSourceOfLaw_IDSezione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
@@ -870,6 +698,8 @@ map:tabSourceOfLaw_IDSezione a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.IDSezione != 0";
   d2rq:additionalPropertyDefinitionProperty map:section_label;
   d2rq:additionalPropertyDefinitionProperty map:section_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:section_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -888,6 +718,8 @@ map:tabSourceOfLaw_IDAutorita a d2rq:PropertyBridge;
   d2rq:condition "tabSourceOfLaw.IDAutorita != 0";
   d2rq:additionalPropertyDefinitionProperty map:authority_label;
   d2rq:additionalPropertyDefinitionProperty map:authority_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:authority_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -899,17 +731,19 @@ map:authority_comment a d2rq:AdditionalProperty;
   .
 map:tabSourceOfLaw_IDAmministrazione a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
-  d2rq:property dogi:amministrazione;
+  d2rq:property dogi:administration;
   d2rq:lang "it";
   d2rq:join "tabSourceOfLaw.IDAmministrazione => tabAmministrazioni.IDAmministrazione";
   d2rq:column "tabAmministrazioni.Amministrazione";
   d2rq:condition "tabSourceOfLaw.IDAmministrazione != 0";
   d2rq:additionalPropertyDefinitionProperty map:amministrazione_label;
   d2rq:additionalPropertyDefinitionProperty map:amministrazione_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_source_of_law_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:amministrazione_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Amministrazione"@en;
+  d2rq:propertyValue "Administration"@en;
   .
 map:amministrazione_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
@@ -946,14 +780,16 @@ map:classification__label a d2rq:PropertyBridge;
   .
 map:classification_NS a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabClassificazioni;
-  d2rq:property dogi:hasCategory;
+  d2rq:property dogi:category;
   d2rq:uriPattern "Category/@@tabClassificazioni.NS@@";
   d2rq:additionalPropertyDefinitionProperty map:sistematico_label;
   d2rq:additionalPropertyDefinitionProperty map:sistematico_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_classification_domain;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_category_range;
   .
 map:sistematico_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Has category"@en;
+  d2rq:propertyValue "Category"@en;
   .
 map:sistematico_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
@@ -961,15 +797,17 @@ map:sistematico_comment a d2rq:AdditionalProperty;
   .
 map:classification_ND a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabClassificazioni;
-  d2rq:property dogi:hasSubjectHeading;
+  d2rq:property dogi:subjectHeading;
   d2rq:uriPattern "SubjectHeading/@@tabClassificazioni.ND@@";
   d2rq:condition "tabClassificazioni.ND != ''";
   d2rq:additionalPropertyDefinitionProperty map:descrittore_label;
   d2rq:additionalPropertyDefinitionProperty map:descrittore_comment;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_classification_domain;
+  d2rq:additionalPropertyDefinitionProperty map:dogi_subject_heading_range;
   .
 map:descrittore_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
-  d2rq:propertyValue "Has subject heading"@en;
+  d2rq:propertyValue "Subject heading"@en;
   .
 map:descrittore_comment a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:comment;
@@ -1135,6 +973,8 @@ map:tabRifBibl_Supplemento a d2rq:PropertyBridge;
   d2rq:column "tabRifBibl.Supplemento";
   d2rq:additionalPropertyDefinitionProperty map:supplement_label;
   d2rq:additionalPropertyDefinitionProperty map:supplement_comment;
+  d2rq:additionalPropertyDefinitionProperty map:bibo_issue_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:supplement_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -1199,6 +1039,8 @@ map:tabRiviste_Rating a d2rq:PropertyBridge;
   d2rq:column "tabRiviste.Rating";
   d2rq:additionalPropertyDefinitionProperty map:rating_label;
   d2rq:additionalPropertyDefinitionProperty map:rating_comment;
+  d2rq:additionalPropertyDefinitionProperty map:bibo_journal_domain;
+  d2rq:additionalPropertyDefinitionProperty map:literal_range;
   .
 map:rating_label a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:label;
@@ -1300,13 +1142,6 @@ map:tabConceptScheme_Top_concept_sistematici a d2rq:PropertyBridge;
   d2rq:condition "tabSistematici.CodiceS_Padre IS NULL";
   d2rq:uriPattern "Category/@@tabSistematici.CodiceS@@";
   .
-# map:tabConceptScheme_Top_concept_descrittori a d2rq:PropertyBridge;
-#   d2rq:belongsToClassMap map:tabConceptScheme;
-#   d2rq:property skos:hasTopConcept;
-#   d2rq:join "tabConceptScheme.Code = tabDescrittori.CodiceD";
-#   d2rq:condition "tabSistematici.Code = ''";
-#   d2rq:uriPattern "SubjectHeading/@@tabDescrittori.CodiceD@@";
-#   .
 
 ### subClassOf
 ###
@@ -1336,3 +1171,63 @@ map:subClassOf_dogi_sourceOfLaw a d2rq:AdditionalProperty;
 map:subProperty_dcterms_identifier a d2rq:AdditionalProperty;
   d2rq:propertyName rdfs:subPropertyOf;
   d2rq:propertyValue dcterms:identifier;
+  .
+map:subProperty_bibo_abstract a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subPropertyOf;
+  d2rq:propertyValue bibo:abstract;
+  .
+map:subProperty_dcterms_abstract a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:subPropertyOf;
+  d2rq:propertyValue dcterms:abstract;
+  .
+
+### domains
+###
+map:bibo_article_domain a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:domain;
+  d2rq:propertyValue bibo:Article;
+  .
+map:dogi_source_of_law_domain a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:domain;
+  d2rq:propertyValue dogi:SourceOfLaw;
+  .
+map:bibo_article_domain a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:domain;
+  d2rq:propertyValue bibo:Article;
+  .
+map:dogi_classification_domain a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:domain;
+  d2rq:propertyValue dogi:Classification;
+  .
+map:bibo_issue_domain a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:domain;
+  d2rq:propertyValue bibo:Issue;
+  .
+map:bibo_journal_domain a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:domain;
+  d2rq:propertyValue bibo:Journal;
+  .
+
+### ranges
+###
+map:literal_range a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:range;
+  d2rq:propertyValue rdfs:Literal;
+  .
+
+map:dogi_classification_range a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:range;
+  d2rq:propertyValue dogi:Classification;
+  .
+map:dogi_bibliography_type_range a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:range;
+  d2rq:propertyValue dogi:BibliographyType;
+  .
+map:dogi_category_range a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:range;
+  d2rq:propertyValue dogi:Category;
+  .
+map:dogi_subject_heading_range a d2rq:AdditionalProperty;
+  d2rq:propertyName rdfs:range;
+  d2rq:propertyValue dogi:SubjectHeading;
+  .
