@@ -25,6 +25,7 @@
   d2r:baseURI <http://www.dogi.cnr.it/>;
   d2r:vocabularyIncludeInstances true;
   d2rq:useAllOptimizations true;
+  d2r:sparqlTimeout 300;
   #d2r:enableMetadata true;
   .
 
@@ -379,6 +380,7 @@ map:tabDocumenti_Data_3 a d2rq:PropertyBridge;
   d2rq:condition "CHAR_LENGTH(Data) = 4"; # AAAA-MM-DD
   d2rq:column "tabRifBibl.Data";
   .
+
 
 ### Table tabSourceOfLaw
 ###
@@ -758,6 +760,7 @@ map:tabSourceOfLaw_DBpedia a d2rq:PropertyBridge;
 map:SourceOfLaw_tabDocumenti a d2rq:PropertyBridge;
   d2rq:belongsToClassMap map:tabSourceOfLaw;
   d2rq:property dcterms:isReferencedBy;
+  d2rq:property bibo:citedBy;
   d2rq:join "tabSourceOfLaw.IDSourceOfLaw => legDocSourceOfLaw.IDSourceOfLaw";
   d2rq:join "legDocSourceOfLaw.IDDoc => tabDocumenti.IDDoc";
   d2rq:uriPattern "Article/@@tabDocumenti.LocalURI@@";
@@ -1141,6 +1144,13 @@ map:tabConceptScheme_Top_concept_sistematici a d2rq:PropertyBridge;
   d2rq:join "tabConceptScheme.Code => tabSistematici.Code";
   d2rq:condition "tabSistematici.CodiceS_Padre IS NULL";
   d2rq:uriPattern "Category/@@tabSistematici.CodiceS@@";
+  .
+map:tabConceptScheme_Top_concept_descrittori a d2rq:PropertyBridge;
+  d2rq:belongsToClassMap map:tabConceptScheme;
+  d2rq:property skos:hasTopConcept;
+  d2rq:join "tabConceptScheme.Id => tabDescrittori.ConceptScheme";
+  d2rq:condition "tabConceptScheme.Id = 25";
+  d2rq:uriPattern "SubjectHeading/@@tabDescrittori.CodiceD@@";
   .
 
 ### subClassOf
