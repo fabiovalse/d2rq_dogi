@@ -146,12 +146,20 @@ update = (root) ->
 
   ### text
   ###
-  node_enter.append 'a'
+  top_node_enter = node_enter.filter (d) -> d.url is ''
+  filtered_node_enter = node_enter.filter (d) -> d.url isnt ''
+
+  filtered_node_enter.append 'a'
     .attr
       href: (d) -> d.url
       target: '_blank'
     .append 'text'
       .attr
+        class: 'hoverable'
+        y: 0
+
+  top_node_enter.append 'text'
+    .attr
       y: 0
 
   text = node.select 'text'

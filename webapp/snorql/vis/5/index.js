@@ -97,7 +97,7 @@
   tree = d3.layout.tree().size([0, 0]);
 
   update = function(root) {
-    var height, link, link_enter, links, node, node_enter, nodes, text, tspans;
+    var filtered_node_enter, height, link, link_enter, links, node, node_enter, nodes, text, top_node_enter, tspans;
     height = 0;
     nodes = tree.nodes(root);
     links = tree.links(nodes);
@@ -187,13 +187,22 @@
 
     /* text
      */
-    node_enter.append('a').attr({
+    top_node_enter = node_enter.filter(function(d) {
+      return d.url === '';
+    });
+    filtered_node_enter = node_enter.filter(function(d) {
+      return d.url !== '';
+    });
+    filtered_node_enter.append('a').attr({
       href: function(d) {
         return d.url;
       },
       target: '_blank'
-    }).append('text').attr;
-    ({
+    }).append('text').attr({
+      "class": 'hoverable',
+      y: 0
+    });
+    top_node_enter.append('text').attr({
       y: 0
     });
     text = node.select('text').attr({

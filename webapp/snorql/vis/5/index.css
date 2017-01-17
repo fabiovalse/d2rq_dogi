@@ -23,6 +23,6 @@ html, body {
   stroke-width: 1.5px;
 }
 
-text:hover {
+text.hoverable:hover {
   fill: steelblue;
 }
